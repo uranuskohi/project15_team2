@@ -42,6 +42,10 @@ public class Meet_Management_Page {
     @FindBy (xpath = "//*/tr/td[5]/span")
     public WebElement descriptionVisible;
 
+    //ADDED FATIH
+    @FindBy (xpath = "//*/tr/td[110]/span")
+    public WebElement descriptionVisible2;
+
     @FindBy (xpath = "//*/tr/td[6]/span/button")
     public WebElement editButtonAtMeetManagement;
 
@@ -49,6 +53,7 @@ public class Meet_Management_Page {
     public WebElement deleteButtonAtMeetManagement;
 
     @FindBy (xpath = "//*[//*[@id=\"2\"]/div[1]/div[2]")
+   // @FindBy (xpath = "//*[//*/div[1]/div[2]") MAYBE TRY THIS IF YOU HAVE an ERROR
     public WebElement meetSavedSuccessfullyPopUp;
 
     @FindBy (xpath="//*[@id=\"4\"]/div[1]/div[2]")
