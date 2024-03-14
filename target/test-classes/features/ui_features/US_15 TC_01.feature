@@ -9,6 +9,7 @@
       And clicks on Menu button
 
 
+
       Scenario Outline:
       When user clicks on Student Management on Main Menu
       And enters name in the user

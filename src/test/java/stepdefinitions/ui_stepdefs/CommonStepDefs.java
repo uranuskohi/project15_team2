@@ -2,8 +2,10 @@ package stepdefinitions.ui_stepdefs;
 
 import io.cucumber.java.en.*;
 import pages.Main_Page;
+import utilities.BrowserUtils;
 import utilities.ConfigReader;
 import utilities.Driver;
+import utilities.JSUtils;
 
 public class CommonStepDefs {
 
@@ -32,7 +34,8 @@ public class CommonStepDefs {
     }
     @Given("clicks on Menu button")
     public void clicks_on_menu_button() {
-    mainPage.menuButton.click();
+
+        BrowserUtils.clickWithTimeOut(mainPage.menuButton, 1);
     }
 
 
