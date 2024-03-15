@@ -7,6 +7,8 @@ import utilities.ConfigReader;
 import utilities.Driver;
 import utilities.JSUtils;
 
+import static utilities.WaitUtils.waitFor;
+
 public class CommonStepDefs {
 
     Main_Page mainPage = new Main_Page();
@@ -43,6 +45,7 @@ public class CommonStepDefs {
 
     @Given("clicks on {string} on Main Menu")
     public void clicks_on_on_main_menu(String mainMenuOption) {
+        waitFor(2);
         switch (mainMenuOption) {
             case "Admin Management":
                 mainPage.adminManagement.click();
