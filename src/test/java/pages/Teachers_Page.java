@@ -11,7 +11,7 @@ public class Teachers_Page {
         PageFactory.initElements(Driver.getDriver(),this);
     }
 
-    @FindBy(id = "react-select-3-live-region")
+    @FindBy(id = "react-select-3-input")
     public WebElement selectLesson;
 
     @FindBy(id = "name")
@@ -50,8 +50,11 @@ public class Teachers_Page {
     @FindBy(id = "password")
     public WebElement password;
 
-    @FindBy(linkText = "Submit")
+    @FindBy(xpath = "//button[text()='Submit']")
     public WebElement submit;
+
+    @FindBy(xpath = "//div[@class='Toastify']")
+    public WebElement successMsg;
 
 
 
