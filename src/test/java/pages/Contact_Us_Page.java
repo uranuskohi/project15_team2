@@ -15,13 +15,13 @@ public class Contact_Us_Page {
     public WebElement contact;
 
     @FindBy(xpath = "//input[@id='name']")
-    public WebElement name;
+    public static WebElement name;
 
     @FindBy(xpath = "//input[@id='email']")
-    public WebElement email;
+    public static WebElement email;
 
     @FindBy(xpath ="//input[@id='subject']")
-    public WebElement subject;
+    public static WebElement subject;
 
     @FindBy(xpath ="//textarea[@id='message']")
     public WebElement message;
