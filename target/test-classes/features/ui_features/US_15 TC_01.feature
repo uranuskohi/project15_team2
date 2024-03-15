@@ -7,7 +7,7 @@
       And enters "Batch197+" in the password input field
       And clicks on Login button
       And clicks on Menu button
-      And clicks on "Logout" on Main Menu
+      And clicks on "Student Management" on Main Menu
 
 
 
