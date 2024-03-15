@@ -4,16 +4,17 @@
     Background:
       Given user goes to "https://managementonschools.com/" homepage
       And clicks on loginIcon
-      And enters "ViceDeanEsra" in the userName input field
-      And enters "ViceDeanEsra123" in the password input field
+      And enters "AdminBatch197" in the userName input field
+      And enters "Batch197+" in the password input field
       And clicks on Login button
       And clicks on Menu button
+      And clicks on "Student Management" on Main Menu
+
 
 
 
       Scenario Outline:
-      When user clicks on Student Management on Main Menu
-      And enters name in the user
+      When user enters name in the user
       And close the application
         Examples:
         |name|
