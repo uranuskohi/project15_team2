@@ -11,7 +11,11 @@ public class Meet_Management_Page {
         PageFactory.initElements(Driver.getDriver(),this);
     }
 
-    @FindBy(id = "react-select-2-input")
+   // @FindBy(id = "react-select-2-input")
+   // @FindBy(id = "react-select-3-input")
+   // @FindBy (xpath = "(//div[@class=' css-19bb58m'])[1]")
+    //@FindBy (id="react-select-3-placeholder")
+   @FindBy(xpath = "(//input)[1]")
     public WebElement chooseStudents;
 
     @FindBy(id = "date")
