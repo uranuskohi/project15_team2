@@ -20,6 +20,6 @@ Feature: Students, choose lesson, grades and announcement
     And student should be able to delete the chosen lesson from the list
     And student is not able to delete the chosen lesson from the list
     And student should click on the menu and should be able to see the Main Menu List
-    And student should click on Grades and Announcments
-    And student should be able to see her/his exam grades if it is added by their teacher in the Student Info List
-    And student should be able to see the meeting created by her/his advisor on the Meet List
+    And student should click on Grades and Announcements
+    And student should be able to see his exam grades if it is added by their teacher in the Student Info List
+    And student should be able to see the meeting created by his advisor on the Meet List

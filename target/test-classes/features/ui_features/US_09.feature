@@ -2,11 +2,11 @@
 @userStory09
 Feature: Vice Deans should be able to view the lesson list and make updates
   Background:
-    Given "Vice Dean" should be already logged in the "https://managementonschools.com" website as a "Vice Dean"
-    And Click on Login
-    And Enter username
-    And Enter password
-    And Click on login button
+    Given user goes to "https://managementonschools.com/" homepage
+    And clicks on loginIcon
+    And enters "uranuskohi" in the userName input field
+    And enters "Helloworld0" in the password input field
+    And clicks on Login button
 
     Scenario: TC_01 Being able to see the lesson details as a Vice Dean and update the information
     When click on Lessons

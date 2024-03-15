@@ -32,10 +32,3 @@ Feature: Vice Deans should be able to create a lesson
         Examples:
           | lesson name |
           | recruiter   |
-
-
-
-
-
-
-

@@ -2,11 +2,11 @@
 @userStory08
 Feature: Vice Deans should be able to create a lesson
   Background:
-    Given "Vice Dean" should be already logged in the "https://managementonschools.com" website as a "Vice Dean"
-    And Click on Login
-    And Enter username
-    And Enter password
-    And Click on login button
+    Given user goes to "https://managementonschools.com/" homepage
+    And clicks on loginIcon
+    And enters "uranuskohi" in the userName input field
+    And enters "Helloworld0" in the password input field
+    And clicks on Login button
 
     Scenario Outline: TC_01 Adding new Lesson as a Vice Dean
       When click on Lessons
@@ -32,10 +32,3 @@ Feature: Vice Deans should be able to create a lesson
         Examples:
           | lesson name |
           | recruiter   |
-
-
-
-
-
-
-
