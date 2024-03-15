@@ -2,11 +2,11 @@
 @userStory21
 Feature: Students, choose lesson, grades and announcement
   Background:
-    Given "Student" should be already logged in the "https://managementonschools.com" website as a "Student"
-    And Click on Login
-    And Enter username
-    And Enter password
-    And Click on login button
+    Given user goes to "https://managementonschools.com/" homepage
+    And clicks on loginIcon
+    And enters "uranus" in the userName input field
+    And enters "Madrid01" in the password input field
+    And clicks on Login button
 
     Scenario: TC_01 Student goes and see her/his exam grade and meeting announcement
     When student goes to Choose Lesson Management

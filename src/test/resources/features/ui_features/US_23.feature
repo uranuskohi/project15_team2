@@ -2,11 +2,11 @@
 @userStory23
 Feature: Admin should be able to add Vice Dean
   Background:
-    Given "Admin" should be already logged in the "https://managementonschools.com" website as a "Admin"
-    And Click on Login
-    And Enter username
-    And Enter password
-    And Click on login button
+    Given user goes to "https://managementonschools.com/" homepage
+    And clicks on loginIcon
+    And enters "AdminBatch197" in the userName input field
+    And enters "Batch197+" in the password input field
+    And clicks on Login button
 
     Scenario Outline: TC_01 Admin adding a Vice Dean
     When admin is logged in the website
