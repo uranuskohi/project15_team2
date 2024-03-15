@@ -1,10 +1,12 @@
 package pages;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import utilities.Driver;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Student_Info_Management_Page {
@@ -14,27 +16,14 @@ public class Student_Info_Management_Page {
     }
 
 
-
-    //delete later
-    @FindBy (id = "username")
-    public WebElement username;
-
-    @FindBy (id = "password")
-    public WebElement password;
-
-    @FindBy (xpath = "(//button[@type='button'])[3]")
-    public WebElement login;
-
-    /////////////////
-
     @FindBy (id="lessonId")
-    public WebElement Lesson;
+    public WebElement lessonDropdown;
 
     @FindBy (id="studentId")
-    public WebElement Student;
+    public WebElement studentDropdown;
 
     @FindBy (id="educationTermId")
-    public WebElement Term;
+    public WebElement semesterDropdown;
 
     @FindBy (id="absentee")
     public WebElement absentee;
@@ -50,6 +39,12 @@ public class Student_Info_Management_Page {
 
     @FindBy(xpath = "(//button[@type='button'])[5]")
     public WebElement submitButton;
+
+
+    //Student Info List Table
+
+    @FindBy(xpath = "//div[@class='table-responsive']//tbody/tr/td[1]")
+    public List<WebElement> nameColumn;
 
     @FindBy (xpath = "//div[@class='table-responsive']//tbody/tr")
     public List<WebElement> rows;
@@ -73,13 +68,4 @@ public class Student_Info_Management_Page {
 
     @FindBy (xpath = "(//button[contains(@aria-label,'Close')])[3]")
     public WebElement closeWindowInEdit;
-
-
-
-
-    //  //tag[contains(text[],'text value')]
-   // @FindBy(xpath = "//*[contains(@id,'')]/div[1]/div[2]")
-  //  public WebElement dynamicElement;
-
-
 }

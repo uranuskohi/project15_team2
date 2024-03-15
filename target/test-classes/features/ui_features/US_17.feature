@@ -16,11 +16,11 @@ Feature: US_17
     And The teacher enters "<information>" notes about the student
     And The teacher submits the student information
     Then Verify the new student information "<student>" is displayed in the student info list
-    And close the application
+    #And close the application
 
     Examples:
       | lesson | student      | semester        | absences | midterm | final |information|
-      | Java   | Harry Potter | SPRING_SEMESTER | 0        | 100     | 100   |Dobby is free |
+      | Java   | Draco Malfoy | SPRING_SEMESTER | 0        | 100     | 100   |Dobby is free |
 
 
  # Scenario Outline: TC_02 The teacher leaves midterm and final exam grades blank
