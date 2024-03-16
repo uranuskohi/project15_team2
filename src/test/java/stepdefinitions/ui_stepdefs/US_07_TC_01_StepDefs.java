@@ -6,7 +6,6 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.When;
 import org.openqa.selenium.Keys;
 import pages.Main_Page;
-import pages.Teachers_Page;
 import pages.Vice_Dean_Management_Page;
 import utilities.Driver;
 import utilities.WaitUtils;
