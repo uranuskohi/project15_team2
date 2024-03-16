@@ -15,7 +15,6 @@ public class Student_Info_Management_Page {
         PageFactory.initElements(Driver.getDriver(),this);
     }
 
-
     @FindBy (id="lessonId")
     public WebElement lessonDropdown;
 
@@ -46,6 +45,12 @@ public class Student_Info_Management_Page {
     @FindBy(xpath = "//div[@class='table-responsive']//tbody/tr/td[1]")
     public List<WebElement> nameColumn;
 
+    @FindBy(xpath = "//div[@class='table-responsive']//tbody/tr/td[4]")
+    public List<WebElement> midtermColumn;
+
+    @FindBy(xpath = "//div[@class='table-responsive']//tbody/tr/td[5]")
+    public List<WebElement> finalColumn;
+
     @FindBy (xpath = "//div[@class='table-responsive']//tbody/tr")
     public List<WebElement> rows;
 
@@ -57,10 +62,10 @@ public class Student_Info_Management_Page {
 
 /// update window
 
-    @FindBy (xpath = "(//input[@id='midtermExam'])[2])")
+    @FindBy (xpath = "(//input[@class='form-control'])[6]")
     public WebElement midtermExamInEdit;
 
-    @FindBy (xpath = "(//input[@id='finalExam'])[2]")
+    @FindBy (xpath = "(//input[@class='form-control'])[7]")
     public WebElement finalExamInEdit;
 
     @FindBy (xpath = "(//button[@type='button'][normalize-space()='Submit'])[2]")
@@ -68,4 +73,14 @@ public class Student_Info_Management_Page {
 
     @FindBy (xpath = "(//button[contains(@aria-label,'Close')])[3]")
     public WebElement closeWindowInEdit;
+
+    @FindBy (xpath = "//input[@id='finalExam']/following-sibling::div[text()='Required']")
+    public WebElement requiredMessageUnderFinalExam;
+
+    @FindBy (xpath = "//input[@id='midtermExam']/following-sibling::div[text()='Required']")
+    public WebElement requiredMessageUnderMidtermExam;
+
+
+
+
 }
