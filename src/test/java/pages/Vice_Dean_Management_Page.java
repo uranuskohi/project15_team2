@@ -21,7 +21,7 @@ public class Vice_Dean_Management_Page {
     @FindBy(id = "password")
     public WebElement password;
 
-    @FindBy(xpath = "//button[text()='Menu']")
+    @FindBy(xpath = "(//button[normalize-space()='Menu'])[1]")
     public WebElement menuButton;
 
 
@@ -38,7 +38,10 @@ public class Vice_Dean_Management_Page {
     public WebElement vdmBirthPlace;
 
     @FindBy(xpath = "//input[@value='FEMALE']")
-    public WebElement gender;
+    public WebElement femGender;
+
+    @FindBy(xpath = "(//label[normalize-space()='Male'])[1]")
+    public WebElement maleGender;
 
     @FindBy(xpath = "//input[@id='birthDay'")
     public WebElement vdmBirthDay;
