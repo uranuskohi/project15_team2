@@ -12,7 +12,6 @@
 
 
 
-
       Scenario Outline:
       When user enters name in the user
       And close the application

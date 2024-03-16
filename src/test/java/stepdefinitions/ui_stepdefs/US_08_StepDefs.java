@@ -4,6 +4,8 @@ import io.cucumber.java.en.*;
 import pages.Choose_Lesson_Management_Page;
 import pages.Lessons_Page;
 import utilities.BrowserUtils;
+import utilities.Driver;
+import utilities.WaitUtils;
 
 public class US_08_StepDefs {
 
@@ -11,6 +13,7 @@ public class US_08_StepDefs {
 
     @When("click on Lessons")
     public void click_on_lessons() {
+        lessonsPage = new Lessons_Page();
         lessonsPage.lessons.click();
     }
 
@@ -41,22 +44,24 @@ public class US_08_StepDefs {
 
     @Then("verify the Lesson is created")
     public void verify_the_lesson_is_created() {
-
+        WaitUtils.waitFor(1);
+        BrowserUtils.verifyElementDisplayed(lessonsPage.lessonCreatedVerification);
     }
+
 
 
 // ------------------------------------------------------------------------------------------------------------------------
 //    TC_02
 
     @When("leave {string} empty")
-    public void leave_empty(String string) {
+    public void leave_empty(String CompulsoryRadioButton) {
 
     }
 
-        @When("don't add Credit Score")
-        public void don_t_add_credit_score() {
+    @When("don't add Credit Score")
+    public void don_t_add_credit_score() {
 
-        }
+    }
 
 
 

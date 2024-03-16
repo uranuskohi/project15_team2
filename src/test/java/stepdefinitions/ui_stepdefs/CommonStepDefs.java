@@ -1,11 +1,9 @@
 package stepdefinitions.ui_stepdefs;
 
 import io.cucumber.java.en.*;
+import org.openqa.selenium.support.ui.Wait;
 import pages.Main_Page;
-import utilities.BrowserUtils;
-import utilities.ConfigReader;
-import utilities.Driver;
-import utilities.JSUtils;
+import utilities.*;
 
 import static utilities.WaitUtils.waitFor;
 
@@ -36,6 +34,7 @@ public class CommonStepDefs {
 
     @Given("clicks on Login button")
     public void clicks_on_login_button() {
+        WaitUtils.waitFor(1);
         mainPage.loginButton.click();
     }
 
