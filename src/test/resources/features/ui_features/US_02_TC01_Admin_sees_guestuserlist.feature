@@ -3,7 +3,7 @@ Feature: Guest user registers
   Background:
     When user goes to "https://managementonschools.com/" homepage
 
-    Scenario Outline:
+    Scenario:
 
     And user clicks Register button
     And enters name in the Name input field
