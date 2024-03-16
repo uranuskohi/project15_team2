@@ -42,7 +42,7 @@ public class Dean_Managament_Page {
     public WebElement password;
 
     @FindBy (xpath = "//button[text()='Submit']")
-    public WebElement submitButton;
+    public WebElement deanSubmitButton;
 
     @FindBy (xpath = "(//span[normalize-space()='»'])[1]")
     public WebElement lastPageButton;
