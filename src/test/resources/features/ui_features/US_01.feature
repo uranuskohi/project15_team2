@@ -1,4 +1,4 @@
-Feature: US01 Prospective Students Should Be Able to Register in the System with Valid Data
+Feature: US_01 Prospective Students Should Be Able to Register in the System with Valid Data
 
   Scenario Outline: Prospective Students Register in the System with Valid Data (Positive Scenario)
     Given User goes to "https://managementonschools.com/"
