@@ -11,42 +11,86 @@ public class Admin_Management_Page {
         PageFactory.initElements(Driver.getDriver(),this);
     }
 
-    @FindBy (id = "name")
-    public WebElement firstName;
 
-    @FindBy (id = "surname")
-    public WebElement lastName;
 
-    @FindBy (id = "birthPlace")
-    public WebElement birthPlace;
+    @FindBy(xpath = "//input[@id='name']")
+    public WebElement nameBoxOnAdminPage;
 
-    @FindBy (xpath = "//input[@value='FEMALE']" )
-    public WebElement genderFemale;
+    @FindBy(xpath = "//input[@id='surname']")
+    public WebElement surnameBoxOnAdminPage;
 
-    @FindBy (xpath = "//input[@value='MALE']")
-    public WebElement genderMale;
+    @FindBy(xpath = "//input[@id='birthPlace']")
+    public WebElement birthPlaceOnAdminPage;
 
-    @FindBy (xpath = "//*[@id='birthDay']")
-    public WebElement dateOfBirth;
+    @FindBy(xpath = "//input[@value='FEMALE']")
+    public WebElement genderFemaleOnAdminPage;
 
-    @FindBy (id = "phoneNumber")
-    public WebElement phoneNumber;
+    @FindBy(xpath = "//input[@id='birthDay']")
+    public WebElement dateOfBirthOnAdminPage;
 
-    @FindBy (id = "ssn")
-    public WebElement ssn;
+    @FindBy(xpath = "//input[@id='phoneNumber']")
+    public WebElement phoneNumberOnAdminPage;
 
-    @FindBy (id = "username")
+    @FindBy(xpath = "//input[@id='ssn']")
+    public WebElement ssnOnAdminPage;
+
+    @FindBy(xpath = "//input[@id='birthDay']")
+    public WebElement birthDayOnAdminPage;
+
+    @FindBy(xpath = "//input[@id='username']")
     public WebElement userName;
 
-    @FindBy (id = "password")
+    @FindBy(xpath = "//input[@id='password']")
     public WebElement password;
 
-    @FindBy (xpath = "//*[@id=\"root\"]/div/main/div/div[1]/div[2]/div/div/form/div[3]/div[6]/div/button")
+    @FindBy(xpath = "(//*[.='Submit'])[3]")
     public WebElement submitButton;
 
-    @FindBy (xpath = "(//*[@class='btn btn-danger'])[]") // this does not work
-    public WebElement deleteButton;
+    @FindBy(xpath = "//div[@role='alert']")
+    public WebElement adminSavedAlert;
 
-    //*[@id="root"]/div/main/div/div[1]/div[2]/div/div/div[1]/table/tbody/tr[1]/td[6]/span/button
+
+
+    @FindBy(xpath = "//*[.='Menu']")
+    public WebElement menuButton;
+
+    @FindBy(partialLinkText = "Admin Management")
+    public WebElement adminManagementOnMenu;
+
+    @FindBy(partialLinkText = "Dean Management")
+    public WebElement deanManagement;
+
+    @FindBy(partialLinkText = "Vice Dean Management")
+    public WebElement viceDeanManagement;
+
+    @FindBy(partialLinkText = "Lesson Management")
+    public WebElement lessonManagement;
+
+    @FindBy(partialLinkText = "Teacher Management")
+    public WebElement teacherManagement;
+
+    @FindBy(partialLinkText = "Student Management")
+    public WebElement studentManagement;
+
+    @FindBy(partialLinkText = "Student Info Management")
+    public WebElement studentInfoManagement;
+
+    @FindBy(partialLinkText = "Meet Management")
+    public WebElement meetManagement;
+
+    @FindBy(partialLinkText = "Choose Lesson")
+    public WebElement chooseLessonOnMenu;
+
+    @FindBy(partialLinkText = "Contact Get All")
+    public WebElement contactGetAll;
+
+    @FindBy(partialLinkText = "Guest User")
+    public WebElement guestUser;
+
+    @FindBy(partialLinkText = "Logout")
+    public WebElement logoutOnMenu;
+
+
+
 
 }

@@ -11,7 +11,11 @@ public class Meet_Management_Page {
         PageFactory.initElements(Driver.getDriver(),this);
     }
 
-    @FindBy(id = "react-select-2-input")
+   // @FindBy(id = "react-select-2-input")
+   // @FindBy(id = "react-select-3-input")
+   // @FindBy (xpath = "(//div[@class=' css-19bb58m'])[1]")
+    //@FindBy (id="react-select-3-placeholder")
+   @FindBy(xpath = "(//input)[1]")
     public WebElement chooseStudents;
 
     @FindBy(id = "date")
@@ -42,6 +46,10 @@ public class Meet_Management_Page {
     @FindBy (xpath = "//*/tr/td[5]/span")
     public WebElement descriptionVisible;
 
+    //ADDED FATIH
+    @FindBy (xpath = "//*/tr/td[110]/span")
+    public WebElement descriptionVisible2;
+
     @FindBy (xpath = "//*/tr/td[6]/span/button")
     public WebElement editButtonAtMeetManagement;
 
@@ -49,6 +57,7 @@ public class Meet_Management_Page {
     public WebElement deleteButtonAtMeetManagement;
 
     @FindBy (xpath = "//*[//*[@id=\"2\"]/div[1]/div[2]")
+   // @FindBy (xpath = "//*[//*/div[1]/div[2]") MAYBE TRY THIS IF YOU HAVE an ERROR
     public WebElement meetSavedSuccessfullyPopUp;
 
     @FindBy (xpath="//*[@id=\"4\"]/div[1]/div[2]")
