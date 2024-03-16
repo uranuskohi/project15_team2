@@ -75,10 +75,6 @@ public class US_13_TC_01_StepDefs {
         teachersPage.isAdvisorTeacher.click();
     }
 
-    @When("selects gender radio button")
-    public void selects_gender_radio_button() {
-        selectGenderRadioButton();
-    }
 
     public static void selectGenderRadioButton(){
         Teachers_Page teachersPage = new Teachers_Page();
