@@ -41,12 +41,12 @@ public class Dean_Managament_Page {
     @FindBy (id = "password")
     public WebElement password;
 
-    @FindBy (xpath = "//*[@id=\"root\"]/div/main/div/div[1]/div[2]/div/div/form/div[3]/div[6]/div/button")
+    @FindBy (xpath = "//button[text()='Submit']")
     public WebElement submitButton;
 
-    @FindBy (xpath = "(//*[@class='btn btn-danger'])[]") // this does not work
-    public WebElement deleteButton;
+    @FindBy (xpath = "(//span[normalize-space()='»'])[1]")
+    public WebElement lastPageButton;
 
-    //*[@id="root"]/div/main/div/div[1]/div[2]/div/div/div[1]/table/tbody/tr[1]/td[6]/span/button
+
 
 }

@@ -60,7 +60,8 @@ public class Student_Management_Page {
     @FindBy (xpath = "//*[@id=\"root\"]/div/main/div/div[1]/div[2]/div/div/form/div[3]/div[6]/div/button")
     public WebElement submitButton;
 
-
+    @FindBy (xpath = "(//span[normalize-space()='»'])[1]")
+    public WebElement lastPageButton;
 
 
 
