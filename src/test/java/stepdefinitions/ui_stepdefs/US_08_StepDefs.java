@@ -1,10 +1,8 @@
 package stepdefinitions.ui_stepdefs;
 
 import io.cucumber.java.en.*;
-import pages.Choose_Lesson_Management_Page;
 import pages.Lessons_Page;
 import utilities.BrowserUtils;
-import utilities.Driver;
 import utilities.WaitUtils;
 
 public class US_08_StepDefs {
