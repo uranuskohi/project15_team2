@@ -39,7 +39,7 @@ public class BrowserUtils {
     /*
     Custom method to wait to type in an input
      */
-    public static void sendKeysWithTimeout(WebElement element,String text,int timeout) {
+    public static void sendKeysWithTimeout(WebElement element, String text, int timeout) {
         for (int i = 0; i < timeout; i++) {
             try {
                 element.sendKeys(text);

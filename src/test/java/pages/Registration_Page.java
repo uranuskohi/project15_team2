@@ -1,11 +1,14 @@
 package pages;
 
+import org.openqa.selenium.Alert;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import utilities.Driver;
 
 public class Registration_Page {
+
+
 
     public Registration_Page(){
         PageFactory.initElements(Driver.getDriver(),this);
@@ -18,13 +21,13 @@ public class Registration_Page {
     public WebElement registerLink;
 
     @FindBy(xpath = "//input[@id='name']")
-    public WebElement nameBox;
+    public static WebElement nameBox;
 
     @FindBy(xpath = "//input[@id='surname']")
-    public WebElement surnameBox;
+    public static WebElement surnameBox;
 
     @FindBy(xpath = "//input[@id='birthPlace']")
-    public WebElement birthplaceBox;
+    public WebElement birthPlace;
 
     @FindBy(xpath = "(//div[@class='invalid-feedback'])[1]")
     public WebElement nameBoxRequiredText;

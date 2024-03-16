@@ -24,7 +24,7 @@ public class Contact_Us_Page {
     public static WebElement subject;
 
     @FindBy(xpath ="//textarea[@id='message']")
-    public WebElement message;
+    public static WebElement message;
 
     @FindBy(xpath ="//button[@class='fw-semibold btn btn-primary']")
     public WebElement send_message;
