@@ -43,27 +43,27 @@ public class US_19_TC_01_StepDefs {
     @When("the user enters the date of the meeting as {string}")
     public void the_user_enters_the_date_of_the_meeting_as(String date) {
         meetManagementPage.dateOfMeet.sendKeys(date);
-        waitFor(5);
+        waitFor(1);
     }
     @When("the user types the start time as {string}")
     public void the_user_types_the_start_time_as(String startTime) {
         meetManagementPage.startTime.sendKeys(startTime);
-        waitFor(5);
+        waitFor(1);
     }
     @When("the user types the stop time as {string}")
     public void the_user_types_the_stop_time_as(String stopTime) {
         meetManagementPage.stopTime.sendKeys(stopTime);
-        waitFor(5);
+        waitFor(1);
     }
     @When("the user types the description as {string}")
     public void the_user_types_the_description_as(String description) {
         meetManagementPage.description.sendKeys(description);
-        waitFor(5);
+        waitFor(1);
     }
     @When("the user clicks the Submit button")
     public void the_user_clicks_the_submit_button() {
         meetManagementPage.submitAtMeetManagement.click();
-        waitFor(5);
+        waitFor(1);
     }
 
 
