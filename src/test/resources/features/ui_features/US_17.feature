@@ -19,22 +19,22 @@ Feature: US_17
     And close the application
 
     Examples:
-      | lesson | student      | semester        | absences | midterm | final |information|
-      | Java   | Harry Potter | SPRING_SEMESTER | 0        | 100     | 100   |Dobby is free |
+      | lesson | student      | semester        | absences | midterm | final | information   |
+      | Java   | Harry Potter | SPRING_SEMESTER | 0        | 100     | 100   | Dobby is free |
 
 
- # Scenario Outline: TC_02 The teacher leaves midterm and final exam grades blank
- #   And The teacher selects a lesson as "<lesson>", student as "<student>" and semester as "<semester>" from the respective dropdown menus
- #   And The teacher enters the number of absences as "<absences>" for the student
- #   And The teacher intentionally leaves the midterm and final exam grades fields blank
- #   And The teacher enters "<information>" notes about the student
- #   And The teacher submits the student information
- #   Then Verify Message appears indicating that midterm and final exam grades are required fields
-  #  And close the application
+  Scenario Outline: TC_02 The teacher leaves midterm and final exam grades blank
+    And The teacher selects a lesson as "<lesson>", student as "<student>" and semester as "<semester>" from the respective dropdown menus
+    And The teacher enters the number of absences as "<absences>" for the student
+    And The teacher intentionally leaves the midterm "<midterm>" and final "<final>" exam grades fields blank
+    And The teacher enters "<information>" notes about the student
+    And The teacher submits the student information
+    Then Verify Message appears indicating that midterm and final exam grades are required fields
+    And close the application
 
- #   Examples:
- #     | lesson | student      | semester        | absences | midterm | final |information|
- #     | Java   | Harry Potter | SPRING_SEMESTER | 0        | 100     | 100   |Dobby is free |
+    Examples:
+      | lesson | student      | semester        | absences | midterm | final | information   |
+      | Java   | Harry Potter | SPRING_SEMESTER | 0        |         |       | Dobby is free |
 
 
 
