@@ -18,7 +18,7 @@ Feature: vice dean creates teacher
     And enters "102-203-3045" in phone field
     And selects is advisor teacher
     And selects gender radio button
-    And selects date of birth in date of birth field
+    And enters "01/01/2000" in date of birth field
     And enters "401-50-6012" in ssn field
     And enters "bobsmith" in user name field
     And enters "BOBsmith123" in password field

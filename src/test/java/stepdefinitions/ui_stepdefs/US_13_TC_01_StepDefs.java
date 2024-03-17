@@ -91,12 +91,11 @@ public class US_13_TC_01_StepDefs {
         }
     }
 
-    @When("selects date of birth in date of birth field")
-    public void selects_date_of_birth_in_date_of_birth_field() {
-        teachersPage.dateOfBirth.sendKeys(dateOfBirthGenerator(), Keys.TAB);
-//        teachersPage.dateOfBirth.sendKeys(string);
-    }
-
+    @When("enters {string} in date of birth field")
+    public void enters_in_date_of_birth_field(String string) {
+            teachersPage.dateOfBirth.sendKeys(dateOfBirthGenerator(), Keys.TAB);
+    //        teachersPage.dateOfBirth.sendKeys(string);
+        }
 
     public static String dateOfBirthGenerator(){
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd/MM/yyyy");

@@ -56,6 +56,9 @@ public class Teachers_Page {
     @FindBy(xpath = "//div[@class='Toastify']")
     public WebElement successMsg;
 
+    @FindBy(xpath = "//div[text()='Minimum 11 character (XXX-XX-XXXX)']")
+    public WebElement ssnErrorMsg;
+
 
 
 

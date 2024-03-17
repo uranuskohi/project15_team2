@@ -1,4 +1,4 @@
-@US13_create_teacher_asvicedean
+@US13_create_teacher_asvicedean_invalid
 Feature: vice dean creates teacher
   Background:
     Given user goes to "https://managementonschools.com/" homepage
@@ -11,20 +11,17 @@ Feature: vice dean creates teacher
 
   Scenario:
     When enters "Java" in select lesson field
-    And enters "Bob" in name field
-    And enters "Smith" in surname field
+    And enters "Peter" in name field
+    And enters "Piper" in surname field
     And enters "London" in birth place field
-    And enters "bob@gmail.com" in email field
-    And enters "102-203-3045" in phone field
+    And enters "peter@gmail.com" in email field
+    And enters "201-302-5403" in phone field
     And selects is advisor teacher
     And selects gender radio button
-    And enters "01/01/2000" in date of birth field
-    And enters "401-50-6012" in ssn field
-    And enters "bobsmith" in user name field
-    And enters "BOBsmith123" in password field
+    And enters "02/02/2002" in date of birth field
+    And enters only 8 digits "104-05-210" in ssn field
+    And enters "peterpiper" in user name field
+    And enters "PETERpiper1" in password field
     And clicks submit button
-    Then verify success message "Teacher saved successfully"
+    Then verify error message "Minimum 9 character (XXX-XX-XXXX)"
 #    And close the application
-
-
-
