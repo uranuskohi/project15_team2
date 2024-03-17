@@ -26,7 +26,7 @@ public class Lessons_Page {
     @FindBy(xpath = "(//button[@class='fw-semibold btn btn-primary btn-lg'])[2]")
     public WebElement submitButtonForLessons;
 
-    @FindBy(linkText = "Lesson Created")
+    @FindBy(partialLinkText = "Lesson Created")
     public WebElement lessonCreatedVerification;
 
     @FindBy(xpath = "(//button[@class='btn btn-danger'])[1]")
@@ -34,6 +34,19 @@ public class Lessons_Page {
 
     @FindBy(linkText = "Lesson Deleted")
     public WebElement deleteLessonVerification;
+//------------------------------------------------------------------------------------------------------------------------
+
+
+    @FindBy(partialLinkText = "Lesson Name")
+    public WebElement lessonListName;
+
+    @FindBy(partialLinkText = "Compulsory")
+    public WebElement lessonListCompulsory;
+
+    @FindBy(partialLinkText = "Credit Score")
+    public WebElement lessonListCreditScore;
+
+
 
 
 

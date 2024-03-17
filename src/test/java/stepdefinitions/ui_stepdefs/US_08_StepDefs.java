@@ -51,15 +51,15 @@ public class US_08_StepDefs {
 // ------------------------------------------------------------------------------------------------------------------------
 //    TC_02
 
-    @When("leave {string} empty")
-    public void leave_empty(String CompulsoryRadioButton) {
-
-    }
-
-    @When("don't add Credit Score")
-    public void don_t_add_credit_score() {
-
-    }
+//    @When("leave {string} empty")
+//    public void leave_empty(String CompulsoryRadioButton) {
+//
+//    }
+//
+//    @When("don't add Credit Score")
+//    public void don_t_add_credit_score() {
+//
+//    }
 
 
 

@@ -17,10 +17,10 @@ public class US_07_TC_01_StepDefs {
 
     Faker faker = new Faker();
 
-    @Given("user goes to {string} homepage")
-    public void user_goes_to_homepage(String url) {
-        Driver.getDriver().get(url);
-    }
+//    @Given("user goes to {string} homepage")
+//    public void user_goes_to_homepage(String url) {
+//        Driver.getDriver().get(url);
+//    }
 
     @And("user clicks on login")
     public void user_clicks_on_login(String string){
@@ -97,12 +97,8 @@ public class US_07_TC_01_StepDefs {
 
 
 
-
-
-
-
-    @When("close the application")
-    public void close_the_application() {
-        Driver.closeDriver();
-    }
+//    @When("close the application")
+//    public void close_the_application() {
+//        Driver.closeDriver();
+//    }
 }
