@@ -23,7 +23,7 @@ Feature: vice dean creates teacher
     And enters "bobsmith" in user name field
     And enters "BOBsmith123" in password field
     And clicks submit button
-    Then verify success message "Teacher saved Successfully"
+    Then verify success message "Teacher saved successfully"
 #    And close the application
 
 

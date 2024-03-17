@@ -23,10 +23,7 @@ Feature: Admin sees Guest User list
     And clicks on the login button
     And clicks on Menu button
     And clicks on guest user on the main menu
-    Then verifies name column is visible
-
-  @US_02_TC03
-
+    Then verifies name,phone number,ssn and user name is visible
 
 
 
