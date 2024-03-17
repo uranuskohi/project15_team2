@@ -1,10 +1,8 @@
 
-Feature: Guest user registers
-  Background:
-    When user goes to "https://managementonschools.com/" homepage
+Feature: Admin sees Guest User list
 
     Scenario:
-
+    Given user goes to url
     And user clicks Register button
     And enters name in the Name input field
     And enters surname in the Surname input field
