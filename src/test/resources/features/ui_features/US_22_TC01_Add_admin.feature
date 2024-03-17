@@ -32,4 +32,3 @@ Feature: Admin adds Admin
     And enters password in Password field
     And clicks on Submit button
     Then verifies Admin is not created
-    And close the application

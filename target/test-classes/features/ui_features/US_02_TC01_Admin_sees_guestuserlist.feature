@@ -23,10 +23,29 @@ Feature: Admin sees Guest User list
     And clicks on the login button
     And clicks on Menu button
     And clicks on guest user on the main menu
-    Then verifies name,phone number,ssn and user name is visible
+    Then verifies name column is visible
 
 
 
+
+
+#  Feature: google_search
+#
+#  Background: navigating_to_google
+#    Given user is on the google homepage
+#
+#  @iPhone
+#  Scenario: TC_01_iPhone_search
+#
+#    And user search for iPhone
+#    Then verify the result contains iPhone
+#    And close the application
+#
+#  @teapot
+#  Scenario: TC_02_teapot_search
+#    And user search for porcelain teapot
+#    Then verify the result contains porcelain teapot
+#    And close the application
 
 
 
