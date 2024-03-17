@@ -18,6 +18,10 @@ public class Main_Page {
     @FindBy(xpath = "//a[@class='header_link ms-2']")
     public WebElement loginIconAtHeader;
 
+    @FindBy(xpath = "//a[@class='header_link ms-2']")
+    public WebElement ContactIconAtHeader;
+
+
 
 
     //Log in Part
