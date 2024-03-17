@@ -1,6 +1,4 @@
 package stepdefinitions.ui_stepdefs;
-
-import io.cucumber.java.en.And;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
@@ -12,10 +10,8 @@ import utilities.Driver;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import utilities.WaitUtils;
-
 import java.util.ArrayList;
 import java.util.List;
-
 import static org.junit.Assert.*;
 
 public class US_18 {
@@ -133,8 +129,14 @@ public class US_18 {
         }
     }
 
+/////////////////////////------TC_02
 
-
-
-
+    @Then("verify the warning Pop-up message displayed")
+    public void verifyTheWarningPopUpMessageDisplayed() {
+        WaitUtils.waitFor(1);
+        String actualText = studentInfoManagementPage.warningPopup.getText();
+        WaitUtils.waitFor(1);
+        System.out.println(actualText);
+        assertTrue(actualText.contains("100"));
+    }
 }

@@ -80,6 +80,9 @@ public class Student_Info_Management_Page {
     @FindBy (xpath = "//input[@id='midtermExam']/following-sibling::div[text()='Required']")
     public WebElement requiredMessageUnderMidtermExam;
 
+    @FindBy (xpath = "//div[@class='Toastify']")
+    public WebElement warningPopup;
+
 
 
 

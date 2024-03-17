@@ -94,8 +94,4 @@ public class US_17 {
             assertTrue(studentInfoManagementPage.requiredMessageUnderMidtermExam.isDisplayed());
             assertTrue(studentInfoManagementPage.requiredMessageUnderFinalExam.isDisplayed());
     }
-
-
-
-
 }
