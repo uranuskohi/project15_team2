@@ -13,7 +13,8 @@
 
 
       Scenario Outline:
-      When user enters name in the user
+      When user enters chooses advisor teacher as "name"
+      And enters "<name>" in the name input field
       And close the application
         Examples:
         |name|

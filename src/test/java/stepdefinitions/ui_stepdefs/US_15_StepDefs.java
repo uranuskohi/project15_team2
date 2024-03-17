@@ -3,7 +3,7 @@ package stepdefinitions.ui_stepdefs;
 import io.cucumber.java.en.When;
 import pages.Main_Page;
 
-public class US_15_TC_01_StepDefs {
+public class US_15_StepDefs {
 
     Main_Page mainPage = new Main_Page();
 
