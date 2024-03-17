@@ -22,7 +22,7 @@ import org.junit.runner.RunWith;
         glue = {"stepdefinitions", "hooks"},
         dryRun = false,
 
-        tags = "@US13_create_teacher_asvicedean_invalid"
+        tags = "@US13_vicedean_creates_teacher"
 
 )
 

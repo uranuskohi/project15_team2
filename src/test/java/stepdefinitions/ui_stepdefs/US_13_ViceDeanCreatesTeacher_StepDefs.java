@@ -4,27 +4,25 @@ import com.github.javafaker.Faker;
 import io.cucumber.java.en.*;
 import org.junit.Assert;
 import org.openqa.selenium.Keys;
-import org.openqa.selenium.interactions.Actions;
-import org.openqa.selenium.support.ui.Select;
-import org.openqa.selenium.support.ui.Wait;
 import pages.Teachers_Page;
 import utilities.ActionsUtils;
-import utilities.JSUtils;
 import utilities.WaitUtils;
 
-import java.text.SimpleDateFormat;
+import static utilities.TestUtils.*;
 
 
-public class US_13_TC_01_StepDefs {
+public class US_13_ViceDeanCreatesTeacher_StepDefs {
 
     Teachers_Page teachersPage = new Teachers_Page();
     Faker faker = new Faker();
 
-    @When("enters {string} in select lesson field")
-    public void enters_in_select_lesson_field(String string) {
-        ActionsUtils.actionsDoubleClick(teachersPage.selectLesson);
+
+//  TC_01_create_teacher_asvicedean_valid StepDefs
+    @When("enters {string} in select lesson field as vice dean")
+    public void enters_in_select_lesson_field_as_vice_dean(String string) {
+        ActionsUtils.actionsDoubleClick(teachersPage.selectLessonViceDean);
         WaitUtils.waitFor(1);
-        teachersPage.selectLesson.sendKeys("Java", Keys.TAB);
+        teachersPage.selectLessonViceDean.sendKeys("Java", Keys.TAB);
         WaitUtils.waitFor(1);
     }
 
@@ -44,7 +42,7 @@ public class US_13_TC_01_StepDefs {
 
     @When("enters {string} in birth place field")
     public void enters_in_birth_place_field(String string) {
-        teachersPage.birthPlace.sendKeys(faker.lorem().word());
+        teachersPage.birthPlace.sendKeys(birthPlaceGenerator());
         WaitUtils.waitFor(1);
 //        teachersPage.birthPlace.sendKeys(string);
     }
@@ -63,19 +61,12 @@ public class US_13_TC_01_StepDefs {
 //        teachersPage.phone.sendKeys(string);
     }
 
-    public static String phoneNumberGenerator(){
-        Faker faker = new Faker();
-        String phoneNumber = faker.numerify("##########");
-        String fakerPhoneNumber = phoneNumber.substring(0,3)+"-"+phoneNumber.substring(3,6)+"-"+phoneNumber.substring(6,10);
-        return fakerPhoneNumber;
-    }
-
     @When("selects is advisor teacher")
     public void selects_is_advisor_teacher() {
         teachersPage.isAdvisorTeacher.click();
     }
 
-
+    @When("selects gender radio button")
     public static void selectGenderRadioButton(){
         Teachers_Page teachersPage = new Teachers_Page();
         if (!teachersPage.male.isSelected() && !teachersPage.female.isSelected()){
@@ -89,15 +80,8 @@ public class US_13_TC_01_StepDefs {
 
     @When("enters {string} in date of birth field")
     public void enters_in_date_of_birth_field(String string) {
-            teachersPage.dateOfBirth.sendKeys(dateOfBirthGenerator(), Keys.TAB);
-    //        teachersPage.dateOfBirth.sendKeys(string);
-        }
-
-    public static String dateOfBirthGenerator(){
-        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd/MM/yyyy");
-        Faker faker = new Faker();
-        String fakerDateOfBirth = simpleDateFormat.format(faker.date().birthday());
-        return fakerDateOfBirth;
+        teachersPage.dateOfBirth.sendKeys(dateOfBirthGenerator(), Keys.TAB);
+//        teachersPage.dateOfBirth.sendKeys(string);
     }
 
     @When("enters {string} in ssn field")
@@ -106,54 +90,16 @@ public class US_13_TC_01_StepDefs {
 //        teachersPage.ssn.sendKeys(string);
     }
 
-    public static String ssnGenerator(){
-        Faker faker = new Faker();
-        String ssn = faker.numerify("#########");
-        String fakerSsn;
-        do {
-            fakerSsn = ssn.substring(0,3)+"-"+ssn.substring(3,5)+"-"+ssn.substring(5,9);
-        } while (fakerSsn.startsWith("9"));
-        return fakerSsn;
-    }
-
-
     @When("enters {string} in user name field")
     public void enters_in_user_name_field(String string) {
         teachersPage.userName.sendKeys(usernameGenerator());
 //        teachersPage.userName.sendKeys(string);
     }
 
-    public static String usernameGenerator() {
-        Faker faker = new Faker();
-        String fakerUsername;
-        do {
-            fakerUsername = faker.lorem().word();
-        } while (fakerUsername.length()<=4);
-        return fakerUsername;
-    }
-
     @When("enters {string} in password field")
     public void enters_in_password_field(String string) {
         teachersPage.password.sendKeys(passwordGenerator());
 //        teachersPage.password.sendKeys(string);
-    }
-
-    public static String passwordGenerator() {
-        Faker faker = new Faker();
-        String fakerPassword;
-        do {
-            fakerPassword = faker.internet().password(8, 12, true, false)+faker.numerify("#");
-        } while (!containsLowercase(fakerPassword));
-        return fakerPassword;
-    }
-
-    private static boolean containsLowercase(String fakerPassword) {
-        for (char c : fakerPassword.toCharArray()) {
-            if (Character.isLowerCase(c)) {
-                return true;
-            }
-        }
-        return false;
     }
 
     @When("clicks submit button")
@@ -168,5 +114,18 @@ public class US_13_TC_01_StepDefs {
         WaitUtils.waitFor(1);
         System.out.println(actualText);
         Assert.assertEquals(string, actualText);
+    }
+
+
+//  TC_02_create_teacher_asvicedean_invalid StepDefs
+    @When("enters only {int} digits {string} in ssn field")
+    public void enters_only_digits_in_ssn_field(Integer int1, String string) {
+        teachersPage.ssn.sendKeys(ssn8DigitGenerator());
+//        teachersPage.ssn.sendKeys(string);
+    }
+
+    @Then("verify error message {string}")
+    public void verify_error_message(String string) {
+        Assert.assertEquals(string, teachersPage.ssnErrorMsg.getText());
     }
 }

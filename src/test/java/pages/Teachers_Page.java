@@ -11,8 +11,12 @@ public class Teachers_Page {
         PageFactory.initElements(Driver.getDriver(),this);
     }
 
+
     @FindBy(id = "react-select-3-input")
-    public WebElement selectLesson;
+    public WebElement selectLessonViceDean;
+
+    @FindBy(id = "react-select-2-input")
+    public WebElement selectLessonAdmin;
 
     @FindBy(id = "name")
     public WebElement name;
@@ -58,6 +62,7 @@ public class Teachers_Page {
 
     @FindBy(xpath = "//div[text()='Minimum 11 character (XXX-XX-XXXX)']")
     public WebElement ssnErrorMsg;
+
 
 
 
