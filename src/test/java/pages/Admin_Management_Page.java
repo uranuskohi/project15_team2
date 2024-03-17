@@ -11,6 +11,8 @@ public class Admin_Management_Page {
         PageFactory.initElements(Driver.getDriver(),this);
     }
 
+
+
     @FindBy(xpath = "//input[@id='name']")
     public WebElement nameBoxOnAdminPage;
 
