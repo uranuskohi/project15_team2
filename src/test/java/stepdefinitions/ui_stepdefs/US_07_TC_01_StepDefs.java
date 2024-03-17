@@ -17,34 +17,34 @@ public class US_07_TC_01_StepDefs {
 
     Faker faker = new Faker();
 
-    @Given("user goes to {string} homepage")
-    public void user_goes_to_homepage(String url) {
-        Driver.getDriver().get(url);
-    }
-
-    @And("user clicks on login")
-    public void user_clicks_on_login(String string){
-        mainPage.loginIconAtHeader.click();
-        WaitUtils.waitFor(1);
-    }
-
-    @When("user enters username")
-    public void user_enters_username(String string){
-        mainPage.userName.sendKeys("Oz14", Keys.TAB);
-        WaitUtils.waitFor(1);
-    }
-
-    @When("user enters username")
-    public void user_enters_password(String string){
-        mainPage.password.sendKeys("Simdiokul3", Keys.TAB);
-        WaitUtils.waitFor(2);
-    }
-
-    @And("user clicks on login button")
-    public void user_clicks_on_loginbutton(String string){
-        mainPage.loginButton.click();
-        WaitUtils.waitFor(2);
-    }
+//    @Given("user goes to {string} homepage")
+//    public void user_goes_to_homepage(String url) {
+//        Driver.getDriver().get(url);
+//    }
+//
+//    @And("user clicks on login")
+//    public void user_clicks_on_login(String string){
+//        mainPage.loginIconAtHeader.click();
+//        WaitUtils.waitFor(1);
+//    }
+//
+//    @When("user enters username")
+//    public void user_enters_username(String string){
+//        mainPage.userName.sendKeys("Oz14", Keys.TAB);
+//        WaitUtils.waitFor(1);
+//    }
+//
+//    @When("user enters username")
+//    public void user_enters_password(String string){
+//        mainPage.password.sendKeys("Simdiokul3", Keys.TAB);
+//        WaitUtils.waitFor(2);
+//    }
+//
+//    @And("user clicks on login button")
+//    public void user_clicks_on_loginbutton(String string){
+//        mainPage.loginButton.click();
+//        WaitUtils.waitFor(2);
+//    }
 
     @And("user clicks on name field")
     public void user_clicks_on_name_field(String string){
