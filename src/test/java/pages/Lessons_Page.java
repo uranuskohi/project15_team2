@@ -38,10 +38,16 @@ public class Lessons_Page {
     public WebElement requiredFiledErrorMessage;
 
 
-    @FindBy(xpath = "(//button[@class='btn btn-danger'])[1]")
+    @FindBy(xpath = "(//*[@class='fa-solid fa-trash'])[19]")
     public WebElement deleteButtonForLesson;
 
-    @FindBy(linkText = "Lesson Deleted")
+    @FindBy(xpath = "(//a[@role='button'])[18]")
+    public WebElement lastPageArrow;
+
+    @FindBy(xpath = "(//*[@class='page-link'])[8]")
+    public WebElement nextPage;
+
+    @FindBy(xpath = "//div[text()='Lesson Deleted']")
     public WebElement deleteLessonVerification;
 //------------------------------------------------------------------------------------------------------------------------
 

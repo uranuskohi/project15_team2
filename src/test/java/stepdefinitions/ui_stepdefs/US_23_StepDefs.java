@@ -60,8 +60,13 @@ public class US_23_StepDefs {
     }
     @When("enter phone number as {string}")
     public void enter_phone_number_as(String PhoneNumber) {
-           viceDeanManagementPage.vdmPhone.sendKeys(PhoneNumber);
+//           viceDeanManagementPage.vdmPhone.sendKeys(PhoneNumber);
+
+        PhoneNumber = Faker.instance().number().digits(3)+"-"+Faker.instance().number().digits(3)+"-"+Faker.instance().number().digits(4);
+        BrowserUtils.sendKeysWithTimeout(viceDeanManagementPage.vdmPhone,PhoneNumber,2);
+
     }
+
 
     @When("write the SSN as {string}")
     public void write_the_ssn_as(String SSNNumber ) {

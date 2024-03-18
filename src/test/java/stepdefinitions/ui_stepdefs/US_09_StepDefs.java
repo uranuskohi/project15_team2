@@ -1,15 +1,22 @@
 package stepdefinitions.ui_stepdefs;
 
 import io.cucumber.java.en.*;
+import org.openqa.selenium.interactions.Actions;
 import pages.Lessons_Page;
+import utilities.BrowserUtils;
+import utilities.JSUtils;
 import utilities.MediaUtils;
+import utilities.WaitUtils;
 
 import java.io.IOException;
+
+import static org.junit.Assert.assertTrue;
 
 
 public class US_09_StepDefs {
 
     Lessons_Page lessonsPage = new Lessons_Page();
+    Actions action;
     @When("scroll down to Lesson List")
     public void scroll_down_to_lesson_list() {
         lessonsPage.lessons.click();
@@ -30,9 +37,20 @@ public class US_09_StepDefs {
         lessonsPage.creditScoreField.isDisplayed();
     }
 
+    @And("click on the last page")
+    public void clickOnTheLastPage() {
+        WaitUtils.waitFor(2);
+        BrowserUtils.clickWithTimeOut(lessonsPage.lastPageArrow,2);
+    }
+    @And("go to the last page")
+    public void goToTheLastPage() {
+        lessonsPage.nextPage.isDisplayed();
+    }
+
     @When("vice dean is able to see and delete the created lesson")
     public void vice_dean_is_able_to_see_and_delete_the_created_lesson() {
-        lessonsPage.deleteButtonForLesson.isDisplayed();
+        WaitUtils.waitFor(1);
+        lessonsPage.deleteButtonForLesson.click();
     }
 
     @When("vice dean should be able to update the lesson")
@@ -41,5 +59,12 @@ public class US_09_StepDefs {
         MediaUtils.takeScreenshotOfTheEntirePage();
 //      There is no any update button or any option to update the lesson
     }
+
+
+    @Then("verify the lesson is deleted")
+    public void verifyTheLessonIsDeleted() {
+        assertTrue(lessonsPage.deleteLessonVerification.isDisplayed());
+    }
+
 
 }

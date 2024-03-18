@@ -27,7 +27,7 @@ Feature: Admin should be able to add Vice Dean
     And close the application
       Examples:
         | Name   | Surname | Birth Place | gender | Brith Date | Phone Number | SSN Number  | username    | Password     |
-        | Madrid | Madrid  | Spain       | Male   | 12/25/1890 | 363-228-0845 | 987-98-9876 | madridspain | Madridspain0 |
+        | Madrid | Madrid  | Spain       | Male   | 12/25/1890 | 363-918-0845 | 987-98-9876 | madridspain | Madridspain0 |
 
 
 
