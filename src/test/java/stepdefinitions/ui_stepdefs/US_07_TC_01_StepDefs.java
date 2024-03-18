@@ -45,42 +45,42 @@ public class US_07_TC_01_StepDefs {
 //        mainPage.loginButton.click();
 //        WaitUtils.waitFor(2);
 //    }
+//
+//    @And("user clicks on name field")
+//    public void user_clicks_on_name_field(String string){
+//        viceDeanManagementPage.vdmName.click();
+//        WaitUtils.waitFor(1);
+//    }
+//
+//    @When("enters {string} in name field")
+//    public void enters_in_name_field(String string) {
+//        viceDeanManagementPage.vdmName.sendKeys(faker.name().firstName());
+//        WaitUtils.waitFor(1);
+//    }
+//
+//    @When("enters {string} in surname field")
+//    public void enters_in_surname_field(String string) {
+//        viceDeanManagementPage.vdmSurname.sendKeys(faker.name().lastName());
+//        WaitUtils.waitFor(1);
+//    }
+//
+//    @When("enters {string} in birth place field")
+//    public void enters_in_birth_place_field(String string) {
+//        viceDeanManagementPage.vdmBirthPlace.sendKeys(faker.lorem().word());
+//        WaitUtils.waitFor(1);
+//    }
+//
+//   @And("user clicks on gender radio button")
+//   public void clicks_on_gender_radio_button(){
+//       if (viceDeanManagementPage.femGender.isSelected()){
+//           viceDeanManagementPage.femGender.click();
+//       }else if (viceDeanManagementPage.maleGender.isSelected()){
+//           viceDeanManagementPage.maleGender.click();
+//
+//       }
 
-    @And("user clicks on name field")
-    public void user_clicks_on_name_field(String string){
-        viceDeanManagementPage.vdmName.click();
-        WaitUtils.waitFor(1);
-    }
 
-    @When("enters {string} in name field")
-    public void enters_in_name_field(String string) {
-        viceDeanManagementPage.vdmName.sendKeys(faker.name().firstName());
-        WaitUtils.waitFor(1);
-    }
-
-    @When("enters {string} in surname field")
-    public void enters_in_surname_field(String string) {
-        viceDeanManagementPage.vdmSurname.sendKeys(faker.name().lastName());
-        WaitUtils.waitFor(1);
-    }
-
-    @When("enters {string} in birth place field")
-    public void enters_in_birth_place_field(String string) {
-        viceDeanManagementPage.vdmBirthPlace.sendKeys(faker.lorem().word());
-        WaitUtils.waitFor(1);
-    }
-
-   @And("user clicks on gender radio button")
-   public void clicks_on_gender_radio_button(){
-       if (viceDeanManagementPage.femGender.isSelected()){
-           viceDeanManagementPage.femGender.click();
-       }else if (viceDeanManagementPage.maleGender.isSelected()){
-           viceDeanManagementPage.maleGender.click();
-
-       }
-
-
-   }
+ //  }
 
   /*  public static void selectGenderRadioButton(){
         Vice_Dean_Management_Page viceDeanManagementPage = new Vice_Dean_Management_Page();
@@ -101,8 +101,8 @@ public class US_07_TC_01_StepDefs {
 
 
 
-    @When("close the application")
-    public void close_the_application() {
-        Driver.closeDriver();
-    }
+//    @When("close the application")
+//    public void close_the_application() {
+//        Driver.closeDriver();
+//    }
 }

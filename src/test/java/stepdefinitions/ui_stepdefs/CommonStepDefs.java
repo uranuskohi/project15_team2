@@ -89,9 +89,7 @@ public class CommonStepDefs {
 
         //Close application
         @When("close the application")
-        public void close_the_application () {
-            Driver.closeDriver();
-        }
+        public void close_the_application () {Driver.closeDriver();}
 
     }
 

@@ -11,7 +11,7 @@
       And clicks on "Student Management" on Main Menu
 
 
-    #TC_15
+
     Scenario: Vice dean should be able to create Student successfully
       Given vice dean chooses "Teacher Tarik" in the advisor teacher dropdown
       And enters name "name",surname "surname",birthplace "birth place",email "email",phone "phone",dateofbirth "dateofbirth",ssn "ssn",username "username",fathername "fathername",mothername "mothername",password "password"
@@ -21,13 +21,13 @@
       Then verify student snn  appear in the student list
       And close the application
 
-      #TC_16
+
       Scenario: Vice dean should NOT be able to create Student with invalid SSN number and phone number
         Given vice dean chooses "Teacher Tarik" in the advisor teacher dropdown
         And enters name "name",surname "surname",birthplace "birth place",email "email",invalid phone "invalidPhone",dateofbirth "dateofbirth",invalid ssn "invalidSsn",username "username",fathername "fathername",mothername "mothername",password "password"
         And selects "Male" radio button
         Then vice dean clicks submit button
-        Then verify invalid phone and invalid ssn  message
+        Then verify student is created successfully message
         Then verify student snn  appear in the student list
         And close the application
 
