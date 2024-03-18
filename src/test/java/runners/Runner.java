@@ -22,10 +22,6 @@ import org.junit.runner.RunWith;
         glue = {"stepdefinitions", "hooks"},
         dryRun = false,
         tags = "@userStory23"
-
-
-
-
 )
 
 public class Runner {
