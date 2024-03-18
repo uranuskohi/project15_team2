@@ -1,5 +1,6 @@
 package stepdefinitions.ui_stepdefs;
 
+import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
@@ -74,7 +75,7 @@ public class US_19_StepDefs {
     public void the_user_clicks_the_submit_button() throws IOException {
         meetManagementPage.submitAtMeetManagement.click();
         waitFor(1);
-        MediaUtils.takeScreenshotOfTheEntirePage();
+        //MediaUtils.takeScreenshotOfTheEntirePage();
     }
 
     @Given("delete if the student name {string} exist on the Meet List")
@@ -103,4 +104,6 @@ public class US_19_StepDefs {
     public void verify_must_be_a_future_date_error_pop_up_message() {
         Assert.assertTrue(meetManagementPage.mustBeFutureDateFromEdit.isDisplayed());
     }
+
+
 }
