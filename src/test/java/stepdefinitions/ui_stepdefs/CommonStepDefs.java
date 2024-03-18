@@ -32,6 +32,7 @@ public class CommonStepDefs {
     @Given("enters {string} in the password input field")
     public void enters_in_the_password_input_field(String password) {
         mainPage.password.sendKeys(password);
+
     }
 
     @Given("clicks on Login button")
@@ -40,7 +41,9 @@ public class CommonStepDefs {
     }
 
     @Given("clicks on Menu button")
-    public void clicks_on_menu_button() { mainPage.menuButton.click(); }
+    public void clicks_on_menu_button() {
+        mainPage.menuButton.click();
+    }
 
 
     @Given("clicks on {string} on Main Menu")
@@ -87,11 +90,16 @@ public class CommonStepDefs {
     }
 
 
-        //Close application
-        @When("close the application")
-        public void close_the_application () {
-            Driver.closeDriver();
-        }
-
+    //Close application
+    @When("close the application")
+    public void close_the_application() {
+        Driver.closeDriver();
     }
+
+//    @And("clicks on getloginIcon")
+//    public void clicksOnGetloginIcon() throws InterruptedException {
+//        mainPage.getLoginIconAtHeader.click();
+//        Thread.sleep(1000);
+//    }
+}
 
