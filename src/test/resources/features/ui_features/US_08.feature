@@ -16,19 +16,21 @@ Feature: Vice Deans should be able to create a lesson
       And add "<credit score>" in the Credit Score
       And click on Submit button
       Then verify the Lesson is created
+      And close the application
       Examples:
         | lesson name | credit score |
         | recruiter   | 5            |
 
 
-#      Scenario Outline: TC_02 Adding new Lesson without Credit Score as a Vice Dean
-#        When click on Lessons
-#        And enter "<lesson name>" in the Lesson Name
-#        And check if Compulsory radio button is clickable
-#        And leave "Compulsory radio button" empty
-#        And don't add Credit Score
-#        And click on Submit button
-#        Then verify the Lesson is created
-#        Examples:
-#          | lesson name |
-#          | recruiter   |
+      Scenario Outline: TC_02 Adding new Lesson without Credit Score as a Vice Dean
+        When click on Lessons
+        And enter "<lesson name>" in the Lesson Name
+        And check if Compulsory radio button is clickable
+        And leave "Compulsory radio button" empty
+        And don't add Credit Score
+        And click on Submit button
+        Then verify the Lesson is not created
+        And close the application
+        Examples:
+          | lesson name |
+          | recruiter   |

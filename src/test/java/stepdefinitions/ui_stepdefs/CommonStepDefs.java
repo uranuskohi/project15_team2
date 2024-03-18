@@ -19,6 +19,7 @@ public class CommonStepDefs {
 
     @Given("clicks on loginIcon")
     public void clicks_on_login_icon() {
+//        Driver.getDriver().navigate().refresh();
         mainPage.loginIconAtHeader.click();
     }
 

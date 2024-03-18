@@ -5,6 +5,8 @@ import pages.Lessons_Page;
 import utilities.BrowserUtils;
 import utilities.WaitUtils;
 
+import static org.junit.Assert.*;
+
 public class US_08_StepDefs {
 
     Lessons_Page lessonsPage;
@@ -43,7 +45,8 @@ public class US_08_StepDefs {
     @Then("verify the Lesson is created")
     public void verify_the_lesson_is_created() {
         WaitUtils.waitFor(1);
-        BrowserUtils.verifyElementDisplayed(lessonsPage.lessonCreatedVerification);
+        assertTrue(lessonsPage.lessonCreatedVerification.isDisplayed());
+//        Driver.getDriver().switchTo().alert().getText().contains("Lesson Created");
     }
 
 
@@ -51,28 +54,20 @@ public class US_08_StepDefs {
 // ------------------------------------------------------------------------------------------------------------------------
 //    TC_02
 
-//    @When("leave {string} empty")
-//    public void leave_empty(String CompulsoryRadioButton) {
-//
-//    }
-//
-//    @When("don't add Credit Score")
-//    public void don_t_add_credit_score() {
-//
-//    }
+    @When("leave {string} empty")
+    public void leave_empty(String CompulsoryRadioButton) {
+
+    }
+
+    @When("don't add Credit Score")
+    public void don_t_add_credit_score() {
+
+    }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+    @Then("verify the Lesson is not created")
+    public void verifyTheLessonIsNotCreated() {
+        WaitUtils.waitFor(1);
+        assertTrue(lessonsPage.requiredFiledErrorMessage.isDisplayed());
+    }
 }

@@ -26,8 +26,13 @@ public class Lessons_Page {
     @FindBy(xpath = "(//button[@class='fw-semibold btn btn-primary btn-lg'])[2]")
     public WebElement submitButtonForLessons;
 
-    @FindBy(partialLinkText = "Lesson Created")
+    @FindBy(xpath = "//div[text()='Lesson Created']")
     public WebElement lessonCreatedVerification;
+
+
+    @FindBy(xpath = "(//div[@class='invalid-feedback'])[5]")
+    public WebElement requiredFiledErrorMessage;
+
 
     @FindBy(xpath = "(//button[@class='btn btn-danger'])[1]")
     public WebElement deleteButtonForLesson;
