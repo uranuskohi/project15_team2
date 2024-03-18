@@ -27,7 +27,7 @@ Feature: Admin should be able to add Vice Dean
     And close the application
       Examples:
         | Name   | Surname | Birth Place | gender | Brith Date | Phone Number | SSN Number  | username    | Password     |
-        | Madrid | Madrid  | Spain       | Male   | 12/25/1890 | 363-228-0857 | 987-98-9876 | madridspain | Madridspain0 |
+        | Madrid | Madrid  | Spain       | Male   | 12/25/1890 | 363-228-0845 | 987-98-9876 | madridspain | Madridspain0 |
 
 
 
@@ -44,13 +44,13 @@ Feature: Admin should be able to add Vice Dean
     And enter phone number as "<Phone Number>"
     And write the SSN as "<SSN Number>"
     And write the "<username>"
-    And leave password empty
+    And leave "<password>" empty
     And click on Submit button for Vice Dean creation
     Then Verify the Vice Dean is not created
     And close the application
     Examples:
-      | Name   | Surname | Birth Place | gender | Brith Date | Phone Number | SSN Number  | username    |
-      | Madrid | Madrid  | Spain       | Male   | 12/25/1890 | 369-258-0147 | 987-98-9876 | madridspain |
+      | Name   | Surname | Birth Place | gender | Brith Date | Phone Number | SSN Number  | username    |password|
+      | Madrid | Madrid  | Spain       | Male   | 12/25/1890 | 369-258-0147 | 987-98-9876 | madridspain |        |
 
 
 

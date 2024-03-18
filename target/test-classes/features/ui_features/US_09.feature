@@ -16,4 +16,5 @@ Feature: Vice Deans should be able to view the lesson list and make updates
     And vice dean can see the Credit
     And vice dean is able to see and delete the created lesson
     And vice dean should be able to update the lesson
+      And close the application
 

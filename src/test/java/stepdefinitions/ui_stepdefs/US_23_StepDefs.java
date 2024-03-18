@@ -48,7 +48,7 @@ public class US_23_StepDefs {
     }
     @When("enter brith place as {string}")
     public void enter_brith_place_as(String BirthPlace) {
-        viceDeanManagementPage.vdmBirthPlace.sendKeys(faker.address().country());
+        viceDeanManagementPage.vdmBirthPlace.sendKeys(BirthPlace);
     }
     @When("select the {string}")
     public void select_the(String gender) {

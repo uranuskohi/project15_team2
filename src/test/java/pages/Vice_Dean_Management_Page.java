@@ -11,12 +11,6 @@ public class Vice_Dean_Management_Page {
         PageFactory.initElements(Driver.getDriver(), this);
     }
 
-    
-
-
-
-
-
     @FindBy(xpath = "//a[@class='header_link ms-2']")
     public WebElement loginIconAtHeader;
 

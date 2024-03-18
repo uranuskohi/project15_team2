@@ -17,6 +17,10 @@ public class Lessons_Page {
     @FindBy(id = "lessonName")
     public WebElement lessonNameField;
 
+    @FindBy(className = "form-check-label")
+    public WebElement compulsory;
+
+
     @FindBy(id = "compulsory")
     public WebElement compulsoryRadioButton;
 

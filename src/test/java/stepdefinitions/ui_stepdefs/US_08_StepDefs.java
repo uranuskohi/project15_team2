@@ -1,6 +1,7 @@
 package stepdefinitions.ui_stepdefs;
 
 import io.cucumber.java.en.*;
+import pages.Choose_Lesson_Management_Page;
 import pages.Lessons_Page;
 import utilities.BrowserUtils;
 import utilities.WaitUtils;
@@ -10,6 +11,7 @@ import static org.junit.Assert.*;
 public class US_08_StepDefs {
 
     Lessons_Page lessonsPage;
+    Choose_Lesson_Management_Page chooseLessonManagementPage = new Choose_Lesson_Management_Page();
 
     @When("click on Lessons")
     public void click_on_lessons() {
@@ -39,7 +41,8 @@ public class US_08_StepDefs {
 
     @When("click on Submit button")
     public void click_on_submit_button() {
-        BrowserUtils.clickWithTimeOut(lessonsPage.submitButtonForLessons,2);
+        lessonsPage.submitButtonForLessons.click();
+//        chooseLessonManagementPage.submitButtonInChooseLessonManagement.click();
     }
 
     @Then("verify the Lesson is created")
