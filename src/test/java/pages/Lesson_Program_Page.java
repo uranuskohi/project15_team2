@@ -12,12 +12,17 @@ public class Lesson_Program_Page {
     }
 
 
+    @FindBy(xpath = "//*[text()='Menu']")
+    public WebElement menu;
+    @FindBy(xpath = "(//*[text()='Lesson Management'])[2]")
+    public WebElement lessonManagement;
+
     //for Add Lesson Program
-    @FindBy(id= "controlled-tab-example-tab-lessonProgram")
+    @FindBy(xpath=  "//*[@id='controlled-tab-example-tab-lessonProgram']")
     public WebElement clickonLessonProgram;
 
-    @FindBy (id= "react-select-3-input")
-    public WebElement chooseLesson;
+    @FindBy (xpath = "//*[@class='css-8mmkcg']")
+    public WebElement chooseLessonDropdown;
 
     @FindBy(id = "educationTermId")
     public WebElement chooseEducationTerm;
