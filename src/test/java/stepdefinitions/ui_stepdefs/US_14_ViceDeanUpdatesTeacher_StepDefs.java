@@ -5,6 +5,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import pages.Teachers_Page;
 import testdata.Teachers;
+import utilities.ActionsUtils;
 import utilities.Driver;
 import utilities.WaitUtils;
 
@@ -21,37 +22,22 @@ public class US_14_ViceDeanUpdatesTeacher_StepDefs {
         boolean isUsernameFound = false;
 
         while (!isUsernameFound) {
-            // Iterate over the rows of the current page
-            List<WebElement> rows = Driver.getDriver().findElements(By.xpath("//tbody[@class='table-group-divider']//tr"));
 
-            for (WebElement row : rows) {
-                WebElement usernameElement = row.findElement(By.xpath("//tbody[@class='table-group-divider']//tr//td[4]"));
-                String username = usernameElement.getText();
+            List<WebElement> tableElements = Driver.getDriver().findElements(By.xpath("//div[@class='table-responsive']"));
+            int numberOfRows = tableElements.size();
+            System.out.println(numberOfRows);
 
-                if (username.equals(Teachers.getTeacherUsername("@US13_TC01"))) {
-
-                    WebElement editButton = row.findElement(By.xpath("//i[@class='fa-solid fa-pencil']"));
-                    editButton.click();
-                    isUsernameFound = true;
-                    break;
+            for (int row = 1; row <= numberOfRows; row++) {
+                String usernameText = Driver.getDriver().findElement(By.xpath("//div[@class='table-responsive']//tbody//tr[" + row + "]//td[4]")).getText();
+                System.out.println(usernameText);
+                if (usernameText.equalsIgnoreCase(Teachers.getTeacherUsername("US13_TC01"))) {
+                    teachersPage.editButton.click();
+                isUsernameFound = true;
+                break;
                 }
+                ActionsUtils.actionsDoubleClick(Driver.getDriver().findElement(By.xpath("//*[text()='Next']")));
+                WaitUtils.waitForPageToLoad(1);
             }
-
-
-            // Check if the username is found or if there's a next page
-            if (!isUsernameFound) {
-                WebElement nextPageButton = Driver.getDriver().findElement(By.xpath("//span[text()='Next']")); // Locate the next page button
-                WaitUtils.waitFor(1);
-                nextPageButton.click();
-                } else {
-                    // No next page available, exit the loop
-                    break;
-                }
-        }
-
-        if (!isUsernameFound) {
-            // Username not found in any page of the table
-            // Handle the case where the username is not found
         }
     }
 
