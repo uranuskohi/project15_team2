@@ -6,7 +6,9 @@ import io.cucumber.java.en.When;
 import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Actions;
 import pages.Meet_Management_Page;
 import utilities.Driver;
@@ -15,7 +17,9 @@ import utilities.MediaUtils;
 
 import java.io.IOException;
 
+import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
+
 import static utilities.WaitUtils.waitFor;
 
 public class US_19_StepDefs {
@@ -26,7 +30,7 @@ public class US_19_StepDefs {
 
     @Given("the user is on the scheduling page")
     public void the_user_is_on_the_scheduling_page() {
-
+        assertTrue(meetManagementPage.meetManagementTitle.isDisplayed());
     }
 
     @When("the user chooses {string} from the dropdown menu")

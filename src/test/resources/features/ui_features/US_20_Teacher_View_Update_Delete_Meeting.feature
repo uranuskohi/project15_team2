@@ -14,7 +14,7 @@ Feature: Teacher creates meeting with students
       Given the user is on the Meet List page
       And the user sees the meeting arranged from US_19
       When the user clicks on the Edit button
-      And changes the Date of Meet to "2024-05-17"
+      And changes the Date of Meet to "002024-05-17"
       And clicks Submit
       Then the user should see the updated meeting details
       When the user clicks on the trash bin icon next to the meeting
@@ -25,7 +25,7 @@ Feature: Teacher creates meeting with students
       Given the user is on the Meet List page
       And the user sees the meeting arranged from US_19
       When the user clicks on the Edit button
-      And changes the Date of Meet to "2022-05-16"
+      And changes the Date of Meet to "002022-05-16"
       And clicks Submit
       Then the user should see the "Must be a future date" error pop-up message
       When the user dismisses the error pop-up

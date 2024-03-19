@@ -51,6 +51,9 @@ public class Meet_Management_Page {
     @FindBy (xpath = "//*/tr/td[4]/span")
     public WebElement stopTimeVisible;
 
+    @FindBy (xpath = "(//h3[normalize-space()='Meet Management'])[1]")
+    public WebElement meetManagementTitle;
+
     @FindBy (xpath = "//*/tr/td[5]/span")
     public WebElement descriptionVisible;
 
