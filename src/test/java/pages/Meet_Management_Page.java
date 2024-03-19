@@ -5,6 +5,8 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import utilities.Driver;
 
+import java.util.List;
+
 public class Meet_Management_Page {
 
     public Meet_Management_Page(){
@@ -37,6 +39,12 @@ public class Meet_Management_Page {
     @FindBy (xpath = "//*/tr/td[2]/span")
     public WebElement dateVisible;
 
+    @FindBy(xpath = "//i[@class='fa-solid fa-trash']")
+    public WebElement deleteButton;
+
+ @FindBy(xpath = "//div[@class='table-responsive']//tbody/tr/td[1]")
+ public List<WebElement> nameColumnAtMeet;
+
     @FindBy (xpath = "//*/tr/td[3]/span")
     public WebElement startTimeVisible;
 
@@ -56,8 +64,9 @@ public class Meet_Management_Page {
     @FindBy (xpath = "//*/tr/td[7]/span/button")
     public WebElement deleteButtonAtMeetManagement;
 
-    @FindBy (xpath = "//*[//*[@id=\"2\"]/div[1]/div[2]")
+   // @FindBy (xpath = "//*[//*[@id=\"2\"]/div[1]/div[2]")
    // @FindBy (xpath = "//*[//*/div[1]/div[2]") MAYBE TRY THIS IF YOU HAVE an ERROR
+    @FindBy (xpath = "(//div[contains(text(),'Meet Saved Successfully')])[2]") //from plug-in
     public WebElement meetSavedSuccessfullyPopUp;
 
     @FindBy (xpath="//*[@id=\"4\"]/div[1]/div[2]")
@@ -69,7 +78,8 @@ public class Meet_Management_Page {
     @FindBy (xpath = "//*[@id=\"40\"]/div[1]/div[2]")
     public WebElement meetDeletedSuccessfullyPopUp;
 
-    @FindBy (xpath = "//*[@id=\"51\"]/div[1]/div[2]")
+    //@FindBy (xpath = "//*[@id=\"51\"]/div[1]/div[2]")
+    @FindBy (xpath = "//*[@role='alert']")
     public WebElement mustBeFutureDateFromEdit;
 
 
