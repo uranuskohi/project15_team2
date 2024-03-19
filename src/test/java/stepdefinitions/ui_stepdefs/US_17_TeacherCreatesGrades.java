@@ -8,12 +8,11 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
 import pages.Student_Info_Management_Page;
-import utilities.ActionsUtils;
 import utilities.BrowserUtils;
 import utilities.Driver;
 import utilities.WaitUtils;
 
-public class US_17 {
+public class US_17_TeacherCreatesGrades {
     Student_Info_Management_Page studentInfoManagementPage = new Student_Info_Management_Page();
     Actions actions = new Actions(Driver.getDriver());
 
