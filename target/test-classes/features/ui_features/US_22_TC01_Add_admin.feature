@@ -25,16 +25,17 @@ Feature: User adds Admin
     And scrolls down to the last page
      And goes to the last page
      And scrolls up to the admin list
-#    And Delete if the admin name "Ashley Smith" exist on the Admin List
+    And Delete if the admin name "Ashley Smith" exist on the Admin List
 #    And admin is in admin management page
 #    And leaves blank in the name field
-#    And enters "Smith" in the surname field
-#    And enters "Istanbul" in the Birth Place field
-#    And enters "Female" in Gender field
-#    And enters "05/10/1977" in DateOfBirth field
-#    And enters "505-446-4646" in Phone Number field
-#    And enters ssn in SSN field
-#    And enters "Asmith" in Username field
-#    And enters password in Password field
-#    And clicks on Submit button
+    And scrolls up to the list
+    And enters "Smith" again in the surname field
+    And enters "Istanbul" in Birth Place box
+    And clicks "Female" in Gender radio button
+#    And enters "05/10/1977" in DateOfBirth box
+#    And enters "505-446-4646" in Phone Number box
+#    And enters ssn in SSN box
+#    And enters "Asmith" in Username box
+#    And enters password in Password box
+#    And clicks on Submit
 #    Then verifies Admin is not created

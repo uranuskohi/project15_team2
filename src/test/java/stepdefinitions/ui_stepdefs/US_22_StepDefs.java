@@ -101,34 +101,54 @@ public class US_22_StepDefs {
     }
 
 
-//    @Given("Delete if the admin name {string} exist on the Admin List")
-//    public void delete_if_the_admin_name_exist_on_the_admin_list(String string) {
-//        int count = 1;
-//        int desiredAdminRow = 0;
-//        for (WebElement adminNameList : admin_management_page.nameColumn1) {
-//            if (adminNameList.getText().equalsIgnoreCase(string)) {
-//                desiredAdminRow = count;
-//                WebElement element = Driver.getDriver().findElement(By.xpath("(//i[@class='fa-solid fa-trash'])[" + desiredAdminRow + "]"));
-//                actions.moveToElement(element).click().perform();
-//                break;
-//            }
-//            count++;
-//        }
-//    }
+    @Given("Delete if the admin name {string} exist on the Admin List")
+    public void delete_if_the_admin_name_exist_on_the_admin_list(String string) {
+        int count = 1;
+        int desiredAdminRow = 0;
+        for (WebElement adminNameList : admin_management_page.nameColumn1) {
+            if (adminNameList.getText().equalsIgnoreCase(string)) {
+                desiredAdminRow = count;
+                WebElement element = Driver.getDriver().findElement(By.xpath("(//i[@class='fa-solid fa-trash'])[" + desiredAdminRow + "]"));
+                actions.moveToElement(element).click().perform();
+                break;
+            }
+            count++;
+        }
+    }
 
 //    ///////////////////////////////// US_22_TC02
 //    @Given("admin is in admin management page")
 //    public void admin_is_in_admin_management_page() {
 //
 //    }
-//    @Given("leaves blank in the name field")
-//    public void leaves_blank_in_the_name_field() {
-//        admin_management_page.nameBoxOnAdminPage.sendKeys("");
-//
-//
-//    }
-
+@Given("scrolls up to the list")
+public void scrolls_up_to_the_list() {
+    ActionsUtils.actionsScrollUp();
+    ActionsUtils.actionsScrollUp();
 }
+    @Given("leaves blank in the name field")
+    public void leaves_blank_in_the_name_field() {
+        admin_management_page.nameBoxOnAdminPage.sendKeys("");
+
+    }
+    @Given("enters {string} again in the surname field")
+    public void enters_again_in_the_surname_field(String string) {
+        admin_management_page.surnameBoxOnAdminPage.sendKeys(string);
+    }
+    @Given("enters {string} in Birth Place box")
+    public void enters_in_birth_place_box(String string) {
+        admin_management_page.birthPlaceOnAdminPage.sendKeys(string);
+    }
+    @Given("clicks {string} in Gender radio button")
+    public void clicks_in_gender_radio_button(String string) {
+        ActionsUtils.actionsScrollUp();
+        WaitUtils.waitForPageToLoad(3);
+//        admin_management_page.genderFemaleOnAdminPage.click();
+        BrowserUtils.sendKeysWithTimeout(admin_management_page.genderFemaleOnAdminPage,string,2);
+    }
+
+
+    }
 //
 //    @Then("verifies Admin is not created")
 //    public void verifies_admin_is_not_created() {
