@@ -11,6 +11,7 @@
 
       @US19_TC01
     Scenario: User schedules a meeting with specific details
+      Given delete if the student name "Harry Potter" exist on the Meet List
       Given the user is on the scheduling page
       When the user chooses "Harry Potter" from the dropdown menu
       And the user enters the date of the meeting as "002024-05-16"
@@ -18,6 +19,7 @@
       And the user types the stop time as "1400"
       And the user types the description as "Presentation"
       And the user clicks the Submit button
+      And verify meeting saved successfully pop up message
       And close the application
 
       @US19_TC02
@@ -29,4 +31,5 @@
       And the user types the stop time as "1400"
       And the user types the description as "Presentation"
       And the user clicks the Submit button
+      And verify must be a future date error pop up message
       And close the application
