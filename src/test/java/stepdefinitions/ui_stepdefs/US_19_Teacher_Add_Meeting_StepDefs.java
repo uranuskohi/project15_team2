@@ -1,18 +1,14 @@
 package stepdefinitions.ui_stepdefs;
 
-import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Actions;
 import pages.Meet_Management_Page;
 import utilities.Driver;
-import utilities.MediaUtils;
 
 
 import java.io.IOException;
@@ -22,7 +18,7 @@ import static org.junit.Assert.assertTrue;
 
 import static utilities.WaitUtils.waitFor;
 
-public class US_19_StepDefs {
+public class US_19_Teacher_Add_Meeting_StepDefs {
 
     Meet_Management_Page meetManagementPage = new Meet_Management_Page();
     Actions actions = new Actions(Driver.getDriver());
@@ -77,7 +73,7 @@ public class US_19_StepDefs {
     }
     @When("the user clicks the Submit button")
     public void the_user_clicks_the_submit_button() throws IOException {
-        meetManagementPage.submitAtMeetManagement.click();
+        meetManagementPage.mainSubmitAtMeet.click();
         waitFor(1);
         //MediaUtils.takeScreenshotOfTheEntirePage();
     }

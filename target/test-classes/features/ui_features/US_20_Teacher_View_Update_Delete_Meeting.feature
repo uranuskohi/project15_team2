@@ -1,4 +1,4 @@
-@US_20
+@US_20 @fatih
 Feature: Teacher creates meeting with students
   Background:
     Given user goes to "https://managementonschools.com/" homepage
@@ -19,6 +19,7 @@ Feature: Teacher creates meeting with students
       Then the user should see the updated meeting details
       When the user clicks on the trash bin icon next to the meeting
       Then the meeting should be deleted successfully
+      And close the application
 
     @US20_TC02
     Scenario: User edits meeting with invalid date and then deletes it
@@ -27,7 +28,8 @@ Feature: Teacher creates meeting with students
       When the user clicks on the Edit button
       And changes the Date of Meet to "002022-05-16"
       And clicks Submit
-      Then the user should see the "Must be a future date" error pop-up message
+      Then the user should see the Must be a future date error pop-up message
       When the user dismisses the error pop-up
       And the user clicks on the trash bin icon next to the meeting
       Then the meeting should be deleted successfully
+      And close the application
