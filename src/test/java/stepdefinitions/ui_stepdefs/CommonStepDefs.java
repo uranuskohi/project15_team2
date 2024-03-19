@@ -2,10 +2,7 @@ package stepdefinitions.ui_stepdefs;
 
 import io.cucumber.java.en.*;
 import pages.Main_Page;
-import utilities.BrowserUtils;
-import utilities.ConfigReader;
-import utilities.Driver;
-import utilities.JSUtils;
+import utilities.*;
 
 import static utilities.WaitUtils.waitFor;
 
@@ -35,9 +32,7 @@ public class CommonStepDefs {
     }
 
     @Given("clicks on Login button")
-    public void clicks_on_login_button() {
-        mainPage.loginButton.click();
-    }
+    public void clicks_on_login_button() { mainPage.loginButton.click(); }
 
     @Given("clicks on Menu button")
     public void clicks_on_menu_button() { mainPage.menuButton.click(); }
