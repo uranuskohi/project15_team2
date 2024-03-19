@@ -1,6 +1,7 @@
 package utilities;
 
 import com.github.javafaker.Faker;
+import testdata.Teachers;
 
 import java.text.SimpleDateFormat;
 
@@ -11,7 +12,7 @@ public class TestUtils {
         String fakerBirthPlace;
         do {
             fakerBirthPlace = faker.address().city();
-        } while (fakerBirthPlace.length() <= 2);
+        } while (fakerBirthPlace.length() <= 3);
         return fakerBirthPlace;
     }
 
@@ -53,7 +54,7 @@ public class TestUtils {
         Faker faker = new Faker();
         String fakerUsername;
         do {
-            fakerUsername = faker.lorem().word();
+            fakerUsername = faker.lorem().word()+faker.lorem().word();
         } while (fakerUsername.length()<=4);
         return fakerUsername;
     }

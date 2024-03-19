@@ -9,9 +9,9 @@ Feature: admin creates teacher
     And clicks on Menu button
     And clicks on "Teacher Management" on Main Menu
 
-  @TC_01_create_teacher_asadmin_valid
+  @US24_TC01
   Scenario: admin creates teacher with valid information
-    When enters "Java" in select lesson field as admin
+    When enters "Java" in select lesson field as "admin"
     And enters "Bob" in name field
     And enters "Smith" in surname field
     And enters "London" in birth place field
@@ -21,15 +21,16 @@ Feature: admin creates teacher
     And selects gender radio button
     And enters "01/01/2000" in date of birth field
     And enters "401-50-6012" in ssn field
-    And enters "bobsmith" in user name field
+    And enters "bobsmith" in user name field for "scenario"
     And enters "BOBsmith123" in password field
     And clicks submit button
     Then verify success message "Teacher saved successfully"
+    And verify "teacher" exists in teacher list
     And close the application
 
-  @TC_02_create_teacher_asadmin_invalid
+  @US24_TC02
   Scenario: admin creates teacher with invalid information
-    When enters "Java" in select lesson field as admin
+    When enters "Java" in select lesson field as "admin"
     And enters "Peter" in name field
     And enters "Piper" in surname field
     And enters "London" in birth place field
@@ -39,8 +40,9 @@ Feature: admin creates teacher
     And selects gender radio button
     And enters "02/02/2002" in date of birth field
     And enters only 8 digits "104-05-210" in ssn field
-    And enters "peterpiper" in user name field
+    And enters "peterpiper" in user name field for "scenario"
     And enters "PETERpiper1" in password field
     And clicks submit button
     Then verify error message "Minimum 9 character (XXX-XX-XXXX)"
+    And verify "teacher" does not exist in teacher list
     And close the application

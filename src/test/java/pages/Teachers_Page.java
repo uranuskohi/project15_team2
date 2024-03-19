@@ -63,11 +63,12 @@ public class Teachers_Page {
     @FindBy(xpath = "//div[text()='Minimum 11 character (XXX-XX-XXXX)']")
     public WebElement ssnErrorMsg;
 
+    @FindBy(xpath = "//tbody[@class='table-group-divider']//tr//td[4]")
+    public WebElement teacherListRow1;
 
+    @FindBy(xpath = "//tbody[@class='table-group-divider']//tr//td[4]")
+    public WebElement teacherListCol4;
 
-
-
-
-
-
+    @FindBy(xpath = "//i[@class='fa-solid fa-pencil']")
+    public WebElement editButton;
 }
