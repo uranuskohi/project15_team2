@@ -7,10 +7,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import pages.Admin_Management_Page;
 import pages.Main_Page;
-import utilities.ActionsUtils;
-import utilities.BrowserUtils;
-import utilities.Driver;
-import utilities.WaitUtils;
+import utilities.*;
 
 public class US_22_StepDefs {
 
@@ -103,18 +100,38 @@ public class US_22_StepDefs {
 
     @Given("Delete if the admin name {string} exist on the Admin List")
     public void delete_if_the_admin_name_exist_on_the_admin_list(String string) {
-        int count = 1;
-        int desiredAdminRow = 0;
-        for (WebElement adminNameList : admin_management_page.nameColumn1) {
-            if (adminNameList.getText().equalsIgnoreCase(string)) {
-                desiredAdminRow = count;
-                WebElement element = Driver.getDriver().findElement(By.xpath("(//i[@class='fa-solid fa-trash'])[" + desiredAdminRow + "]"));
-                actions.moveToElement(element).click().perform();
+
+        boolean dataExist=false;
+
+        while(!dataExist){
+            WebElement createdData=Driver.getDriver().findElement(By.xpath("(//span[normalize-space()='Ashley Smith'])[1]"));
+
+            if(createdData.isDisplayed()){
+                dataExist=true;
+                System.out.println("dataExist:"+createdData.getText());
                 break;
             }
-            count++;
+
         }
+
     }
+//    int count = 1;
+//    int desiredAdminRow = 0;
+//        for (WebElement adminNameList : admin_management_page.nameColumn1) {
+//        if (adminNameList.getText().equalsIgnoreCase(string)) {
+//            desiredAdminRow = count;
+//            WebElement element = Driver.getDriver().findElement(By.xpath("(//i[@class='fa-solid fa-trash'])[" + desiredAdminRow + "]"));
+//            actions.moveToElement(element).click().perform();
+//            break;
+//        }
+//        count++;
+//    }
+//
+
+
+
+
+
 
 //    ///////////////////////////////// US_22_TC02
 //    @Given("admin is in admin management page")
@@ -146,14 +163,29 @@ public void scrolls_up_to_the_list() {
 //        admin_management_page.genderFemaleOnAdminPage.click();
         BrowserUtils.sendKeysWithTimeout(admin_management_page.genderFemaleOnAdminPage,string,2);
     }
-
-
-    }
-//
-//    @Then("verifies Admin is not created")
+//    @Then("verifies Required message")
 //    public void verifies_admin_is_not_created() {
+//        WaitUtils.waitFor(1);
+//        String actualText = admin_management_page.requiredMessageUnderName.getText();
+//        System.out.println(actualText);
+//        WaitUtils.waitFor(1);
+//        System.out.println(actualText);
+//        Assert.assertEquals(string, actualText);
 //
 //    }
+@Then("verifies {string} message")
+public void verifies_message(String string) {
+    WaitUtils.waitFor(1);
+        String actualText = admin_management_page.requiredMessageUnderName.getText();
+        System.out.println(actualText);
+        WaitUtils.waitFor(1);
+        System.out.println(actualText);
+        Assert.assertEquals(string, actualText);
+}
+
+    }
+
+
 
 
 

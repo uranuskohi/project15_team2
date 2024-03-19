@@ -58,6 +58,21 @@ public class Admin_Management_Page {
     @FindBy(xpath = "(//a[@class='page-link'])[4]")
     public WebElement lastPageButton;
 
+    @FindBy(xpath = "(//span[normalize-space()='Asmith'])[1]")
+    public WebElement getUserName;
+
+    @FindBy(xpath = "(//span[normalize-space()='Ashley Smith'])[1]")
+    public WebElement getNameToDeleteUser;
+
+    @FindBy(xpath = "(//td)[42]")
+    public WebElement deleteButton;
+
+    @FindBy(xpath = "(//div[@class='invalid-feedback'])[1]")
+    public WebElement requiredMessageUnderName;
+
+
+
+
 //    // Get all the elements available with tag name 'p'
 //    List<WebElement> elements = element.findElements(By.tagName("td"));
 //             for (WebElement e : elements) {
