@@ -29,12 +29,8 @@ public class Contact_Us_Page {
     @FindBy(xpath ="//button[@class='fw-semibold btn btn-primary']")
     public WebElement send_message;
 
-
-    public static void click() {
-    }
-
-    public void name(String s) {
-    }
+    @FindBy(xpath = "//div[text()='Contact Message Created Successfully']")
+    public WebElement sentSuccessfullyMessage;
 }
 
 

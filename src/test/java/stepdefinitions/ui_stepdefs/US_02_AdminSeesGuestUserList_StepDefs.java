@@ -128,17 +128,17 @@ Admin_Management_Page admin_management_page= new Admin_Management_Page();
     }
     @Then("delete the registered user from the list")
     public void delete_the_registered_user_from_the_list() {
-        int count = 1;
-        int desiredAdminRow = 0;
-        for (WebElement adminNameList : guest_user_list_page..nameColumn1) {
-            if (adminNameList.getText().equalsIgnoreCase(string)) {
-                desiredAdminRow = count;
-                WebElement element = Driver.getDriver().findElement(By.xpath("(//i[@class='fa-solid fa-trash'])[" + desiredAdminRow + "]"));
-                actions.moveToElement(element).click().perform();
-                break;
-            }
-            count++;
-        }
+//        int count = 1;
+//        int desiredAdminRow = 0;
+//        for (WebElement adminNameList : guest_user_list_page..nameColumn1) {
+//            if (adminNameList.getText().equalsIgnoreCase(string)) {
+//                desiredAdminRow = count;
+//                WebElement element = Driver.getDriver().findElement(By.xpath("(//i[@class='fa-solid fa-trash'])[" + desiredAdminRow + "]"));
+//                actions.moveToElement(element).click().perform();
+//                break;
+//            }
+//            count++;
+//        }
     }
 
 
