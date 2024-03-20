@@ -1,23 +1,64 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="Cucumber" time="47.151" tests="1" skipped="0" failures="0" errors="0">
-<testcase classname="US_10" name=": TC_01 Vice Dean should be able to select the start and end time for the course - Example #1.1" time="46.793">
+<testsuite name="Cucumber" time="28.053" tests="1" skipped="0" failures="1" errors="0">
+<testcase classname="Admin sees Guest User list" name="" time="27.818">
+<failure type="org.openqa.selenium.NoSuchElementException" message="no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//*[text()='Guest User registered.']&quot;}
+  (Session info: chrome=122.0.6261.129)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Build info: version: '4.18.1', revision: 'b1d3319b48'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.2'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [8faadf6c837296c34d98e57ab912c3ab, findElement {value=//*[text()='Guest User registered.'], using=xpath}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 122.0.6261.129, chrome: {chromedriverVersion: 122.0.6261.128 (f18a44fedeb..., userDataDir: C:\Users\fatih\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:62169}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:62169/devtoo..., se:cdpVersion: 122.0.6261.129, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 8faadf6c837296c34d98e57ab912c3ab">
+<![CDATA[org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//*[text()='Guest User registered.']"}
+  (Session info: chrome=122.0.6261.129)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Build info: version: '4.18.1', revision: 'b1d3319b48'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.2'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [8faadf6c837296c34d98e57ab912c3ab, findElement {value=//*[text()='Guest User registered.'], using=xpath}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 122.0.6261.129, chrome: {chromedriverVersion: 122.0.6261.128 (f18a44fedeb..., userDataDir: C:\Users\fatih\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:62169}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:62169/devtoo..., se:cdpVersion: 122.0.6261.129, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 8faadf6c837296c34d98e57ab912c3ab
+	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486)
+	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:519)
+	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
+	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:356)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:350)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.openqa.selenium.support.ThreadGuard$WebDriverInvocationHandler.invokeUnderlying(ThreadGuard.java:99)
+	at org.openqa.selenium.support.ThreadGuard$WebDriverInvocationHandler.invoke(ThreadGuard.java:91)
+	at jdk.proxy2/jdk.proxy2.$Proxy19.findElement(Unknown Source)
+	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:68)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+	at jdk.proxy2/jdk.proxy2.$Proxy22.getText(Unknown Source)
+	at stepdefinitions.ui_stepdefs.US_02_AdminSeesGuestUserList_StepDefs.verifies_success_mesg(US_02_AdminSeesGuestUserList_StepDefs.java:112)
+	at ✽.verifies success mesg "Guest User registered."(file:///C:/Users/fatih/Desktop/project15_team2/./src/test/resources/features/ui_features/US_02_TC01_Admin_sees_guestuserlist.feature:19)
+]]>
+</failure>
 <system-out><![CDATA[
 Given user goes to "https://managementonschools.com/" homepage..............passed
-And clicks on loginIcon.....................................................passed
-And enters "ViceDeanYusa" in the userName input field.......................passed
-And enters "ViceDeanYusa1" in the password input field......................passed
-And clicks on Login button..................................................passed
-And clicks on Menu button...................................................passed
-And clicks on "Lesson Management" on Main Menu..............................passed
-And User clicks on the Lesson Program button................................passed
-And And User selects an education class "C#" from the provided options......passed
-And User chooses the educational terms "SPRING_SEMESTER" from the available list.passed
-And User selects a day "WEDNESDAY" from the dropdown menu...................passed
-And User chooses a start time "7:00AM" from the provided time slots.........passed
-And User selects a stop time "7:00PM" from the available time slots.........passed
-Then User clicks on the submit button.......................................passed
-And verify successful warning Pop-up message displayed......................passed
-And close the application...................................................passed
+And user clicks Register button.............................................passed
+And enters "Deniz" in the Name input field..................................passed
+And enters "Ugur" in the Surname input field................................passed
+And enters "Istanbul" in the Birth Place input field........................passed
+And enters "444-444-4545" in the phone field................................passed
+And selects gender female radio button......................................passed
+And enters "06-07-1977" in the Date Of Birth field..........................passed
+And enters ssn in the Ssn input field.......................................passed
+And enters "Dugur" in the User Name field...................................passed
+And enters password in the Password input field.............................passed
+And clicks Register button..................................................passed
+Then verifies success mesg "Guest User registered.".........................failed
 ]]></system-out>
 </testcase>
 </testsuite>
