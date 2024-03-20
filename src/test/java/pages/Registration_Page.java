@@ -1,11 +1,14 @@
 package pages;
 
+import org.openqa.selenium.Alert;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import utilities.Driver;
 
 public class Registration_Page {
+
+
 
     public Registration_Page(){
         PageFactory.initElements(Driver.getDriver(),this);
@@ -18,13 +21,13 @@ public class Registration_Page {
     public WebElement registerLink;
 
     @FindBy(xpath = "//input[@id='name']")
-    public WebElement nameBox;
+    public static WebElement nameBox;
 
     @FindBy(xpath = "//input[@id='surname']")
-    public WebElement surnameBox;
+    public static WebElement surnameBox;
 
     @FindBy(xpath = "//input[@id='birthPlace']")
-    public WebElement birthplaceBox;
+    public WebElement birthPlace;
 
     @FindBy(xpath = "(//div[@class='invalid-feedback'])[1]")
     public WebElement nameBoxRequiredText;
@@ -56,11 +59,12 @@ public class Registration_Page {
     @FindBy(xpath = "(//button[@type='button'])[3]")
     public WebElement registerBox;
 
-    @FindBy(xpath = "//input[@value='FEMALE']")
+
+    @FindBy(xpath = "(//input[@value='FEMALE'])[1]")
     public WebElement femaleRadioButton;
 
-    @FindBy(xpath = "//input[@value='MALE']")
-    public WebElement maleRadioButton;
+    @FindBy( css = "input[value='FEMALE']")
+    public WebElement femaleRadioButton1;
 
     @FindBy(xpath = "//input[@placeholder='username']")
     public WebElement usernameBox;
@@ -83,13 +87,13 @@ public class Registration_Page {
     @FindBy(id = "ssn")
     public WebElement ssnBox;
 
-    @FindBy(xpath ="//button[text()='Register']")
+    @FindBy(xpath ="//div[text()='Guest User registered.']")
     public WebElement registerButton;
 
 
 
-
-
+   // @FindBy(xpath ="//button[text()='Register']")
+    //public WebElement registerButton;
 
 }
 
