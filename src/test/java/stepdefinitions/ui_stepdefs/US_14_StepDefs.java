@@ -5,10 +5,10 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
-import org.openqa.selenium.support.ui.ExpectedConditions;
 import pages.Teachers_Page;
-import testdata.TeacherCredentials;
 import utilities.*;
+
+import static stepdefinitions.ui_stepdefs.US_13_and_US_24_StepDefs.nameForAssertion;
 import static utilities.TestUtils.*;
 
 
@@ -19,15 +19,13 @@ public class US_14_StepDefs {
     Actions actions = new Actions(Driver.getDriver());
     public int desiredTeacherRow = 0;
 
-    US_13_and_US_24_StepDefs us13AndUs24StepDefs = new US_13_and_US_24_StepDefs();
 
-//    TeacherCredentials teacherCredentials = TeacherCredentials.getInstance();
 
     //  TC_01_update_teacher_asvicedean_valid StepDefs
     @Given("user finds {string} on teacher list")
     public void user_finds_on_teacher_list(String username) {
 
-
+        System.out.println(nameForAssertion);
 
         JSUtils.JSscrollAllTheWayDown();
         WaitUtils.waitFor(1);

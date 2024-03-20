@@ -5,26 +5,22 @@ import org.junit.Assert;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.interactions.Actions;
 import pages.Teachers_Page;
-import testdata.TeacherCredentials;
 import utilities.*;
 import static utilities.TestUtils.*;
-
 
 public class US_13_and_US_24_StepDefs {
 
     Teachers_Page teachersPage = new Teachers_Page();
     Faker faker = new Faker();
 
-    TeacherCredentials teacherCredentials = TeacherCredentials.getInstance();
-
     Actions actions = new Actions(Driver.getDriver());
 
-    public static String nameToAssert;
+    public static String nameForAssertion;
 
     @When("enters {string} in name field")
     public void enters_in_name_field(String name) {
         name = faker.name().firstName();
-//        nameForAssertion = name;
+        nameForAssertion = name;
         teachersPage.name.sendKeys(name);
 //        teacherCredentials.setNameForAssertion(name);
 //        System.out.println(teacherCredentials.getNameForAssertion());
@@ -52,7 +48,6 @@ public class US_13_and_US_24_StepDefs {
     public void enters_in_surname_field(String surname) {
         surname = faker.name().lastName();
         teachersPage.surname.sendKeys(surname);
-        teacherCredentials.setLastNameForAssertion(surname);
         WaitUtils.waitFor(1);
     }
 
@@ -74,7 +69,6 @@ public class US_13_and_US_24_StepDefs {
     public void enters_in_phone_field(String phone) {
         phone = phoneNumberGenerator();
         teachersPage.phone.sendKeys(phone);
-        teacherCredentials.setPhoneForAssertion(phone);
         WaitUtils.waitFor(1);
     }
 
@@ -105,14 +99,12 @@ public class US_13_and_US_24_StepDefs {
     public void enters_in_ssn_field(String ssn) {
         ssn = ssnGenerator();
         teachersPage.ssn.sendKeys(ssn);
-        teacherCredentials.setSsnForAssertion(ssn);
     }
 
     @When("enters {string} in user name field")
     public void enters_in_user_name_field(String username) {
         username = TestUtils.usernameGenerator();
         teachersPage.userName.sendKeys(username);
-        teacherCredentials.setUsernameForAssertion(username);
     }
 
     @When("enters {string} in password field")
