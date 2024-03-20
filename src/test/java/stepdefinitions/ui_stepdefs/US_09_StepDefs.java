@@ -12,7 +12,6 @@ import static org.junit.Assert.assertTrue;
 
 public class US_09_StepDefs {
     Lessons_Page lessonsPage = new Lessons_Page();
-    Actions action;
     @When("scroll down to Lesson List")
     public void scroll_down_to_lesson_list() {
         lessonsPage.lessons.click();
