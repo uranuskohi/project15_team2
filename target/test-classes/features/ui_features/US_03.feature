@@ -1,20 +1,21 @@
 @US_03Contact
 Feature:  Users should be able to send messages from the page (contact)
 
-  Scenario Outline: send a message from Contact page
 
-    Given user goes to home page "https://managementonschools.com"
-    Given user clicks Contact button
-    And user enters a name "<name>"
-    And user enters an email "<email>"
-    And user enters a subject "<subject>"
-    And user enters a message "<message>"
+Background:
+  Given user goes to "https://managementonschools.com/" homepage
+    When user clicks Contact button
+
+
+  Scenario: US_03Contact
+    And user enters a name "Evrim1"
+    And user enters an email "admin_batch197@gmail.com"
+    And user enters a subject "maths"
+    And user enters a message "Joining a new maths class"
     And user clicks on Send Message button
     Then assert alert message on contact page
     And  close the app
-    Examples:
-      | name   | email                   | subject  | message               |
-      | Evrim1 | admin_batch197@gmail.com | maths |  Joining a new maths class|
+
 
 
 

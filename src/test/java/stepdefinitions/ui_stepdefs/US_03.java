@@ -7,12 +7,12 @@ import pages.Contact_Us_Page;
 import pages.Main_Page;
 import utilities.BrowserUtils;
 import utilities.Driver;
+import utilities.JSUtils;
 import utilities.WaitUtils;
-
 import static org.junit.Assert.assertTrue;
-import static utilities.WaitUtils.waitFor;
 
-public class US_03_StepDefs {
+
+public class US_03 {
 
 
 
@@ -20,42 +20,41 @@ public class US_03_StepDefs {
         Main_Page mainPage = new Main_Page();
         Contact_Us_Page contactUsPage = new Contact_Us_Page();
 
+    @Given("user goes to home page {string}")
+    public void userGoesToHomePage(String url) {
+
+        Driver.getDriver().get(url);
+    }
+    @Given("user clicks Contact button")
+    public void user_clicks_contact_button() {
+        contactUsPage.contact.click();
+        WaitUtils.waitFor(2);
+
+    }
 
 
-        @Given("user goes to home page {string}")
-        public void userGoesToHomePage(String url) {
-
-            Driver.getDriver().get(url);
-        }
-        @Given("user clicks Contact button")
-        public void user_clicks_contact_button() {
-            contactUsPage.contact.click();
-            WaitUtils.waitFor(2);
-
-        }
-
-    @Given("user enters  name as {string}")
-    public void user_enters_name_as(String name) {
+    @Given("user enters a name {string}")
+    public void user_enters_a_name(String name) {
         contactUsPage.name.sendKeys(name);
-        waitFor(3);
+        WaitUtils.waitFor(3);
+
     }
 
-    @Given("user enters email as {string}")
-    public void user_enters_email_as(String email) {
-    contactUsPage.email.sendKeys(email);
-    waitFor(2);
+    @Given("user enters an email {string}")
+    public void user_enters_an_email(String email) {
+       contactUsPage.email.sendKeys(email);
+       WaitUtils.waitFor(3);
     }
-    @Given("user enters subject as {string}")
-    public void user_enters_subject_as(String subject) {
+    @Given("user enters a subject {string}")
+    public void user_enters_a_subject(String subject) {
         contactUsPage.subject.sendKeys(subject);
-        waitFor(2);
     }
-
 
 
         @Given("user enters a message {string}")
         public void user_enters_a_message(String message) {
-            contactUsPage.send_message.sendKeys(message);
+
+            BrowserUtils.sendKeysWithTimeout(contactUsPage.message,message,10);
             WaitUtils.waitFor(2);
 
         }
@@ -71,14 +70,14 @@ public class US_03_StepDefs {
         public void assertAlertMessageOnContactPage() {
             WaitUtils.waitFor(1);
             String alertText= contactUsPage.send_message.getText();
-            assertTrue(alertText.contains("Contact Message Created Successfully"));
+            assertTrue(contactUsPage.sentSuccessfullyMessage.getText().contains("Contact Message Created Successfully"));
 
         }
 
         @And("close the app")
         public void closeTheApp() {
             WaitUtils.waitFor(3);
-            //  Driver.closeDriver();
+              Driver.closeDriver();
         }
 
 
@@ -93,9 +92,7 @@ public class US_03_StepDefs {
     And user clicks on Send Message button
     Then assert alert message on contact page
     And  close the app
-    Examples:
-      | name   | email                   | subject  | message               |
-      | Evrim1 | admin_batch197@gmail.com | maths |  Joining a new maths class|
+
 
 */
 }

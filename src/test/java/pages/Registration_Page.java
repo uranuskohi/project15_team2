@@ -59,11 +59,12 @@ public class Registration_Page {
     @FindBy(xpath = "(//button[@type='button'])[3]")
     public WebElement registerBox;
 
-    @FindBy(xpath = "//input[@value='FEMALE']")
+
+    @FindBy(xpath = "(//input[@value='FEMALE'])[1]")
     public WebElement femaleRadioButton;
 
-    @FindBy(xpath = "//input[@value='MALE']")
-    public WebElement maleRadioButton;
+    @FindBy( css = "input[value='FEMALE']")
+    public WebElement femaleRadioButton1;
 
     @FindBy(xpath = "//input[@placeholder='username']")
     public WebElement usernameBox;
@@ -86,13 +87,13 @@ public class Registration_Page {
     @FindBy(id = "ssn")
     public WebElement ssnBox;
 
-    @FindBy(xpath ="//button[text()='Register']")
+    @FindBy(xpath ="//div[text()='Guest User registered.']")
     public WebElement registerButton;
 
 
 
-
-
+   // @FindBy(xpath ="//button[text()='Register']")
+    //public WebElement registerButton;
 
 }
 
