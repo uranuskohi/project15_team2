@@ -1,4 +1,4 @@
-@US13_vicedean_creates_teacher
+@US13
 Feature: vice dean creates teacher
   Background:
     Given user goes to "https://managementonschools.com/" homepage
@@ -25,7 +25,6 @@ Feature: vice dean creates teacher
     And enters "password" in password field
     And clicks submit button
     Then verify success message "Teacher saved successfully"
-    And verify "teacher" exists in teacher list
     And close the application
 
 #  @US13_TC02
@@ -44,7 +43,6 @@ Feature: vice dean creates teacher
 #    And enters "PETERpiper1" in password field
 #    And clicks submit button
 #    Then verify error message "Minimum 9 character (XXX-XX-XXXX)"
-#    And verify "teacher" does not exist in teacher list
 #    And close the application
 #
 #

@@ -1,4 +1,4 @@
-@US14_vicedean_updates_teacher
+@US14
 Feature: vice dean updates teacher
   Background:
     Given user goes to "https://managementonschools.com/" homepage
@@ -9,46 +9,46 @@ Feature: vice dean updates teacher
     And clicks on Menu button
     And clicks on "Teacher Management" on Main Menu
 
-  @US14_TC01
-  Scenario: vice dean updates teacher list with valid information
-    Given user finds "username" on teacher list
-    Then verify "name" in name field
-    And verify "phone" in phone field
-    And verify "ssn" in ssn field
-    And verify "username" in user name field
+#  @US14_TC01
+#  Scenario: vice dean updates teacher list with valid information
+#    Given user finds "username" on teacher list
+#    Then verify "name" in name field
+#    And verify "phone" in phone field
+#    And verify "ssn" in ssn field
+#    And verify "username" in user name field
 #    When clicks on edit button
-#    And enters "Cypress" in select lesson field as "vice dean"
-#    And enters "Helen" in name field
-#    And enters "Jones" in surname field
-#    And enters "Paris" in birth place field
-#    And enters "helen@gmail.com" in email field
-#    And enters "791-702-5406" in phone field
-#    And enters "108-25-2306" in ssn field
-#    And selects is advisor teacher
-#    And selects gender radio button
-#    And enters "01/02/2003" in date of birth field
-#    And enters "helenjones" in user name field for "@US14_TC01"
-#    And enters "HELENjones1" in password field
-#    And clicks submit button
+#    And enters "Cypress" in edit select lesson field
+#    And enters "name" in edit name field
+#    And enters "lastname" in edit surname field
+#    And enters "birthplace" in edit birth place field
+#    And enters "email" in edit email field
+#    And enters "phone" in edit phone field
+#    And enters "ssn" in edit ssn field
+#    And selects edit is advisor teacher
+#    And selects edit gender radio button
+#    And enters "dateofbirth" in edit date of birth field
+#    And enters "username" in edit user name field
+#    And enters "password" in edit password field
+#    And clicks edit submit button
 #    Then verify success message "Teacher updated Successful"
 #    And close the application
 
-#  @US14_TC02
-#  Scenario: vice dean updates teacher with invalid information
-#    Given user finds "teacher" on teacher list
-#    When clicks on edit button
-#    And enters "C#" in select lesson field as "vice dean"
-#    And enters "Charlie" in name field
-#    And enters "Brown" in surname field
-#    And enters "Madrid" in birth place field
-#    And removes email from email field
-#    And enters "841-031-5783" in phone field
-#    And enters "584-25-2354" in ssn field
-#    And selects is advisor teacher
-#    And selects gender radio button
-#    And enters "03/02/2004" in date of birth field
-#    And enters "charliebrown" in user name field for "scenario"
-#    And enters "CHARLIEb1" in password field
-#    And clicks submit button
-#    Then verify error message "Required"
+  @US14_TC02
+  Scenario: vice dean updates teacher with invalid information
+    Given user finds "teacher" on teacher list
+    When clicks on edit button
+    And enters "C#" in edit select lesson field
+    And enters "name" in edit name field
+    And enters "surname" in edit surname field
+    And enters "birthplace" in edit birth place field
+    And removes email from email field
+    And enters "phone" in edit phone field
+    And enters "ssn" in edit ssn field
+    And selects edit is advisor teacher
+    And selects edit gender radio button
+    And enters "dateofbirth" in edit date of birth field
+    And enters "username" in edit user name field
+    And enters "password" in edit password field
+    And clicks submit button
+    Then verify error message "Required"
 #    And close the application

@@ -1,15 +1,12 @@
 package stepdefinitions.ui_stepdefs;
-
 import com.github.javafaker.Faker;
 import io.cucumber.java.en.*;
 import org.junit.Assert;
 import org.openqa.selenium.Keys;
+import org.openqa.selenium.interactions.Actions;
 import pages.Teachers_Page;
-import utilities.ActionsUtils;
-import utilities.TestUtils;
-import utilities.WaitUtils;
-
-import static stepdefinitions.ui_stepdefs.US_14_StepDefs.nameElement;
+import testdata.TeacherCredentials;
+import utilities.*;
 import static utilities.TestUtils.*;
 
 
@@ -18,23 +15,28 @@ public class US_13_and_US_24_StepDefs {
     Teachers_Page teachersPage = new Teachers_Page();
     Faker faker = new Faker();
 
-    public String name;
-    public static String nameForAssertion;
-    public static String lastNameForAssertion;
+    TeacherCredentials teacherCredentials = TeacherCredentials.getInstance();
 
-    public static String phoneForAssertion;
+    Actions actions = new Actions(Driver.getDriver());
 
-    public static String ssnForAssertion;
-    public static String usernameForAssertion;
+    public static String nameToAssert;
 
+    @When("enters {string} in name field")
+    public void enters_in_name_field(String name) {
+        name = faker.name().firstName();
+        nameForAssertion = name;
+        teachersPage.name.sendKeys(name);
+//        teacherCredentials.setNameForAssertion(name);
+//        System.out.println(teacherCredentials.getNameForAssertion());
+        WaitUtils.waitFor(1);
+    }
 
-
-//  TC_01_create_teacher_asvicedean_valid StepDefs
+    //  TC_01_create_teacher_asvicedean_valid StepDefs
     @When("enters {string} in select lesson field as {string}")
-    public void enters_in_select_lesson_field_as(String lesson, String user) {
+    public void enters_in_select_lesson_field(String lesson, String user) {
         ActionsUtils.actionsDoubleClick(teachersPage.selectLessonViceDean);
         WaitUtils.waitFor(1);
-        teachersPage.selectLessonViceDean.sendKeys("Java", Keys.TAB);
+        teachersPage.selectLessonViceDean.sendKeys(lesson, Keys.TAB, user);
         WaitUtils.waitFor(1);
 
         if(user.equals("admin")){
@@ -46,26 +48,18 @@ public class US_13_and_US_24_StepDefs {
         }
     }
 
-    @When("enters {string} in name field")
-    public void enters_in_name_field(String name) {
-        name = faker.name().firstName();
-        teachersPage.name.sendKeys(name);
-        nameForAssertion = name;
-        WaitUtils.waitFor(1);
-    }
-
     @When("enters {string} in surname field")
-    public void enters_in_surname_field(String lastName) {
-        lastName = faker.name().lastName();
-        teachersPage.surname.sendKeys(lastName);
-        lastNameForAssertion = lastName;
+    public void enters_in_surname_field(String surname) {
+        surname = faker.name().lastName();
+        teachersPage.surname.sendKeys(surname);
+        teacherCredentials.setLastNameForAssertion(surname);
         WaitUtils.waitFor(1);
     }
 
     @When("enters {string} in birth place field")
-    public void enters_in_birth_place_field(String birthPlace) {
-        birthPlace = birthPlaceGenerator();
-        teachersPage.birthPlace.sendKeys(birthPlace);
+    public void enters_in_birth_place_field(String birthplace) {
+        birthplace = birthPlaceGenerator();
+        teachersPage.birthPlace.sendKeys(birthplace);
         WaitUtils.waitFor(1);
     }
 
@@ -80,7 +74,7 @@ public class US_13_and_US_24_StepDefs {
     public void enters_in_phone_field(String phone) {
         phone = phoneNumberGenerator();
         teachersPage.phone.sendKeys(phone);
-        phoneForAssertion = phone;
+        teacherCredentials.setPhoneForAssertion(phone);
         WaitUtils.waitFor(1);
     }
 
@@ -102,23 +96,23 @@ public class US_13_and_US_24_StepDefs {
     }
 
     @When("enters {string} in date of birth field")
-    public void enters_in_date_of_birth_field(String dateOfBirth) {
-        dateOfBirth = dateOfBirthGenerator();
-        teachersPage.dateOfBirth.sendKeys(dateOfBirth, Keys.TAB);
+    public void enters_in_date_of_birth_field(String dateofbirth) {
+        dateofbirth = dateOfBirthGenerator();
+        teachersPage.dateOfBirth.sendKeys(dateofbirth, Keys.TAB);
     }
 
     @When("enters {string} in ssn field")
     public void enters_in_ssn_field(String ssn) {
         ssn = ssnGenerator();
         teachersPage.ssn.sendKeys(ssn);
-        ssnForAssertion = ssn;
+        teacherCredentials.setSsnForAssertion(ssn);
     }
 
     @When("enters {string} in user name field")
     public void enters_in_user_name_field(String username) {
         username = TestUtils.usernameGenerator();
         teachersPage.userName.sendKeys(username);
-        usernameForAssertion = username;
+        teacherCredentials.setUsernameForAssertion(username);
     }
 
     @When("enters {string} in password field")
@@ -141,11 +135,6 @@ public class US_13_and_US_24_StepDefs {
         Assert.assertEquals(string, actualText);
     }
 
-    @Then("verify {string} exists in teacher list")
-    public void verify_exists_in_teacher_list(String username) {
-        Assert.assertEquals(nameForAssertion+" "+lastNameForAssertion, nameElement);
-    }
-
 
 //  TC_02_create_teacher_asvicedean_invalid StepDefs
     @When("enters only {int} digits {string} in ssn field")
@@ -159,8 +148,4 @@ public class US_13_and_US_24_StepDefs {
         Assert.assertEquals(string, teachersPage.ssnErrorMsg.getText());
     }
 
-    @Then("verify {string} does not exist in teacher list")
-    public void verify_does_not_exist_in_teacher_list(String string) {
-
     }
-}

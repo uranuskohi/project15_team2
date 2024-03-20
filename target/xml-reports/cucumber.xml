@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="Cucumber" time="29.766" tests="1" skipped="0" failures="1" errors="0">
+<testcase classname="vice dean updates teacher" name="vice dean updates teacher with invalid information" time="29.568">
+<failure type="org.openqa.selenium.ElementClickInterceptedException" message="element click intercepted: Element is not clickable at point (1300, -447)
+  (Session info: chrome=122.0.6261.129)
+Build info: version: '4.18.1', revision: 'b1d3319b48'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.2'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [ca3284693cea63ba4d95594ecf00551d, clickElement {id=f.F4E94D8AE127358945AF888A96399DD7.d.ABD9EB2A8359760BAB35863652A58DAD.e.381}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 122.0.6261.129, chrome: {chromedriverVersion: 122.0.6261.128 (f18a44fedeb..., userDataDir: C:\Users\sarah\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:52089}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:52089/devtoo..., se:cdpVersion: 122.0.6261.129, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on windows (ca3284693cea63ba4d95594ecf00551d)] -&gt; xpath: //button[text()='Submit']]
+Session ID: ca3284693cea63ba4d95594ecf00551d">
+<![CDATA[org.openqa.selenium.ElementClickInterceptedException: element click intercepted: Element is not clickable at point (1300, -447)
+  (Session info: chrome=122.0.6261.129)
+Build info: version: '4.18.1', revision: 'b1d3319b48'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.2'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [ca3284693cea63ba4d95594ecf00551d, clickElement {id=f.F4E94D8AE127358945AF888A96399DD7.d.ABD9EB2A8359760BAB35863652A58DAD.e.381}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 122.0.6261.129, chrome: {chromedriverVersion: 122.0.6261.128 (f18a44fedeb..., userDataDir: C:\Users\sarah\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:52089}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:52089/devtoo..., se:cdpVersion: 122.0.6261.129, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on windows (ca3284693cea63ba4d95594ecf00551d)] -> xpath: //button[text()='Submit']]
+Session ID: ca3284693cea63ba4d95594ecf00551d
+	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486)
+	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:519)
+	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:223)
+	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:76)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:51)
+	at jdk.proxy2/jdk.proxy2.$Proxy22.click(Unknown Source)
+	at stepdefinitions.ui_stepdefs.US_13_and_US_24_StepDefs.clicks_submit_button(US_13_and_US_24_StepDefs.java:128)
+	at ✽.clicks submit button(file:///C:/Users/sarah/IdeaProjects/project15_team2/./src/test/resources/features/ui_features/US_14.feature:52)
+]]>
+</failure>
+<system-out><![CDATA[
+Given user goes to "https://managementonschools.com/" homepage..............passed
+And clicks on loginIcon.....................................................passed
+And enters "vdsarahfp" in the userName input field..........................passed
+And enters "VDSarahFP123" in the password input field.......................passed
+And clicks on Login button..................................................passed
+And clicks on Menu button...................................................passed
+And clicks on "Teacher Management" on Main Menu.............................passed
+Given user finds "teacher" on teacher list..................................passed
+When clicks on edit button..................................................passed
+And enters "C#" in edit select lesson field.................................passed
+And enters "name" in edit name field........................................passed
+And enters "surname" in edit surname field..................................passed
+And enters "birthplace" in edit birth place field...........................passed
+And removes email from email field..........................................passed
+And enters "phone" in edit phone field......................................passed
+And enters "ssn" in edit ssn field..........................................passed
+And selects edit is advisor teacher.........................................passed
+And selects edit gender radio button........................................passed
+And enters "dateofbirth" in edit date of birth field........................passed
+And enters "username" in edit user name field...............................passed
+And enters "password" in edit password field................................passed
+And clicks submit button....................................................failed
+Then verify error message "Required"........................................skipped
+]]></system-out>
+</testcase>
+</testsuite>
