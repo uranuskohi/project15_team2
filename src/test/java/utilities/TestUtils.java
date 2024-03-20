@@ -1,7 +1,6 @@
 package utilities;
 
 import com.github.javafaker.Faker;
-import testdata.Teachers;
 
 import java.text.SimpleDateFormat;
 

@@ -32,7 +32,8 @@ public class CommonStepDefs {
     }
 
     @Given("clicks on Login button")
-    public void clicks_on_login_button() { mainPage.loginButton.click(); }
+    public void clicks_on_login_button() {
+        ActionsUtils.actionsDoubleClick(mainPage.loginButton); }
 
     @Given("clicks on Menu button")
     public void clicks_on_menu_button() { mainPage.menuButton.click(); }

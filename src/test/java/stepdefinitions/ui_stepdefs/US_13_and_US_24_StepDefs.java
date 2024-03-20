@@ -5,11 +5,11 @@ import io.cucumber.java.en.*;
 import org.junit.Assert;
 import org.openqa.selenium.Keys;
 import pages.Teachers_Page;
-import testdata.Teachers;
 import utilities.ActionsUtils;
 import utilities.TestUtils;
 import utilities.WaitUtils;
 
+import static stepdefinitions.ui_stepdefs.US_14_StepDefs.nameElement;
 import static utilities.TestUtils.*;
 
 
@@ -17,6 +17,16 @@ public class US_13_and_US_24_StepDefs {
 
     Teachers_Page teachersPage = new Teachers_Page();
     Faker faker = new Faker();
+
+    public String name;
+    public static String nameForAssertion;
+    public static String lastNameForAssertion;
+
+    public static String phoneForAssertion;
+
+    public static String ssnForAssertion;
+    public static String usernameForAssertion;
+
 
 
 //  TC_01_create_teacher_asvicedean_valid StepDefs
@@ -38,37 +48,40 @@ public class US_13_and_US_24_StepDefs {
 
     @When("enters {string} in name field")
     public void enters_in_name_field(String name) {
-        teachersPage.name.sendKeys(faker.name().firstName());
+        name = faker.name().firstName();
+        teachersPage.name.sendKeys(name);
+        nameForAssertion = name;
         WaitUtils.waitFor(1);
-//        teachersPage.name.sendKeys(string);
     }
 
     @When("enters {string} in surname field")
     public void enters_in_surname_field(String lastName) {
-        teachersPage.surname.sendKeys(faker.name().lastName());
+        lastName = faker.name().lastName();
+        teachersPage.surname.sendKeys(lastName);
+        lastNameForAssertion = lastName;
         WaitUtils.waitFor(1);
-//        teachersPage.surname.sendKeys(string);
     }
 
     @When("enters {string} in birth place field")
     public void enters_in_birth_place_field(String birthPlace) {
-        teachersPage.birthPlace.sendKeys(birthPlaceGenerator());
+        birthPlace = birthPlaceGenerator();
+        teachersPage.birthPlace.sendKeys(birthPlace);
         WaitUtils.waitFor(1);
-//        teachersPage.birthPlace.sendKeys(string);
     }
 
     @When("enters {string} in email field")
     public void enters_in_email_field(String email) {
-        teachersPage.email.sendKeys(usernameGenerator()+"@"+faker.internet().domainName());
+        email = usernameGenerator()+"@"+faker.internet().domainName();
+        teachersPage.email.sendKeys(email);
         WaitUtils.waitFor(1);
-//        teachersPage.email.sendKeys(string);
     }
 
     @When("enters {string} in phone field")
     public void enters_in_phone_field(String phone) {
-        teachersPage.phone.sendKeys(phoneNumberGenerator());
+        phone = phoneNumberGenerator();
+        teachersPage.phone.sendKeys(phone);
+        phoneForAssertion = phone;
         WaitUtils.waitFor(1);
-//        teachersPage.phone.sendKeys(string);
     }
 
     @When("selects is advisor teacher")
@@ -90,41 +103,28 @@ public class US_13_and_US_24_StepDefs {
 
     @When("enters {string} in date of birth field")
     public void enters_in_date_of_birth_field(String dateOfBirth) {
-        teachersPage.dateOfBirth.sendKeys(dateOfBirthGenerator(), Keys.TAB);
-//        teachersPage.dateOfBirth.sendKeys(string);
+        dateOfBirth = dateOfBirthGenerator();
+        teachersPage.dateOfBirth.sendKeys(dateOfBirth, Keys.TAB);
     }
 
     @When("enters {string} in ssn field")
     public void enters_in_ssn_field(String ssn) {
-        teachersPage.ssn.sendKeys(ssnGenerator());
-//        teachersPage.ssn.sendKeys(string);
+        ssn = ssnGenerator();
+        teachersPage.ssn.sendKeys(ssn);
+        ssnForAssertion = ssn;
     }
 
-    @When("enters {string} in user name field for {string}")
-    public void enters_in_user_name_field_for(String userName, String scenarioId) {
-        String generatedUsername = TestUtils.usernameGenerator();
-        Teachers.addTeacherUsername("@US13_TC01", generatedUsername);
-        teachersPage.userName.sendKeys(generatedUsername);
-//        teachersPage.userName.sendKeys(string);
-        System.out.println("generatedUsername = " + generatedUsername);
+    @When("enters {string} in user name field")
+    public void enters_in_user_name_field(String username) {
+        username = TestUtils.usernameGenerator();
+        teachersPage.userName.sendKeys(username);
+        usernameForAssertion = username;
     }
-
-
-//    public class YourStepDefinitions {
-//
-//        @When("enters {string} in user name field for {string}")
-//        public void enters_in_user_name_field(String username, String scenarioId) {
-//            String generatedUsername = TestUtils.usernameGenerator();
-//            teachersPage.userName.sendKeys(generatedUsername);
-//            Teachers.addTeacherUsername(scenarioId, generatedUsername);
-//        }
-//
-//    }
 
     @When("enters {string} in password field")
     public void enters_in_password_field(String password) {
-        teachersPage.password.sendKeys(passwordGenerator());
-//        teachersPage.password.sendKeys(string);
+        password = passwordGenerator();
+        teachersPage.password.sendKeys(password);
     }
 
     @When("clicks submit button")
@@ -141,13 +141,9 @@ public class US_13_and_US_24_StepDefs {
         Assert.assertEquals(string, actualText);
     }
 
-//    @Then("verify {string} exists in teacher list")
-//    public void verify_exists_in_teacher_list(String string) {
-//    }
-
-    @Then("I print all teacher usernames")
-    public void printAllTeacherUsernames() {
-        Teachers.printAllTeacherUsernames();
+    @Then("verify {string} exists in teacher list")
+    public void verify_exists_in_teacher_list(String username) {
+        Assert.assertEquals(nameForAssertion+" "+lastNameForAssertion, nameElement);
     }
 
 

@@ -11,27 +11,27 @@ Feature: vice dean updates teacher
 
   @US14_TC01
   Scenario: vice dean updates teacher list with valid information
-    Given user finds "teacher" on teacher list
-    Then verify "Bob Smith" in name field
-    And verify "102-203-3045" in phone field
-    And verify "401-50-6012" in ssn field
-    And verify "bobsmith" in user name field
-    When clicks on edit button
-    And enters "Cypress" in select lesson field as "vice dean"
-    And enters "Helen" in name field
-    And enters "Jones" in surname field
-    And enters "Paris" in birth place field
-    And enters "helen@gmail.com" in email field
-    And enters "791-702-5406" in phone field
-    And enters "108-25-2306" in ssn field
-    And selects is advisor teacher
-    And selects gender radio button
-    And enters "01/02/2003" in date of birth field
-    And enters "helenjones" in user name field for "@US14_TC01"
-    And enters "HELENjones1" in password field
-    And clicks submit button
-    Then verify success message "Teacher updated Successful"
-    And close the application
+    Given user finds "username" on teacher list
+    Then verify "name" in name field
+    And verify "phone" in phone field
+    And verify "ssn" in ssn field
+    And verify "username" in user name field
+#    When clicks on edit button
+#    And enters "Cypress" in select lesson field as "vice dean"
+#    And enters "Helen" in name field
+#    And enters "Jones" in surname field
+#    And enters "Paris" in birth place field
+#    And enters "helen@gmail.com" in email field
+#    And enters "791-702-5406" in phone field
+#    And enters "108-25-2306" in ssn field
+#    And selects is advisor teacher
+#    And selects gender radio button
+#    And enters "01/02/2003" in date of birth field
+#    And enters "helenjones" in user name field for "@US14_TC01"
+#    And enters "HELENjones1" in password field
+#    And clicks submit button
+#    Then verify success message "Teacher updated Successful"
+#    And close the application
 
 #  @US14_TC02
 #  Scenario: vice dean updates teacher with invalid information

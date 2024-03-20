@@ -5,6 +5,8 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import utilities.Driver;
 
+import java.util.List;
+
 public class Teachers_Page {
 
     public Teachers_Page(){
@@ -17,6 +19,9 @@ public class Teachers_Page {
 
     @FindBy(id = "react-select-2-input")
     public WebElement selectLessonAdmin;
+
+    @FindBy(id = "react-select-4-placeholder")
+    public WebElement editSelectLessonVD;
 
     @FindBy(id = "name")
     public WebElement name;
@@ -63,12 +68,20 @@ public class Teachers_Page {
     @FindBy(xpath = "//div[text()='Minimum 11 character (XXX-XX-XXXX)']")
     public WebElement ssnErrorMsg;
 
-    @FindBy(xpath = "//div[@class='table-responsive']//tr/td[4]")
-    public WebElement teacherUsername;
+    @FindBy(xpath = "//div[@class='table-responsive']//tbody//tr//td[4]")
+    public List<WebElement> usernameColumn;
 
     @FindBy(xpath = "//i[@class='fa-solid fa-pencil']")
     public WebElement editButton;
 
     @FindBy(xpath = "//*[text()='Next']")
     public WebElement nextPageButton;
+
+    @FindBy(xpath = "//*[text()='Last']")
+    public WebElement lastPageButton;
+
+    @FindBy(xpath = "//*[text()='Previous']")
+    public WebElement previousPageButton;
+
+
 }
