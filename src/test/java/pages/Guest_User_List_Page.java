@@ -63,12 +63,6 @@ public class Guest_User_List_Page {
     public WebElement registeredSuccessMessage;
 
 
-
-
-
-
-
-
     @FindBy(xpath = "//a[text()='Guest User']")
     public WebElement guestuserLink;
 

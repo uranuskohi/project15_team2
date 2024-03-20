@@ -22,11 +22,12 @@ Feature: Admin sees Guest User list
     Scenario:
     And clicks on loginIcon
     And enters "AdminBatch197" in the userName input field
-    And enters "Batch197+" in password field
+    And enters "Batch197+" in the password input field
     And clicks on Login button
     And clicks on Menu button
     And clicks on guest user on the main menu
-    Then verifies name column is visible
+    Then verifies "name","phone number","Ssn","Username" columns are visible
+    And delete the registered user from the list
 
 
 

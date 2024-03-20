@@ -37,12 +37,15 @@ public class CommonStepDefs {
 
     @Given("clicks on Login button")
     public void clicks_on_login_button() {
-        mainPage.loginButton.click();
+        ActionsUtils.actionsDoubleClick(mainPage.loginButton);
+//        JSUtils.JSclickWithTimeout(mainPage.loginButton);
+        WaitUtils.waitForPageToLoad(2);
     }
 
     @Given("clicks on Menu button")
     public void clicks_on_menu_button() {
         mainPage.menuButton.click();
+        WaitUtils.waitForPageToLoad(2);
     }
 
 

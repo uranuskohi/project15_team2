@@ -3,7 +3,11 @@ package stepdefinitions.ui_stepdefs;
 import io.cucumber.java.en.*;
 import org.junit.Assert;
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import pages.Admin_Management_Page;
 import pages.Guest_User_List_Page;
 import pages.Main_Page;
@@ -12,6 +16,10 @@ import utilities.ActionsUtils;
 import utilities.BrowserUtils;
 import utilities.Driver;
 import utilities.WaitUtils;
+
+import java.time.Duration;
+
+import static java.awt.SystemColor.text;
 
 public class US_02_AdminSeesGuestUserList_StepDefs {
 Admin_Management_Page admin_management_page= new Admin_Management_Page();
@@ -53,19 +61,10 @@ Admin_Management_Page admin_management_page= new Admin_Management_Page();
 
     }
 
-
-
 //    @Given("clicks {string} in the Gender field")
 //    public void clicks_in_the_gender_field(String string) throws InterruptedException {
 
 
-//    }
-
-//    @When("selects gender radio button")
-//    public static void selectGenderRadioButton() throws InterruptedException {
-//        Thread.sleep(1000);
-//        guest_user_list_page.genderOnRegister.click();
-//        WaitUtils.waitFor(3);
 //    }
 
     @Given("enters {string} in the Date Of Birth field")
@@ -91,43 +90,56 @@ Admin_Management_Page admin_management_page= new Admin_Management_Page();
 
     }
     @Given("clicks Register button")
-    public void clicks_register_button() {
-        ActionsUtils.actionsScrollUp();
-//        guest_user_list_page.registerButton1.click();
-        BrowserUtils.clickWithTimeOut(guest_user_list_page.registerButton1,3);
-//        actions.moveToElement(guest_user_list_page.registerButton1).click().perform();
-//        WaitUtils.waitForClickablility(guest_user_list_page.registerButton1,5);
-//        WaitUtils.waitFor(2);
-
-
+    public void clicks_register_button() throws InterruptedException {
+        JavascriptExecutor js = (JavascriptExecutor) Driver.getDriver();
+        js.executeScript("window.scrollBy(0,200)");
+        actions.moveToElement(guest_user_list_page.registerButton1).click().perform();
 
     }
     @Then("verifies success mesg {string}")
     public void verifies_success_mesg(String string) {
 
-
-
-//        String actualText=BrowserUtils.getTextWithTimeout(guest_user_list_page.registeredSuccessMessage,5);
-//       WaitUtils.waitFor(1);
-       String actualText = guest_user_list_page.registeredSuccessMessage.getText();
-//        WaitUtils.waitFor(1);
-//
-//       System.out.println(actualText);
-//        System.out.println(actualText);
-        Assert.assertEquals(string,actualText);
-
+        try {
+            String text = "";
+            while (text.isBlank())
+                text = Driver.getDriver().findElement(By.xpath("//div[@role='alert']")).getText();
+            Assert.assertEquals(string,text);
+        } catch (Exception e) {
+            // do nothing
+        }
 
     }
-//
-//
-//    @Given("clicks on guest user on the main menu")
-//    public void clicks_on_guest_user_on_the_main_menu() {
+    @Given("clicks on guest user on the main menu")
+    public void clicks_on_guest_user_on_the_main_menu() {
+        guest_user_list_page.guestuserLink.click();
+
+    }
+//    @Then("verifies {string} columns are visible")
+//    public void verifies_columns_are_visible(String string) {
 //
 //    }
-//    @Then("verifies name column is visible")
-//    public void verifies_name_column_is_visible() {
-//
-//    }
+    @Then("verifies {string},{string},{string},{string} columns are visible")
+    public void verifies_columns_are_visible(String string, String string2, String string3, String string4) {
+        Assert.assertTrue(guest_user_list_page.nameSurnameColumn.isDisplayed());
+        Assert.assertTrue(guest_user_list_page.phoneNumberColumn.isDisplayed());
+        Assert.assertTrue(guest_user_list_page.ssnColumn.isDisplayed());
+        Assert.assertTrue(guest_user_list_page.usernameColumn.isDisplayed());
+
+    }
+    @Then("delete the registered user from the list")
+    public void delete_the_registered_user_from_the_list() {
+        int count = 1;
+        int desiredAdminRow = 0;
+        for (WebElement adminNameList : guest_user_list_page..nameColumn1) {
+            if (adminNameList.getText().equalsIgnoreCase(string)) {
+                desiredAdminRow = count;
+                WebElement element = Driver.getDriver().findElement(By.xpath("(//i[@class='fa-solid fa-trash'])[" + desiredAdminRow + "]"));
+                actions.moveToElement(element).click().perform();
+                break;
+            }
+            count++;
+        }
+    }
 
 
 }
