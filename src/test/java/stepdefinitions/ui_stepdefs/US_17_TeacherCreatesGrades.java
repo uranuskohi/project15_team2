@@ -2,6 +2,7 @@ package stepdefinitions.ui_stepdefs;
 
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
+import static org.junit.Assert.*;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
@@ -11,9 +12,7 @@ import utilities.BrowserUtils;
 import utilities.Driver;
 import utilities.WaitUtils;
 
-import static org.junit.Assert.assertTrue;
-
-public class US_17 {
+public class US_17_TeacherCreatesGrades {
     Student_Info_Management_Page studentInfoManagementPage = new Student_Info_Management_Page();
     Actions actions = new Actions(Driver.getDriver());
 

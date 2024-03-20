@@ -101,8 +101,8 @@
 //
 //
 //
-////    @When("close the application")
-////    public void close_the_application() {
-////        Driver.closeDriver();
-////    }
+//    @When("close the application")
+//    public void close_the_application() {
+//        Driver.closeDriver();
+//    }
 //}

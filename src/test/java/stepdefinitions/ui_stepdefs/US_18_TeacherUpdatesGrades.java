@@ -14,7 +14,7 @@ import java.util.ArrayList;
 import java.util.List;
 import static org.junit.Assert.*;
 
-public class US_18 {
+public class US_18_TeacherUpdatesGrades {
 
     Student_Info_Management_Page studentInfoManagementPage = new Student_Info_Management_Page();
     Actions actions = new Actions(Driver.getDriver());
