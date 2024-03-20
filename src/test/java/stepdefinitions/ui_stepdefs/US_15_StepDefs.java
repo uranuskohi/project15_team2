@@ -106,7 +106,8 @@ public class US_15_StepDefs {
     }
     @Then("verify student is created successfully message")
     public void verify_student_is_created_successfully_message() {
-    studentManagementPage.createdSuccessfullyMessage.isDisplayed();
+        String actualResult = studentManagementPage.createdSuccessfullyMessage.getText();
+    Assert.assertEquals("Student saved Successfully",actualResult);
     }
 
 
@@ -136,6 +137,77 @@ public class US_15_StepDefs {
 
 
     }
+
+
+
+    //TC_02
+    @Given("enters name {string},surname {string},birthplace {string},email {string},invalid phone {string},dateofbirth {string},invalid ssn {string},username {string},fathername {string},mothername {string},password {string}")
+    public void enters_name_surname_birthplace_email_invalid_phone_dateofbirth_invalid_ssn_username_fathername_mothername_password(String name, String surname, String birthPlace, String email, String invalidPhone, String dateOfBirth, String invalidSnn, String userName, String fatherName, String motherName, String password) {
+
+        name = Faker.instance().name().firstName();
+
+        BrowserUtils.sendKeysWithTimeout(studentManagementPage.firstName,name,2);
+
+
+        surname = Faker.instance().name().lastName();
+        BrowserUtils.sendKeysWithTimeout(studentManagementPage.lastName,surname,2);
+
+
+        birthPlace = Faker.instance().address().city();
+        BrowserUtils.sendKeysWithTimeout(studentManagementPage.birthPlace,birthPlace,2);
+
+
+        email = Faker.instance().internet().emailAddress();
+        BrowserUtils.sendKeysWithTimeout(studentManagementPage.email,email,2);
+
+
+        invalidPhone = Faker.instance().number().digits(2)+"-"+Faker.instance().number().digits(4)+"-"+Faker.instance().number().digits(4);
+        BrowserUtils.sendKeysWithTimeout(studentManagementPage.phoneNumber,invalidPhone,2);
+
+
+        String year = String.valueOf(Faker.instance().number().numberBetween(1940,2023));
+        String month = String.valueOf(Faker.instance().number().numberBetween(1,13));
+        String day = String.valueOf(Faker.instance().number().numberBetween(1,32));
+        studentManagementPage.dateOfBirth.sendKeys(year, Keys.TAB,month,Keys.ENTER,day,Keys.ENTER);
+
+
+        invalidSnn = Faker.instance().number().digits(4)+"-"+Faker.instance().number().digits(3)+"-"+Faker.instance().number().digits(4);
+        BrowserUtils.sendKeysWithTimeout(studentManagementPage.ssn,invalidSnn,2);
+        ssnForVerification=invalidSnn;
+
+
+        userName = Faker.instance().name().fullName();
+        BrowserUtils.sendKeysWithTimeout(studentManagementPage.userName,userName,2);
+
+
+        fatherName = Faker.instance().name().firstName();
+        BrowserUtils.sendKeysWithTimeout(studentManagementPage.fatherName,fatherName,2);
+
+
+        motherName = Faker.instance().name().firstName();
+        BrowserUtils.sendKeysWithTimeout(studentManagementPage.motherName,motherName,2);
+
+
+        password = Faker.instance().internet().password(8,15,true,true,true)+"a1";
+        BrowserUtils.sendKeysWithTimeout(studentManagementPage.password,password,2);
+
+    }
+    @Then("verify invalid phone and invalid ssn  message")
+    public void verify_invalid_phone_and_invalid_ssn_message() {
+
+
+    }
+
+
+
+
+
+
+
+
+
+
+
 
 
 

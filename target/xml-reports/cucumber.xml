@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="Cucumber" time="18.798" tests="2" skipped="0" failures="1" errors="0">
+<testcase classname="Vice Dean should be able to view the messages sent by users." name="The Vice Dean should be able to view the messages, their authors, emails, sending date and subject information" time="8.473">
+<system-out><![CDATA[
+Given user goes to "https://managementonschools.com/" homepage..............passed
+And clicks on loginIcon.....................................................passed
+And enters "ViceDeanEsra" in the userName input field.......................passed
+And enters "ViceDeanEsra123" in the password input field....................passed
+And clicks on Login button..................................................passed
+And clicks on Menu button...................................................passed
+And clicks on "Contact Get All" on Main Menu................................passed
+Then verify Name is visible.................................................passed
+Then verify Email is visible................................................passed
+Then verify Date is visible.................................................passed
+Then verify Subject is visible..............................................passed
+Then verify message is visible..............................................passed
+And close the application...................................................passed
+]]></system-out>
+</testcase>
+<testcase classname="Vice Dean should be able to view the messages sent by users." name="The Vice Dean should be able to delete messages" time="10.132">
+<failure type="java.lang.AssertionError" message="The delete button should be visible">
+<![CDATA[java.lang.AssertionError: The delete button should be visible
+	at org.junit.Assert.fail(Assert.java:89)
+	at org.junit.Assert.assertTrue(Assert.java:42)
+	at stepdefinitions.ui_stepdefs.US_16_StepDefs.verify_ability_to_delete_messages(US_16_StepDefs.java:56)
+	at ✽.verify ability to delete messages(file:///C:/Users/esrab/IdeaProjects/project15_team2/./src/test/resources/features/ui_features/US_16_ViceDeanViewMessagesFromStudents.feature:27)
+]]>
+</failure>
+<system-out><![CDATA[
+Given user goes to "https://managementonschools.com/" homepage..............passed
+And clicks on loginIcon.....................................................passed
+And enters "ViceDeanEsra" in the userName input field.......................passed
+And enters "ViceDeanEsra123" in the password input field....................passed
+And clicks on Login button..................................................passed
+And clicks on Menu button...................................................passed
+And clicks on "Contact Get All" on Main Menu................................passed
+Then verify ability to delete messages......................................failed
+And close the application...................................................skipped
+]]></system-out>
+</testcase>
+</testsuite>

@@ -20,8 +20,8 @@ import org.junit.runner.RunWith;
 
         features = "./src/test/resources/features",
         glue = {"stepdefinitions", "hooks"},
-        dryRun = true,
-        tags = "@US_15_UI"
+        dryRun = false,
+        tags = ""
 
 
 
