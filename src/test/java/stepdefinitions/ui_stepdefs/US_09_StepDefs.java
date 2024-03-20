@@ -3,10 +3,7 @@ package stepdefinitions.ui_stepdefs;
 import io.cucumber.java.en.*;
 import org.openqa.selenium.interactions.Actions;
 import pages.Lessons_Page;
-import utilities.BrowserUtils;
-import utilities.JSUtils;
-import utilities.MediaUtils;
-import utilities.WaitUtils;
+import utilities.*;
 
 import java.io.IOException;
 
@@ -14,7 +11,6 @@ import static org.junit.Assert.assertTrue;
 
 
 public class US_09_StepDefs {
-
     Lessons_Page lessonsPage = new Lessons_Page();
     Actions action;
     @When("scroll down to Lesson List")

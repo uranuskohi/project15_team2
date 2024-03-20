@@ -1,9 +1,11 @@
 package stepdefinitions.ui_stepdefs;
 
 import io.cucumber.java.en.*;
-import org.openqa.selenium.support.ui.Wait;
 import pages.Main_Page;
-import utilities.*;
+import utilities.BrowserUtils;
+import utilities.ConfigReader;
+import utilities.Driver;
+import utilities.JSUtils;
 
 import static utilities.WaitUtils.waitFor;
 
@@ -19,7 +21,6 @@ public class CommonStepDefs {
 
     @Given("clicks on loginIcon")
     public void clicks_on_login_icon() {
-//        Driver.getDriver().navigate().refresh();
         mainPage.loginIconAtHeader.click();
     }
 
@@ -35,7 +36,6 @@ public class CommonStepDefs {
 
     @Given("clicks on Login button")
     public void clicks_on_login_button() {
-        WaitUtils.waitFor(1);
         mainPage.loginButton.click();
     }
 
@@ -89,10 +89,7 @@ public class CommonStepDefs {
 
         //Close application
         @When("close the application")
-        public void close_the_application () {
-        WaitUtils.waitFor(2);
-            Driver.closeDriver();
-        }
+        public void close_the_application () {Driver.closeDriver();}
 
     }
 

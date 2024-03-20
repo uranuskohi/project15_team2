@@ -64,6 +64,17 @@ public class Student_Management_Page {
     public WebElement lastPageButton;
 
 
+    //Added by Esra
+    @FindBy(xpath = "//div[text()='Student saved Successfully']")
+    public WebElement createdSuccessfullyMessage;
+    @FindBy(xpath = "//span[text()='Previous']")
+    public WebElement previousButton;
+
+
+
+
+
+
 
 
 }
