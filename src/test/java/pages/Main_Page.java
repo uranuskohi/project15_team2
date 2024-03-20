@@ -18,6 +18,9 @@ public class Main_Page {
     @FindBy(xpath = "//a[@class='header_link ms-2']") //---Does not work
     public WebElement loginIconAtHeader;
 
+    @FindBy(xpath ="//a[@href='/login']")
+    public WebElement loginButtonMainPage;
+
 //    @FindBy(xpath = "//i[@class='fa fa-lock']") ---Does not work
 //    public WebElement getLoginIconAtHeader;
 

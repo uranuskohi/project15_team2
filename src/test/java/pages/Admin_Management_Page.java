@@ -67,6 +67,15 @@ public class Admin_Management_Page {
     @FindBy(xpath = "(//td)[42]")
     public WebElement deleteButton;
 
+    @FindBy(xpath = "//div[text()='Admin deleted Successful']")
+    public WebElement adminDeletedSuccessfulMessage;
+
+    @FindBy(xpath = "//div[@id='2']")
+    public WebElement adminDeletedSuccessfulMessage1;
+
+    @FindBy(xpath = "//div[@role='alert']")
+    public WebElement adminDeletedSuccessfulMessage2;
+
     @FindBy(xpath = "(//div[@class='invalid-feedback'])[1]")
     public WebElement requiredMessageUnderName;
 

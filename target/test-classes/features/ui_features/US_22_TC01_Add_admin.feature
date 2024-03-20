@@ -1,4 +1,4 @@
-
+@US_22
 Feature: User adds Admin
   Background:
     Given user goes to "https://managementonschools.com/" homepage
@@ -19,16 +19,18 @@ Feature: User adds Admin
     And enters password in Password field
     And clicks on Submit button
     Then verifies success message "Admin Saved"
+    And scrolls down to the last page
+    And goes to the last page
+    And scrolls up to the admin list
+    And Delete if the admin name "Ashley Smith" exist on the Admin List
+    Then verifies message "Admin deleted Successful" message
+    And close the application
 
   @US_22_TC02
   Scenario: Admin shouldn't be created with blank name field
-    And scrolls down to the last page
-     And goes to the last page
-     And scrolls up to the admin list
-    And Delete if the admin name "Ashley Smith" exist on the Admin List
 #    And admin is in admin management page
 #    And leaves blank in the name field
-    And scrolls up to the list
+   # And scrolls up to the list
     And enters "Smith" again in the surname field
     And enters "Istanbul" in Birth Place box
     And clicks "Female" in Gender radio button
@@ -39,3 +41,4 @@ Feature: User adds Admin
     And enters password in Password field
     And clicks on Submit button
     Then verifies "Required" message
+    And close the application

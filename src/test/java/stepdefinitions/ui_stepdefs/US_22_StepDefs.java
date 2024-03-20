@@ -77,7 +77,6 @@ public class US_22_StepDefs {
         Assert.assertEquals(string, actualText);
 
     }
-//  TC02
 
     @Given("scrolls down to the last page")
     public void scrolls_down_to_the_last_page() {
@@ -93,46 +92,53 @@ public class US_22_StepDefs {
     }
 
     @Given("scrolls up to the admin list")
-    public void scrolls_up_to_the_admin_list() {
+    public void scrolls_up_to_the_admin_list() throws InterruptedException {
         ActionsUtils.actionsScrollUp();
+        WaitUtils.waitForVisibility(By.xpath("(//span[normalize-space()='Ashley Smith'])[1]"),5);
+        Thread.sleep(2000);
     }
 
 
     @Given("Delete if the admin name {string} exist on the Admin List")
     public void delete_if_the_admin_name_exist_on_the_admin_list(String string) {
-
-        boolean dataExist=false;
-
-        while(!dataExist){
-            WebElement createdData=Driver.getDriver().findElement(By.xpath("(//span[normalize-space()='Ashley Smith'])[1]"));
-
-            if(createdData.isDisplayed()){
-                dataExist=true;
-                System.out.println("dataExist:"+createdData.getText());
+        int count = 1;
+        int desiredAdminRow = 0;
+        for (WebElement adminNameList : admin_management_page.nameColumn1) {
+            if (adminNameList.getText().equalsIgnoreCase(string)) {
+                desiredAdminRow = count;
+                WebElement element = Driver.getDriver().findElement(By.xpath("(//i[@class='fa-solid fa-trash'])[" + desiredAdminRow + "]"));
+                actions.moveToElement(element).click().perform();
                 break;
             }
-
+            count++;
         }
 
+
     }
-//    int count = 1;
-//    int desiredAdminRow = 0;
-//        for (WebElement adminNameList : admin_management_page.nameColumn1) {
-//        if (adminNameList.getText().equalsIgnoreCase(string)) {
-//            desiredAdminRow = count;
-//            WebElement element = Driver.getDriver().findElement(By.xpath("(//i[@class='fa-solid fa-trash'])[" + desiredAdminRow + "]"));
-//            actions.moveToElement(element).click().perform();
+
+    @Then("verifies message {string} message")
+    public void verifies_message_message(String string) {
+        WaitUtils.waitFor(1);
+        String actualText = admin_management_page.adminDeletedSuccessfulMessage2.getText();
+        System.out.println(actualText);
+        WaitUtils.waitFor(1);
+        System.out.println(actualText);
+        Assert.assertEquals(string, actualText);
+    }
+
+//    boolean dataExist=false;
+//
+//        while(!dataExist){
+//        WebElement createdData=Driver.getDriver().findElement(By.xpath("(//span[normalize-space()='Ashley Smith'])[1]"));
+//
+//        if(createdData.isDisplayed()){
+//            dataExist=true;
+//            System.out.println("dataExist:"+createdData.getText());
 //            break;
 //        }
-//        count++;
+//
 //    }
 //
-
-
-
-
-
-
 //    ///////////////////////////////// US_22_TC02
 //    @Given("admin is in admin management page")
 //    public void admin_is_in_admin_management_page() {

@@ -11,7 +11,64 @@ public class Guest_User_List_Page {
         PageFactory.initElements(Driver.getDriver(),this);
     }
 
-    //Precondition Admin goes to the webpage and login
+
+
+    @FindBy(xpath = "//input[@id='name']")
+    public WebElement nameOnRegister;
+
+    @FindBy(xpath = "//input[@id='surname']")
+    public WebElement surnameOnRegister;
+
+    @FindBy(xpath = "//input[@id='birthPlace']")
+    public WebElement birthplaceOnRegister;
+
+    @FindBy(xpath = "//input[@id='phoneNumber']")
+    public WebElement phoneOnRegister;
+
+    @FindBy(xpath = "//input[@value='FEMALE']")
+    public WebElement genderOnRegister;
+
+    @FindBy(xpath = "(//input[@type='radio'])[1]")
+    public WebElement genderFemaleOnRegister;
+
+    @FindBy(xpath = "//input[@id='birthDay']")
+    public WebElement dateOfBirthOnRegister;
+
+    @FindBy(xpath = "//input[@id='ssn']")
+    public WebElement ssnOnRegister;
+
+    @FindBy(xpath = "//input[@id='username']")
+    public WebElement userNameOnRegister;
+
+    @FindBy(xpath = "//input[@id='password']")
+    public WebElement passwordOnRegister;
+
+    @FindBy(xpath = "//button[text()='Register']")
+    public WebElement registerButton;
+
+    @FindBy(xpath = "(//button[normalize-space()='Register'])[1]")
+    public WebElement registerButton1;
+
+
+    @FindBy(xpath = "//div[@class='Toastify']")
+    public WebElement successMessage;
+
+    @FindBy(xpath = "//div[@role='alert']")
+    public WebElement registerSuccessMessage1;
+
+    @FindBy(xpath = "(//div[contains(text(),'Guest User registered.')])[1]")
+    public WebElement registerSuccessMessage2;
+
+    @FindBy(xpath = "//*[text()='Guest User registered.']")
+    public WebElement registeredSuccessMessage;
+
+
+
+
+
+
+
+
     @FindBy(xpath = "//a[text()='Guest User']")
     public WebElement guestuserLink;
 
@@ -32,11 +89,8 @@ public class Guest_User_List_Page {
 
 
 
-
-
     @FindBy(xpath = "//div[@class='table-responsive']//table/thead/tr/th[1]")
     public WebElement nameOnGuestUserList;
-
     @FindBy(xpath = "//div[@class='table-responsive']//table/thead/tr/th[2]")
     public WebElement phoneNumOnGuestUserList;
 

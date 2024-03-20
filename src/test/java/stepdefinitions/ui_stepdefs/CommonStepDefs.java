@@ -1,11 +1,9 @@
 package stepdefinitions.ui_stepdefs;
 
 import io.cucumber.java.en.*;
+import org.openqa.selenium.Keys;
 import pages.Main_Page;
-import utilities.BrowserUtils;
-import utilities.ConfigReader;
-import utilities.Driver;
-import utilities.JSUtils;
+import utilities.*;
 
 import static utilities.WaitUtils.waitFor;
 
@@ -20,8 +18,10 @@ public class CommonStepDefs {
     }
 
     @Given("clicks on loginIcon")
-    public void clicks_on_login_icon() {
+    public void clicks_on_login_icon() throws InterruptedException {
+        Thread.sleep(2000);
         mainPage.loginIconAtHeader.click();
+        WaitUtils.waitForPageToLoad(5);
     }
 
     @Given("enters {string} in the userName input field")
@@ -94,6 +94,7 @@ public class CommonStepDefs {
     @When("close the application")
     public void close_the_application() {
         Driver.closeDriver();
+//        Driver.getDriver().quit();
     }
 
 //    @And("clicks on getloginIcon")
