@@ -24,7 +24,7 @@ public class US_13_and_US_24_StepDefs {
     @When("enters {string} in name field")
     public void enters_in_name_field(String name) {
         name = faker.name().firstName();
-        nameForAssertion = name;
+//        nameForAssertion = name;
         teachersPage.name.sendKeys(name);
 //        teacherCredentials.setNameForAssertion(name);
 //        System.out.println(teacherCredentials.getNameForAssertion());
