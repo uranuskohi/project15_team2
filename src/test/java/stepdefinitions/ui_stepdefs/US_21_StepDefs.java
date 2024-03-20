@@ -81,6 +81,7 @@ public class US_21_StepDefs {
     }
     @And("student should be able to see the meeting created by his advisor on the Meet List")
     public void studentShouldBeAbleToSeeTheMeetingCreatedByHerHisAdvisorOnTheMeetList() {
+        WaitUtils.waitFor(1);
         chooseLessonManagementPage.givenDateFromTeacherToStudent.isDisplayed();
     }
 

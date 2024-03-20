@@ -46,11 +46,15 @@ public class US_09_StepDefs {
     public void goToTheLastPage() {
         lessonsPage.nextPage.isDisplayed();
     }
-
+    @And("go up")
+    public void goUp() {
+        WaitUtils.waitFor(1);
+        JSUtils.JSscrollAllTheWayUp();
+    }
     @When("vice dean is able to see and delete the created lesson")
     public void vice_dean_is_able_to_see_and_delete_the_created_lesson() {
-        WaitUtils.waitFor(1);
-        lessonsPage.deleteButtonForLesson.click();
+        WaitUtils.waitFor(2);
+        BrowserUtils.clickWithTimeOut(lessonsPage.deleteButtonForLesson,2);
     }
 
     @When("vice dean should be able to update the lesson")
@@ -63,8 +67,10 @@ public class US_09_StepDefs {
 
     @Then("verify the lesson is deleted")
     public void verifyTheLessonIsDeleted() {
+        WaitUtils.waitFor(1);
         assertTrue(lessonsPage.deleteLessonVerification.isDisplayed());
     }
+
 
 
 }

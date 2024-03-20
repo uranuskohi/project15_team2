@@ -75,7 +75,7 @@ public class Choose_Lesson_Management_Page {
     @FindBy(xpath = "//*[text()='Grades and Announcements']")
     public WebElement gradeAndAnnouncements;
 
-    @FindBy(xpath = "//*[text()='2024-03-25']")
+    @FindBy(xpath = "//*[text()='congratulations']")
     public WebElement givenDateFromTeacherToStudent;
 
     @FindBy(xpath = "(//*[text()='100'])[2]")

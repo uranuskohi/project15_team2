@@ -38,7 +38,7 @@ public class Lessons_Page {
     public WebElement requiredFiledErrorMessage;
 
 
-    @FindBy(xpath = "(//*[@class='fa-solid fa-trash'])[19]")
+    @FindBy(xpath = "(//*[@class='fa-solid fa-trash'])[5]")
     public WebElement deleteButtonForLesson;
 
     @FindBy(xpath = "(//a[@role='button'])[18]")

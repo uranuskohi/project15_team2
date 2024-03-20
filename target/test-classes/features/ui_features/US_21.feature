@@ -1,5 +1,5 @@
 
-@userStory21
+@userStory21  @hehe
 Feature: Students, choose lesson, grades and announcement
   Background:
     Given user goes to "https://managementonschools.com/" homepage

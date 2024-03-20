@@ -16,6 +16,7 @@ Feature: Vice Deans should be able to view the lesson list and make updates
     And vice dean can see the Credit
       And click on the last page
       And go to the last page
+      And go up
     And vice dean is able to see and delete the created lesson
     And vice dean should be able to update the lesson
       Then verify the lesson is deleted

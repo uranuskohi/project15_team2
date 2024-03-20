@@ -90,6 +90,7 @@ public class CommonStepDefs {
         //Close application
         @When("close the application")
         public void close_the_application () {
+        WaitUtils.waitFor(2);
             Driver.closeDriver();
         }
 
