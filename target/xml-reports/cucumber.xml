@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="Cucumber" time="47.151" tests="1" skipped="0" failures="0" errors="0">
-<testcase classname="US_10" name=": TC_01 Vice Dean should be able to select the start and end time for the course - Example #1.1" time="46.793">
+<testsuite name="Cucumber" time="11.153" tests="1" skipped="0" failures="1" errors="0">
+<testcase classname="US_11" name="TC_02 Vice Dean should be able to update from the Lesson Program List" time="10.872">
+<failure type="java.lang.AssertionError" message="no update button">
+<![CDATA[java.lang.AssertionError: no update button
+	at org.junit.Assert.fail(Assert.java:89)
+	at org.junit.Assert.assertTrue(Assert.java:42)
+	at stepdefinitions.ui_stepdefs.US_11_Stepdefs.userCannotClickOnTheUpdateButton(US_11_Stepdefs.java:63)
+	at ✽.User cannot click on the Update Button(file:///C:/Users/TAMER/IdeaProjects/project15_team2/./src/test/resources/features/ui_features/US_11_ViceDeanViewsSchedule.feature:33)
+]]>
+</failure>
 <system-out><![CDATA[
 Given user goes to "https://managementonschools.com/" homepage..............passed
 And clicks on loginIcon.....................................................passed
@@ -10,14 +18,13 @@ And clicks on Login button..................................................pass
 And clicks on Menu button...................................................passed
 And clicks on "Lesson Management" on Main Menu..............................passed
 And User clicks on the Lesson Program button................................passed
-And And User selects an education class "C#" from the provided options......passed
-And User chooses the educational terms "SPRING_SEMESTER" from the available list.passed
-And User selects a day "WEDNESDAY" from the dropdown menu...................passed
-And User chooses a start time "7:00AM" from the provided time slots.........passed
-And User selects a stop time "7:00PM" from the available time slots.........passed
-Then User clicks on the submit button.......................................passed
-And verify successful warning Pop-up message displayed......................passed
-And close the application...................................................passed
+And User sees Lesson Program List details...................................passed
+And User sees Lesson in the Lesson Program List.............................passed
+And User sees Day in the Lesson Program List................................passed
+And User sees Start Time in the Lesson Program List.........................passed
+Then User sees Stop Time in the Lesson Program List.........................passed
+Then User cannot click on the Update Button.................................failed
+And close the application...................................................skipped
 ]]></system-out>
 </testcase>
 </testsuite>
