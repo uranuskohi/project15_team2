@@ -24,10 +24,9 @@ public class US_14_ViceDeanUpdatesTeacher {
     WebElement usernameElement;
 
     //  US14_TC_01_update_teacher_asvicedean_valid_StepDefs
-    @Given("user finds {string} on teacher list")
-    public void user_finds_on_teacher_list(String username) {
+    @Given("user is on last page of teacher list")
+    public void user_is_on_last_page_of_teacher_list() {
 
-//        System.out.println(fullNameForAssertion);
         JSUtils.JSscrollIntoView(teachersPage.lastPageButton);
         BrowserUtils.clickWithTimeOut(teachersPage.lastPageButton, 2);
 
@@ -36,19 +35,19 @@ public class US_14_ViceDeanUpdatesTeacher {
 //        boolean usernameFound = false;
 //        while (!usernameFound) {
 
-            for (WebElement teacherUsernameList : teachersPage.usernameColumn) {
+        for (WebElement teacherUsernameList : teachersPage.usernameColumn) {
 
 //                if (teacherUsernameList.getText().equalsIgnoreCase("bobsmith")) {
-                desiredTeacherRow = count;
-                count++;
-            }
-                    nameElement = Driver.getDriver().findElement(By.xpath("(//div[@class='table-responsive']//tbody//tr//td[1])[" + desiredTeacherRow + "]"));
-                    phoneElement = Driver.getDriver().findElement(By.xpath("(//div[@class='table-responsive']//tbody//tr//td[2])[" + desiredTeacherRow + "]"));
-                    ssnElement = Driver.getDriver().findElement(By.xpath("(//div[@class='table-responsive']//tbody//tr//td[3])[" + desiredTeacherRow + "]"));
-                    usernameElement = Driver.getDriver().findElement(By.xpath("(//div[@class='table-responsive']//tbody//tr//td[4])[" + desiredTeacherRow + "]"));
+            desiredTeacherRow = count;
+            count++;
+        }
+        nameElement = Driver.getDriver().findElement(By.xpath("(//div[@class='table-responsive']//tbody//tr//td[1])[" + desiredTeacherRow + "]"));
+        phoneElement = Driver.getDriver().findElement(By.xpath("(//div[@class='table-responsive']//tbody//tr//td[2])[" + desiredTeacherRow + "]"));
+        ssnElement = Driver.getDriver().findElement(By.xpath("(//div[@class='table-responsive']//tbody//tr//td[3])[" + desiredTeacherRow + "]"));
+        usernameElement = Driver.getDriver().findElement(By.xpath("(//div[@class='table-responsive']//tbody//tr//td[4])[" + desiredTeacherRow + "]"));
 //                    usernameFound = true;
 //                    break;
-            }
+    }
 //                if (!usernameFound) {
 //                    WaitUtils.waitFor(1);
 //                    actions.moveToElement(teachersPage.previousPageButton).click().perform();
@@ -58,29 +57,33 @@ public class US_14_ViceDeanUpdatesTeacher {
 //        }
 
 
-//    @Then("verify fullname in name field")
-//    public void verify_fullname_in_name_field() {
-////    Assert.assertTrue(fullNameForAssertion.equalsIgnoreCase(nameElement.toString()));
-//        Assert.assertEquals("Bob Smith", nameElement.getText());
-//    }
-//
-//    @Then("verify {string} in phone field")
-//    public void verify_in_phone_field(String phone) {
-////        Assert.assertTrue(phoneForAssertion.equalsIgnoreCase(phoneElement.toString()));
-//        Assert.assertEquals(phone, nameElement.getText());
-//      }
-//
-//    @Then("verify {string} in ssn field")
-//    public void verify_in_ssn_field(String ssn) {
-////        Assert.assertTrue(ssnForAssertion.equalsIgnoreCase(ssnElement.toString()));
-//        Assert.assertEquals(ssn, nameElement.getText());
-//    }
-//
-//    @Then("verify {string} in user name field")
-//    public void verify_in_user_name_field(String username) {
-////        Assert.assertTrue(usernameForAssertion.equalsIgnoreCase(usernameElement.toString()));
-//        Assert.assertEquals(username, nameElement.getText());
-//    }
+    @Then("verify {string} in name field")
+    public void verify_in_name_field(String fullname) {
+//        Assert.assertEquals(fullNameForAssertion, actualName);
+        fullname = nameElement.getText();
+        Assert.assertEquals("Doreen Miller", fullname);
+    }
+
+    @Then("verify {string} in phone field")
+    public void verify_in_phone_field(String phone) {
+//        Assert.assertEquals(phoneForAssertion, actualPhone);
+        phone = phoneElement.getText();
+        Assert.assertEquals("561-265-9210", phone);
+      }
+
+    @Then("verify {string} in ssn field")
+    public void verify_in_ssn_field(String ssn) {
+//        Assert.assertEquals(ssnForAssertion, actualSsn);
+        ssn = ssnElement.getText();
+        Assert.assertEquals("667-12-7385", ssn);
+    }
+
+    @Then("verify {string} in user name field")
+    public void verify_in_user_name_field(String username) {
+//        Assert.assertEquals(usernameForAssertion, actualUsername);
+        username = usernameElement.getText();
+        Assert.assertEquals("ltdxjukewfvhgy",username);
+    }
 
     @When("clicks on edit button")
     public void clicks_on_edit_button() {
@@ -173,7 +176,7 @@ public class US_14_ViceDeanUpdatesTeacher {
     @When("enters {string} in edit user name field")
     public void enters_in_edit_user_name_field(String username) {
         teachersPage.editUserNameVD.sendKeys(Keys.DELETE);
-        username = faker.regexify("[a-z]{9}");
+        username = faker.regexify("[a-z]{5}");
         teachersPage.editUserNameVD.sendKeys(username);
         WaitUtils.waitFor(2);
     }
@@ -190,7 +193,7 @@ public class US_14_ViceDeanUpdatesTeacher {
         WaitUtils.waitFor(1);
     }
 
-//    US14_TC_02_update_teacher_asvicedean_invalid_StepDefs
+    //    US14_TC_02_update_teacher_asvicedean_invalid_StepDefs
     @When("removes email from email field")
     public void removes_email_from_email_field() {
         teachersPage.editEmailVD.sendKeys(Keys.CONTROL, "a", Keys.DELETE);
