@@ -24,6 +24,12 @@ public class Admin_Management_Page {
 
     @FindBy(xpath = "//input[@value='FEMALE']")
     public WebElement genderFemaleOnAdminPage;
+//----------------------------------------------
+//    Uranus: male gender button
+
+    @FindBy(xpath = "//input[@value='MALE']")
+    public WebElement genderMaleOnAdminPage;
+//-------------------------------------------------------
 
     @FindBy(xpath = "//input[@id='birthDay']")
     public WebElement dateOfBirthOnAdminPage;

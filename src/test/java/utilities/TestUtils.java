@@ -1,7 +1,6 @@
 package utilities;
 
 import com.github.javafaker.Faker;
-import testdata.Teachers;
 
 import java.text.SimpleDateFormat;
 
@@ -50,15 +49,6 @@ public class TestUtils {
         return fakerSsn;
     }
 
-    public static String usernameGenerator() {
-        Faker faker = new Faker();
-        String fakerUsername;
-        do {
-            fakerUsername = faker.lorem().word()+faker.lorem().word();
-        } while (fakerUsername.length()<=4);
-        return fakerUsername;
-    }
-
     public static String passwordGenerator() {
         Faker faker = new Faker();
         String fakerPassword;
@@ -75,6 +65,15 @@ public class TestUtils {
             }
         }
         return false;
+    }
+
+    public static String usernameGenerator() {
+        Faker faker = new Faker();
+        String fakerUsername;
+        do {
+            fakerUsername = faker.lorem().word()+faker.lorem().word();
+        } while (fakerUsername.length()<=4);
+        return fakerUsername;
     }
 
 }
