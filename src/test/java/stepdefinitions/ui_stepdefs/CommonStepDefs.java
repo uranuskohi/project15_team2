@@ -2,10 +2,7 @@ package stepdefinitions.ui_stepdefs;
 
 import io.cucumber.java.en.*;
 import pages.Main_Page;
-import utilities.BrowserUtils;
-import utilities.ConfigReader;
-import utilities.Driver;
-import utilities.JSUtils;
+import utilities.*;
 
 import static utilities.WaitUtils.waitFor;
 
@@ -36,8 +33,7 @@ public class CommonStepDefs {
 
     @Given("clicks on Login button")
     public void clicks_on_login_button() {
-        mainPage.loginButton.click();
-    }
+        ActionsUtils.actionsDoubleClick(mainPage.loginButton); }
 
     @Given("clicks on Menu button")
     public void clicks_on_menu_button() { mainPage.menuButton.click(); }
@@ -89,9 +85,7 @@ public class CommonStepDefs {
 
         //Close application
         @When("close the application")
-        public void close_the_application () {
-            Driver.closeDriver();
-        }
+        public void close_the_application () {Driver.closeDriver();}
 
     }
 

@@ -24,6 +24,8 @@ public class US_20_Teacher_View_Update_Delete_Meeting_StepDefs {
     @And("the user sees the meeting arranged from US_19")
     public void theUserSeesTheMeetingArrangedFromUS_() {
         BrowserUtils.verifyElementDisplayed(meetManagementPage.verifyMeetDateIsVisible);
+        BrowserUtils.verifyElementDisplayed(meetManagementPage.descriptionVisible);
+        assertTrue(meetManagementPage.descriptionVisible.isDisplayed());
         assertTrue(meetManagementPage.verifyMeetDateIsVisible.isDisplayed());
     }
 
@@ -81,7 +83,7 @@ public class US_20_Teacher_View_Update_Delete_Meeting_StepDefs {
 //        } catch (IOException e) {
 //            throw new RuntimeException(e);
 //        }
-        //  assertTrue(meetManagementPage.mustBeFutureDateFromEdit.isDisplayed());
+          assertTrue(meetManagementPage.mustBeFutureDateFromEdit.isDisplayed());
     }
 
     @When("the user dismisses the error pop-up")
