@@ -11,11 +11,11 @@ Feature: vice dean updates teacher
 
   @US14_TC01
   Scenario: vice dean updates teacher list with valid information
-    Given user finds "username" on teacher list
-#    Then verify fullname in name field
-#    And verify "phone" in phone field
-#    And verify "ssn" in ssn field
-#    And verify "username" in user name field
+    Given user is on last page of teacher list
+    Then verify "fullname" in name field
+    And verify "phone" in phone field
+    And verify "ssn" in ssn field
+    And verify "username" in user name field
     When clicks on edit button
     And enters "Cypress" in edit select lesson field
     And enters "name" in edit name field
@@ -35,7 +35,7 @@ Feature: vice dean updates teacher
 
   @US14_TC02
   Scenario: vice dean updates teacher with invalid information
-    Given user finds "teacher" on teacher list
+    Given user is on last page of teacher list
     When clicks on edit button
     And enters "C#" in edit select lesson field
     And enters "name" in edit name field
