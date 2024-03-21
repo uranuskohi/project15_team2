@@ -64,12 +64,6 @@ Admin_Management_Page admin_management_page= new Admin_Management_Page();
 
     }
 
-//    @Given("clicks {string} in the Gender field")
-//    public void clicks_in_the_gender_field(String string) throws InterruptedException {
-
-
-//    }
-
     @Given("enters {string} in the Date Of Birth field")
     public void enters_in_the_date_of_birth_field(String string) {
         guest_user_list_page.dateOfBirthOnRegister.sendKeys(string);
@@ -129,21 +123,6 @@ Admin_Management_Page admin_management_page= new Admin_Management_Page();
 
     }
 
-//    @Then("goes to the last guest page")
-//    public void goes_to_the_last_guest_page() {
-//        Driver.getDriver().findElement(By.xpath("(//a[@class='page-link'])[4]")).click();
-//
-// //       BrowserUtils.clickWithTimeOut(guest_user_list_page.lastpageButton,2);
-//        waitUtils.waitFor(3);
-//        ActionsUtils.actionsScrollUp();
-//        WaitUtils.waitForVisibility(By.xpath("(//span[normalize-space()='Ashley Smith'])[1]"),5);
-//    }
-
-//    @Given("scrolls up to the list")
-//    public void scrolls_up_to_the_admin_list() throws InterruptedException {
-
-//        Thread.sleep(2000);
-//    }
 
     @Then("delete if the registered user {string} exist in the list")
     public void delete_if_the_registered_user_exist_in_the_list(String string) {
@@ -170,14 +149,6 @@ Admin_Management_Page admin_management_page= new Admin_Management_Page();
 //            };
 //
 //        }
-//
-//    }
-
-//    @And("Admin must be able to see {string} message")
-//    public void adminMustBeAbleToSeeMessage(String message) {
-
-//
-//    }
 @Then("verifies the message {string}")
 public void verifies_the_message(String string) {
     try {
