@@ -8,46 +8,51 @@ import pages.Teachers_Page;
 import utilities.*;
 import static utilities.TestUtils.*;
 
-public class US_13_and_US_24_StepDefs {
+public class US_13_and_US_24_ViceDeanAndAdminCreatesTeacher {
 
     Teachers_Page teachersPage = new Teachers_Page();
     Faker faker = new Faker();
-
     Actions actions = new Actions(Driver.getDriver());
+    String nameForAssertion;
+    String surnameForAssertion;
+    public static String fullNameForAssertion;
+    public static String phoneForAssertion;
+    public static String ssnForAssertion;
+    public static String usernameForAssertion;
 
-    public static String nameForAssertion;
-
-    @When("enters {string} in name field")
-    public void enters_in_name_field(String name) {
-        name = faker.name().firstName();
-        nameForAssertion = name;
-        teachersPage.name.sendKeys(name);
-//        teacherCredentials.setNameForAssertion(name);
-//        System.out.println(teacherCredentials.getNameForAssertion());
-        WaitUtils.waitFor(1);
-    }
 
     //  TC_01_create_teacher_asvicedean_valid StepDefs
     @When("enters {string} in select lesson field as {string}")
     public void enters_in_select_lesson_field(String lesson, String user) {
-        ActionsUtils.actionsDoubleClick(teachersPage.selectLessonViceDean);
-        WaitUtils.waitFor(1);
-        teachersPage.selectLessonViceDean.sendKeys(lesson, Keys.TAB, user);
-        WaitUtils.waitFor(1);
-
-        if(user.equals("admin")){
-            teachersPage.selectLessonAdmin.click();
-        } else if (user.equals("vice dean")){
-            teachersPage.selectLessonViceDean.click();
-        } else {
-            System.out.println("Unknown user: " +user);
+        WaitUtils.waitFor(2);
+        switch (user) {
+            case "vice dean":
+                actions.doubleClick(teachersPage.selectLessonViceDean);
+                teachersPage.selectLessonViceDean.sendKeys(lesson, Keys.TAB);
+                break;
+            case "admin":
+                actions.doubleClick(teachersPage.selectLessonAdmin);
+                teachersPage.selectLessonAdmin.sendKeys(lesson, Keys.TAB);
+                break;
         }
+        WaitUtils.waitFor(1);
+    }
+
+    @When("enters {string} in name field")
+    public void enters_in_name_field(String name) {
+        name = faker.name().firstName();
+        String nameForAssertion = name;
+        teachersPage.name.sendKeys(nameForAssertion);
+        WaitUtils.waitFor(1);
     }
 
     @When("enters {string} in surname field")
     public void enters_in_surname_field(String surname) {
         surname = faker.name().lastName();
-        teachersPage.surname.sendKeys(surname);
+        surnameForAssertion = surname;
+        String fullNameForAssertion = nameForAssertion+" "+surnameForAssertion;
+        System.out.println(fullNameForAssertion);
+        teachersPage.surname.sendKeys(surnameForAssertion);
         WaitUtils.waitFor(1);
     }
 
@@ -60,7 +65,7 @@ public class US_13_and_US_24_StepDefs {
 
     @When("enters {string} in email field")
     public void enters_in_email_field(String email) {
-        email = usernameGenerator()+"@"+faker.internet().domainName();
+        email = faker.regexify("[a-z]{9}")+"@"+faker.internet().domainName();
         teachersPage.email.sendKeys(email);
         WaitUtils.waitFor(1);
     }
@@ -68,6 +73,7 @@ public class US_13_and_US_24_StepDefs {
     @When("enters {string} in phone field")
     public void enters_in_phone_field(String phone) {
         phone = phoneNumberGenerator();
+        phoneForAssertion = phone;
         teachersPage.phone.sendKeys(phone);
         WaitUtils.waitFor(1);
     }
@@ -98,12 +104,14 @@ public class US_13_and_US_24_StepDefs {
     @When("enters {string} in ssn field")
     public void enters_in_ssn_field(String ssn) {
         ssn = ssnGenerator();
+        ssnForAssertion = ssn;
         teachersPage.ssn.sendKeys(ssn);
     }
 
     @When("enters {string} in user name field")
     public void enters_in_user_name_field(String username) {
-        username = TestUtils.usernameGenerator();
+        username = faker.regexify("[a-z]{9}");
+        usernameForAssertion = username;
         teachersPage.userName.sendKeys(username);
     }
 
@@ -132,11 +140,10 @@ public class US_13_and_US_24_StepDefs {
     @When("enters only {int} digits {string} in ssn field")
     public void enters_only_digits_in_ssn_field(Integer numberOfDigits, String ssn) {
         teachersPage.ssn.sendKeys(ssn8DigitGenerator());
-//        teachersPage.ssn.sendKeys(string);
     }
 
-    @Then("verify error message {string}")
-    public void verify_error_message(String string) {
+    @Then("verify ssn error message {string}")
+    public void verify_ssn_error_message(String string) {
         Assert.assertEquals(string, teachersPage.ssnErrorMsg.getText());
     }
 

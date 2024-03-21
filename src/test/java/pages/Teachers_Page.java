@@ -13,7 +13,6 @@ public class Teachers_Page {
         PageFactory.initElements(Driver.getDriver(),this);
     }
 
-
     @FindBy(id = "react-select-3-input")
     public WebElement selectLessonViceDean;
 
@@ -107,6 +106,9 @@ public class Teachers_Page {
     @FindBy(xpath = "//div[text()='Minimum 11 character (XXX-XX-XXXX)']")
     public WebElement ssnErrorMsg;
 
+    @FindBy(xpath = "//div[text()='Required']")
+    public WebElement emailErrorMsg;
+
     @FindBy(xpath = "//div[@class='table-responsive']//tbody//tr//td[4]")
     public List<WebElement> usernameColumn;
 
@@ -121,6 +123,8 @@ public class Teachers_Page {
 
     @FindBy(xpath = "//*[text()='Previous']")
     public WebElement previousPageButton;
+
+
 
 
 }

@@ -1,87 +1,86 @@
 package stepdefinitions.ui_stepdefs;
 import com.github.javafaker.Faker;
 import io.cucumber.java.en.*;
+import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import pages.Teachers_Page;
 import utilities.*;
-
-import static stepdefinitions.ui_stepdefs.US_13_and_US_24_StepDefs.nameForAssertion;
+import static stepdefinitions.ui_stepdefs.US_13_and_US_24_ViceDeanAndAdminCreatesTeacher.*;
 import static utilities.TestUtils.*;
 
-
-public class US_14_StepDefs {
+public class US_14_ViceDeanUpdatesTeacher {
 
     Teachers_Page teachersPage = new Teachers_Page();
     Faker faker = new Faker();
     Actions actions = new Actions(Driver.getDriver());
     public int desiredTeacherRow = 0;
 
+    WebElement nameElement;
+    WebElement phoneElement;
+    WebElement ssnElement;
+    WebElement usernameElement;
 
-
-    //  TC_01_update_teacher_asvicedean_valid StepDefs
+    //  US14_TC_01_update_teacher_asvicedean_valid_StepDefs
     @Given("user finds {string} on teacher list")
     public void user_finds_on_teacher_list(String username) {
 
-        System.out.println(nameForAssertion);
+//        System.out.println(fullNameForAssertion);
 
-        JSUtils.JSscrollAllTheWayDown();
+        JSUtils.JSscrollIntoView(teachersPage.lastPageButton);
         WaitUtils.waitFor(1);
         actions.moveToElement(teachersPage.lastPageButton).click().perform();
-        WaitUtils.waitFor(1);
+        WaitUtils.waitFor(2);
 
         int count = 1;
 
-        boolean usernameFound = false;
-
-        while (!usernameFound) {
+//        boolean usernameFound = false;
+//        while (!usernameFound) {
 
             for (WebElement teacherUsernameList : teachersPage.usernameColumn) {
 
-                if (teacherUsernameList.getText().equalsIgnoreCase("magnamqui")) {
-                    desiredTeacherRow = count;
-                    WebElement nameElement = Driver.getDriver().findElement(By.xpath("(//div[@class='table-responsive']//tbody//tr//td[1])[" + desiredTeacherRow + "]"));
-                    WebElement phoneElement = Driver.getDriver().findElement(By.xpath("(//div[@class='table-responsive']//tbody//tr//td[2])[" + desiredTeacherRow + "]"));
-                    WebElement ssnElement = Driver.getDriver().findElement(By.xpath("(//div[@class='table-responsive']//tbody//tr//td[3])[" + desiredTeacherRow + "]"));
-                    WebElement usernameElement = Driver.getDriver().findElement(By.xpath("(//div[@class='table-responsive']//tbody//tr//td[4])[" + desiredTeacherRow + "]"));
-
-                    usernameFound = true;
-                    break;
-                }
+//                if (teacherUsernameList.getText().equalsIgnoreCase("dwetryt")) {
+                desiredTeacherRow = count;
                 count++;
-
             }
-                if (!usernameFound) {
-                    WaitUtils.waitFor(1);
-                    actions.moveToElement(teachersPage.previousPageButton).click().perform();
-                    WaitUtils.waitFor(1);
-                    count = 1;
-                }
-        }
+                    nameElement = Driver.getDriver().findElement(By.xpath("(//div[@class='table-responsive']//tbody//tr//td[1])[" + desiredTeacherRow + "]"));
+                    phoneElement = Driver.getDriver().findElement(By.xpath("(//div[@class='table-responsive']//tbody//tr//td[2])[" + desiredTeacherRow + "]"));
+                    ssnElement = Driver.getDriver().findElement(By.xpath("(//div[@class='table-responsive']//tbody//tr//td[3])[" + desiredTeacherRow + "]"));
+                    usernameElement = Driver.getDriver().findElement(By.xpath("(//div[@class='table-responsive']//tbody//tr//td[4])[" + desiredTeacherRow + "]"));
+//                    usernameFound = true;
+//                    break;
+//                }
+//            }
+//                if (!usernameFound) {
+//                    WaitUtils.waitFor(1);
+//                    actions.moveToElement(teachersPage.previousPageButton).click().perform();
+//                    WaitUtils.waitFor(1);
+//                    count = 1;
+//                }
+//        }
     }
 
-    @Then("verify {string} in name field")
-    public void verify_in_name_field(String name) {
-//        Assert.assertEquals(teacherCredentials.getNameForAssertion()+" "+teacherCredentials.getSurnameForAssertion(), nameElement.getText());
-    }
-
-    @Then("verify {string} in phone field")
-    public void verify_in_phone_field(String string) {
-//        Assert.assertEquals();
-
-    }
-
-    @Then("verify {string} in ssn field")
-    public void verify_in_ssn_field(String string) {
-
-    }
-
-    @Then("verify {string} in user name field")
-    public void verify_in_user_name_field(String string) {
-
-    }
+//    @Then("verify {string} in name field")
+//    public void verify_in_name_field(String name) {
+//    fullNameForAssertion.equalsIgnoreCase(nameElement.toString());
+//    }
+//
+//    @Then("verify {string} in phone field")
+//    public void verify_in_phone_field(String string) {
+//        phoneForAssertion.equalsIgnoreCase(phoneElement.toString());
+//      }
+//
+//    @Then("verify {string} in ssn field")
+//    public void verify_in_ssn_field(String string) {
+//        ssnForAssertion.equalsIgnoreCase(ssnElement.toString());
+//    }
+//
+//    @Then("verify {string} in user name field")
+//    public void verify_in_user_name_field(String string) {
+//        usernameForAssertion.equalsIgnoreCase(usernameElement.toString());
+//    }
 
     @When("clicks on edit button")
     public void clicks_on_edit_button() {
@@ -125,7 +124,7 @@ public class US_14_StepDefs {
     @When("enters {string} in edit email field")
     public void enters_in_edit_email_field(String email) {
         teachersPage.editEmailVD.sendKeys(Keys.CONTROL, "a", Keys.DELETE);
-        email = usernameGenerator()+"@"+faker.internet().domainName();
+        email = faker.regexify("[a-z]{9}")+"@"+faker.internet().domainName();
         teachersPage.editEmailVD.sendKeys(email);
         WaitUtils.waitFor(1);
     }
@@ -174,28 +173,29 @@ public class US_14_StepDefs {
     }
     @When("enters {string} in edit user name field")
     public void enters_in_edit_user_name_field(String username) {
-        teachersPage.editUserNameVD.sendKeys(Keys.DELETE, Keys.TAB);
-        username = TestUtils.usernameGenerator();
+        teachersPage.editUserNameVD.sendKeys(Keys.DELETE);
+        username = faker.regexify("[a-z]{9}");
         teachersPage.editUserNameVD.sendKeys(username);
-        WaitUtils.waitFor(1);
+        WaitUtils.waitFor(2);
     }
     @When("enters {string} in edit password field")
     public void enters_in_edit_password_field(String password) {
         password = passwordGenerator();
         teachersPage.editPasswordVD.sendKeys(password);
-        WaitUtils.waitFor(1);
+        WaitUtils.waitFor(2);
     }
 
-    @When("clicks edit submit button")
-    public void clicks_edit_submit_button() {
-        teachersPage.submit.click();
-//        ExpectedConditions.elementToBeClickable()
-    }
-
-//    TC_02
+//    US14_TC_02_update_teacher_asvicedean_invalid_StepDefs
     @When("removes email from email field")
     public void removes_email_from_email_field() {
         teachersPage.editEmailVD.sendKeys(Keys.CONTROL, "a", Keys.DELETE);
         WaitUtils.waitFor(1);
+    }
+
+    @And("verify email error message {string}")
+    public void verify_email_error_message(String emailErrorMsg) {
+        actions.moveToElement(teachersPage.emailErrorMsg).click().perform();
+        String actualMsg = teachersPage.emailErrorMsg.getText();
+        Assert.assertTrue(emailErrorMsg.equalsIgnoreCase(actualMsg));
     }
 }
