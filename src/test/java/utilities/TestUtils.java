@@ -67,4 +67,13 @@ public class TestUtils {
         return false;
     }
 
+    public static String usernameGenerator() {
+        Faker faker = new Faker();
+        String fakerUsername;
+        do {
+            fakerUsername = faker.lorem().word()+faker.lorem().word();
+        } while (fakerUsername.length()<=4);
+        return fakerUsername;
+    }
+
 }
