@@ -18,10 +18,13 @@ public class US_13_and_US_24_StepDefs {
     Teachers_Page teachersPage = new Teachers_Page();
     Faker faker = new Faker();
 
+    US_15_StepDefs us15StepDefs = new US_15_StepDefs();
+
 
 //  TC_01_create_teacher_asvicedean_valid StepDefs
     @When("enters {string} in select lesson field as {string}")
     public void enters_in_select_lesson_field_as(String lesson, String user) {
+
         ActionsUtils.actionsDoubleClick(teachersPage.selectLessonViceDean);
         WaitUtils.waitFor(1);
         teachersPage.selectLessonViceDean.sendKeys("Java", Keys.TAB);

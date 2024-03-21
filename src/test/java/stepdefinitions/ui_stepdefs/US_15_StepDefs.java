@@ -30,6 +30,9 @@ public class US_15_StepDefs {
     SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
 
     String ssnForVerification;
+    public void storeExpectedData(){
+        this.ssnForVerification=ssnForVerification;
+    }
 
 
     @Given("vice dean chooses {string} in the advisor teacher dropdown")
@@ -41,6 +44,7 @@ public class US_15_StepDefs {
     public void enters_name_surname_birthplace_email_phone_dateofbirth_ssn_username_fathername_mothername_password(String name, String surname, String birthPlace, String email, String phone, String dateOfBirth, String ssn, String userName, String fatherName, String motherName, String password) {
 
     name = Faker.instance().name().firstName();
+    ssnForVerification=name;
 
     BrowserUtils.sendKeysWithTimeout(studentManagementPage.firstName,name,2);
 
@@ -69,7 +73,7 @@ public class US_15_StepDefs {
 
     ssn = Faker.instance().number().digits(3)+"-"+Faker.instance().number().digits(2)+"-"+Faker.instance().number().digits(4);
     BrowserUtils.sendKeysWithTimeout(studentManagementPage.ssn,ssn,2);
-    ssnForVerification=ssn;
+    //ssnForVerification=ssn;
 
 
     userName = Faker.instance().name().fullName();
@@ -197,6 +201,8 @@ public class US_15_StepDefs {
 
 
     }
+
+
 
 
 

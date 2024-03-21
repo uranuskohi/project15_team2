@@ -9,14 +9,19 @@ public class Main_Page {
 
     public Main_Page(){PageFactory.initElements(Driver.getDriver(),this);
     }
+//@FindBy(xpath = "//a[@class='header_link me-2'])[1]")
+   // public WebElement registerIconAtHeader;
 
 
-    //Register and Log in Icon at Headers
     @FindBy(xpath = "//a[@class='header_link me-2']")
     public WebElement registerIconAtHeader;
 
     @FindBy(xpath = "//a[@class='header_link ms-2']")
     public WebElement loginIconAtHeader;
+
+    @FindBy(xpath = "//a[@class='header_link ms-2']")
+    public WebElement ContactIconAtHeader;
+
 
 
 

@@ -17,11 +17,13 @@ public class US_16_StepDefs {
 
     Contact_Message_Page contactMessagePage = new Contact_Message_Page();
 
+    US_15_StepDefs us15StepDefs = new US_15_StepDefs();
 
     //TC_01
     @Then("verify Name is visible")
     public void verify_name_is_visible() {
-       assertTrue(contactMessagePage.nameData.isDisplayed());
+        assertTrue(contactMessagePage.nameData.isDisplayed());
+        assertTrue(us15StepDefs.ssnForVerification.contains("+++++"));
     }
     @Then("verify Email is visible")
     public void verify_email_is_visible() {
