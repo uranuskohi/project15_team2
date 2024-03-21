@@ -1,1 +1,0 @@
-file:src/test/resources/features/ui_features/US_11_ViceDeanViewsSchedule.feature:25
