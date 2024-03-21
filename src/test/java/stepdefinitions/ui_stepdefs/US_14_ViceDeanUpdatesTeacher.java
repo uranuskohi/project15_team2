@@ -38,7 +38,7 @@ public class US_14_ViceDeanUpdatesTeacher {
 
             for (WebElement teacherUsernameList : teachersPage.usernameColumn) {
 
-//                if (teacherUsernameList.getText().equalsIgnoreCase("dwetryt")) {
+//                if (teacherUsernameList.getText().equalsIgnoreCase("bobsmith")) {
                 desiredTeacherRow = count;
                 count++;
             }
@@ -48,8 +48,7 @@ public class US_14_ViceDeanUpdatesTeacher {
                     usernameElement = Driver.getDriver().findElement(By.xpath("(//div[@class='table-responsive']//tbody//tr//td[4])[" + desiredTeacherRow + "]"));
 //                    usernameFound = true;
 //                    break;
-//                }
-//            }
+            }
 //                if (!usernameFound) {
 //                    WaitUtils.waitFor(1);
 //                    actions.moveToElement(teachersPage.previousPageButton).click().perform();
@@ -57,26 +56,30 @@ public class US_14_ViceDeanUpdatesTeacher {
 //                    count = 1;
 //                }
 //        }
-    }
 
-//    @Then("verify {string} in name field")
-//    public void verify_in_name_field(String name) {
-//    fullNameForAssertion.equalsIgnoreCase(nameElement.toString());
+
+//    @Then("verify fullname in name field")
+//    public void verify_fullname_in_name_field() {
+////    Assert.assertTrue(fullNameForAssertion.equalsIgnoreCase(nameElement.toString()));
+//        Assert.assertEquals("Bob Smith", nameElement.getText());
 //    }
 //
 //    @Then("verify {string} in phone field")
-//    public void verify_in_phone_field(String string) {
-//        phoneForAssertion.equalsIgnoreCase(phoneElement.toString());
+//    public void verify_in_phone_field(String phone) {
+////        Assert.assertTrue(phoneForAssertion.equalsIgnoreCase(phoneElement.toString()));
+//        Assert.assertEquals(phone, nameElement.getText());
 //      }
 //
 //    @Then("verify {string} in ssn field")
-//    public void verify_in_ssn_field(String string) {
-//        ssnForAssertion.equalsIgnoreCase(ssnElement.toString());
+//    public void verify_in_ssn_field(String ssn) {
+////        Assert.assertTrue(ssnForAssertion.equalsIgnoreCase(ssnElement.toString()));
+//        Assert.assertEquals(ssn, nameElement.getText());
 //    }
 //
 //    @Then("verify {string} in user name field")
-//    public void verify_in_user_name_field(String string) {
-//        usernameForAssertion.equalsIgnoreCase(usernameElement.toString());
+//    public void verify_in_user_name_field(String username) {
+////        Assert.assertTrue(usernameForAssertion.equalsIgnoreCase(usernameElement.toString()));
+//        Assert.assertEquals(username, nameElement.getText());
 //    }
 
     @When("clicks on edit button")

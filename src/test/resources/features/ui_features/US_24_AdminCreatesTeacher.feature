@@ -12,16 +12,16 @@ Feature: admin creates teacher
   @US24_TC01
   Scenario: admin creates teacher with valid information
     When enters "Java" in select lesson field as "admin"
-    And enters "name" in name field
-    And enters "surname" in surname field
+    And enters "Bob" in name field
+    And enters "Smith" in surname field
     And enters "birthplace" in birth place field
     And enters "email" in email field
-    And enters "phone" in phone field
+    And enters "102-203-3045" in phone field
     And selects is advisor teacher
     And selects gender radio button
     And enters "dateofbirth" in date of birth field
-    And enters "ssn" in ssn field
-    And enters "username" in user name field
+    And enters "401-50-6012" in ssn field
+    And enters "bobsmith" in user name field
     And enters "password" in password field
     And clicks submit button
     Then verify success message "Teacher saved successfully"
@@ -30,11 +30,11 @@ Feature: admin creates teacher
   @US24_TC02
   Scenario: admin creates teacher with invalid information
     When enters "Java" in select lesson field as "admin"
-    And enters "name" in name field
-    And enters "surname" in surname field
+    And enters "Bob" in name field
+    And enters "Smith" in surname field
     And enters "birthplace" in birth place field
     And enters "email" in email field
-    And enters "phone" in phone field
+    And enters "102-203-3045" in phone field
     And selects is advisor teacher
     And selects gender radio button
     And enters "dateofbirth" in date of birth field

@@ -12,7 +12,7 @@ Feature: vice dean updates teacher
   @US14_TC01
   Scenario: vice dean updates teacher list with valid information
     Given user finds "username" on teacher list
-#    Then verify "name" in name field
+#    Then verify fullname in name field
 #    And verify "phone" in phone field
 #    And verify "ssn" in ssn field
 #    And verify "username" in user name field
