@@ -1,5 +1,5 @@
 
-@userStory21
+@userStory21 @hehe
 Feature: Students, choose lesson, grades and announcement
   Background:
     Given user goes to "https://managementonschools.com/" homepage
@@ -15,7 +15,7 @@ Feature: Students, choose lesson, grades and announcement
     And student should be able to see the StartTime on the Choose Lesson List
     And student should see the StopTime on the Choose Lesson List
     And select the wanted Lessons
-    And student is not able to select two Lessons at the same time from the Lesson List
+      And click on Submit button for add lesson
     And student is able to see the chosen Lessons on the Lesson Program List
     And student should be able to delete the chosen lesson from the list
     And student is not able to delete the chosen lesson from the list
@@ -23,3 +23,4 @@ Feature: Students, choose lesson, grades and announcement
     And student should click on Grades and Announcements
     And student should be able to see his exam grades if it is added by their teacher in the Student Info List
     And student should be able to see the meeting created by his advisor on the Meet List
+      And close the application

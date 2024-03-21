@@ -1,9 +1,9 @@
 package stepdefinitions.ui_stepdefs;
 
+
 import io.cucumber.java.en.*;
 import pages.Choose_Lesson_Management_Page;
 import utilities.BrowserUtils;
-import utilities.JSUtils;
 import utilities.MediaUtils;
 import utilities.WaitUtils;
 
