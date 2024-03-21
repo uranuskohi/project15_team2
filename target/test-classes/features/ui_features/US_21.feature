@@ -1,5 +1,9 @@
 
+<<<<<<< HEAD
 @userStory21 @hehe
+=======
+@userStory21  @hehe
+>>>>>>> 56acbfc8bfc8f4aba9c3a3309b9029d2ea735392
 Feature: Students, choose lesson, grades and announcement
   Background:
     Given user goes to "https://managementonschools.com/" homepage
