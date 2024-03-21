@@ -6,9 +6,9 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.Wait;
 import pages.Teachers_Page;
 import utilities.*;
-import static stepdefinitions.ui_stepdefs.US_13_and_US_24_ViceDeanAndAdminCreatesTeacher.*;
 import static utilities.TestUtils.*;
 
 public class US_14_ViceDeanUpdatesTeacher {
@@ -28,11 +28,8 @@ public class US_14_ViceDeanUpdatesTeacher {
     public void user_finds_on_teacher_list(String username) {
 
 //        System.out.println(fullNameForAssertion);
-
         JSUtils.JSscrollIntoView(teachersPage.lastPageButton);
-        WaitUtils.waitFor(1);
-        actions.moveToElement(teachersPage.lastPageButton).click().perform();
-        WaitUtils.waitFor(2);
+        BrowserUtils.clickWithTimeOut(teachersPage.lastPageButton, 2);
 
         int count = 1;
 
@@ -134,7 +131,6 @@ public class US_14_ViceDeanUpdatesTeacher {
         teachersPage.editPhoneVD.sendKeys(Keys.CONTROL, "a", Keys.DELETE);
         phone = phoneNumberGenerator();
         teachersPage.editPhoneVD.sendKeys(phone);
-        WaitUtils.waitFor(1);
     }
 
     @When("enters {string} in edit ssn field")
@@ -183,6 +179,12 @@ public class US_14_ViceDeanUpdatesTeacher {
         password = passwordGenerator();
         teachersPage.editPasswordVD.sendKeys(password);
         WaitUtils.waitFor(2);
+    }
+
+    @When("clicks edit submit button")
+    public void clicks_edit_submit_button() {
+        actions.moveToElement(teachersPage.editSubmitVD).click().perform();
+        WaitUtils.waitFor(1);
     }
 
 //    US14_TC_02_update_teacher_asvicedean_invalid_StepDefs
