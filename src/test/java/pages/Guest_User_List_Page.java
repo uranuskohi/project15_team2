@@ -11,8 +11,6 @@ public class Guest_User_List_Page {
         PageFactory.initElements(Driver.getDriver(),this);
     }
 
-
-
     @FindBy(xpath = "//input[@id='name']")
     public WebElement nameOnRegister;
 
@@ -50,60 +48,30 @@ public class Guest_User_List_Page {
     public WebElement registerButton1;
 
 
-    @FindBy(xpath = "//div[@class='Toastify']")
-    public WebElement successMessage;
-
     @FindBy(xpath = "//div[@role='alert']")
     public WebElement registerSuccessMessage1;
 
     @FindBy(xpath = "(//div[contains(text(),'Guest User registered.')])[1]")
     public WebElement registerSuccessMessage2;
 
-    @FindBy(xpath = "//*[text()='Guest User registered.']")
-    public WebElement registeredSuccessMessage;
-
 
     @FindBy(xpath = "//a[text()='Guest User']")
     public WebElement guestuserLink;
 
-//    @FindBy(partialLinkText = "Guest User")
-//    public WebElement guestUser;
-
     @FindBy(xpath = "(//a[@role='button'])[16]")
     public WebElement guestUserButton;
 
-    @FindBy(xpath = "//h5[text()='Guest User List']")
-    public WebElement guestlistText;
-
-    @FindBy(xpath = "//th[text()='User Name']")
-    public WebElement UsernameText;
 
     @FindBy(xpath = "(//a[@class='page-link'])[3]")
     public WebElement Secondpage;
 
 
-
-    @FindBy(xpath = "//div[@class='table-responsive']//table/thead/tr/th[1]")
-    public WebElement nameOnGuestUserList;
-    @FindBy(xpath = "//div[@class='table-responsive']//table/thead/tr/th[2]")
-    public WebElement phoneNumOnGuestUserList;
-
-    @FindBy(xpath = "//div[@class='table-responsive']//table/thead/tr/th[3]")
-    public WebElement ssnOnGuestUserList;
-
-    @FindBy(xpath = "//div[@class='table-responsive']//table/thead/tr/th[4]")
-    public WebElement userNameOnGuestUserList;
-
     @FindBy(xpath = "(//button[@type='button'])[5]")
     public WebElement deleteButton;
 
-    @FindBy(xpath = "//button[@class='btn btn-danger']") //for all the delete buttons,to go 1 by 1 add index
-    public WebElement deleteButton2;
 
     @FindBy(xpath = "//div[@role='alert']")
     public WebElement alert;
-
-
 
 
     @FindBy(xpath = "//tbody/tr[1]/td[1]")
@@ -114,13 +82,14 @@ public class Guest_User_List_Page {
     public WebElement ssnColumn;
     @FindBy(xpath = "//tbody/tr[1]/td[4]")
     public WebElement usernameColumn;
+
+    @FindBy(xpath = "//*[text()='Last']")
+    public WebElement lastpageButton;
+
     @FindBy(xpath = "(//*[@class='btn btn-danger'])[1]")
     public WebElement trashBin;
     @FindBy(xpath = "//*[text()=' Guest User deleted Successful']")
     public WebElement successfullyDeleted;
-
-
-
 
 
 }

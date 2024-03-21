@@ -18,15 +18,18 @@ import utilities.Driver;
 import utilities.WaitUtils;
 
 import java.time.Duration;
+import java.util.List;
 
 import static java.awt.SystemColor.text;
+import static org.junit.Assert.assertEquals;
 
 public class US_02_AdminSeesGuestUserList_StepDefs {
 Admin_Management_Page admin_management_page= new Admin_Management_Page();
     Main_Page mainPage=new Main_Page();
-    static Guest_User_List_Page guest_user_list_page=new Guest_User_List_Page();
+    Guest_User_List_Page guest_user_list_page=new Guest_User_List_Page();
     BrowserUtils browserUtils=new BrowserUtils();
     Actions actions = new Actions(Driver.getDriver());
+    WaitUtils waitUtils=new WaitUtils();
 
 
     @Given("user clicks Register button")
@@ -103,21 +106,20 @@ Admin_Management_Page admin_management_page= new Admin_Management_Page();
             String text = "";
             while (text.isBlank())
                 text = Driver.getDriver().findElement(By.xpath("//div[@role='alert']")).getText();
-            Assert.assertEquals(string,text);
+            assertEquals(string,text);
         } catch (Exception e) {
             // do nothing
         }
 
     }
+
+    //************TC_02
     @Given("clicks on guest user on the main menu")
     public void clicks_on_guest_user_on_the_main_menu() {
         guest_user_list_page.guestuserLink.click();
 
     }
-//    @Then("verifies {string} columns are visible")
-//    public void verifies_columns_are_visible(String string) {
-//
-//    }
+
     @Then("verifies {string},{string},{string},{string} columns are visible")
     public void verifies_columns_are_visible(String string, String string2, String string3, String string4) {
         Assert.assertTrue(guest_user_list_page.nameSurnameColumn.isDisplayed());
@@ -126,20 +128,66 @@ Admin_Management_Page admin_management_page= new Admin_Management_Page();
         Assert.assertTrue(guest_user_list_page.usernameColumn.isDisplayed());
 
     }
-    @Then("delete the registered user from the list")
-    public void delete_the_registered_user_from_the_list() {
-//        int count = 1;
-//        int desiredAdminRow = 0;
-//        for (WebElement adminNameList : guest_user_list_page..nameColumn1) {
-//            if (adminNameList.getText().equalsIgnoreCase(string)) {
-//                desiredAdminRow = count;
-//                WebElement element = Driver.getDriver().findElement(By.xpath("(//i[@class='fa-solid fa-trash'])[" + desiredAdminRow + "]"));
-//                actions.moveToElement(element).click().perform();
+
+//    @Then("goes to the last guest page")
+//    public void goes_to_the_last_guest_page() {
+//        Driver.getDriver().findElement(By.xpath("(//a[@class='page-link'])[4]")).click();
+//
+// //       BrowserUtils.clickWithTimeOut(guest_user_list_page.lastpageButton,2);
+//        waitUtils.waitFor(3);
+//        ActionsUtils.actionsScrollUp();
+//        WaitUtils.waitForVisibility(By.xpath("(//span[normalize-space()='Ashley Smith'])[1]"),5);
+//    }
+
+//    @Given("scrolls up to the list")
+//    public void scrolls_up_to_the_admin_list() throws InterruptedException {
+
+//        Thread.sleep(2000);
+//    }
+
+    @Then("delete if the registered user {string} exist in the list")
+    public void delete_if_the_registered_user_exist_in_the_list(String string) {
+        int count = 1;
+        int desiredAdminRow = 0;
+        for (WebElement adminNameList : admin_management_page.nameColumn1) {
+            if (adminNameList.getText().equalsIgnoreCase(string)) {
+                desiredAdminRow = count;
+                WebElement element = Driver.getDriver().findElement(By.xpath("(//i[@class='fa-solid fa-trash'])[" + desiredAdminRow + "]"));
+                actions.moveToElement(element).click().perform();
+                break;
+            }
+            count++;
+        }
+    }
+//    @Then("delete the registered user from the list")
+//    public void delete_the_registered_user_from_the_list() {
+
+
+//        for(int i=1;i<=5;i++) {
+//            if(Driver.getDriver().findElement(By.xpath("//tbody/tr["+i+"]/td[4]")).getText().equalsIgnoreCase("Dugur")){
+//                Driver.getDriver().findElement(By.xpath("//tbody/tr["+i+"]/td[5]")).click();
 //                break;
-//            }
-//            count++;
+//            };
+//
 //        }
+//
+//    }
+
+//    @And("Admin must be able to see {string} message")
+//    public void adminMustBeAbleToSeeMessage(String message) {
+
+//
+//    }
+@Then("verifies the message {string}")
+public void verifies_the_message(String string) {
+    try {
+        String text = "";
+        while (text.isBlank())
+            text = Driver.getDriver().findElement(By.xpath("//div[@role='alert']")).getText();
+        assertEquals(string,text);
+    } catch (Exception e) {
+        // do nothing
     }
 
-
+}
 }

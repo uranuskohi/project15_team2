@@ -1,4 +1,4 @@
-
+@US_02
 Feature: Admin sees Guest User list
   Background:
     Given user goes to "https://managementonschools.com/" homepage
@@ -10,7 +10,6 @@ Feature: Admin sees Guest User list
     And enters "Istanbul" in the Birth Place input field
     And enters "444-444-4545" in the phone field
     And selects gender female radio button
-
     And enters "06-07-1977" in the Date Of Birth field
     And enters ssn in the Ssn input field
     And enters "Dugur" in the User Name field
@@ -27,29 +26,11 @@ Feature: Admin sees Guest User list
     And clicks on Menu button
     And clicks on guest user on the main menu
     Then verifies "name","phone number","Ssn","Username" columns are visible
-    And delete the registered user from the list
+#    And goes to the last guest page
+    And delete if the registered user "Deniz Ugur" exist in the list
+    Then verifies the message "Guest User deleted Successful"
+    And close the application
 
-
-
-
-
-#  Feature: google_search
-#
-#  Background: navigating_to_google
-#    Given user is on the google homepage
-#
-#  @iPhone
-#  Scenario: TC_01_iPhone_search
-#
-#    And user search for iPhone
-#    Then verify the result contains iPhone
-#    And close the application
-#
-#  @teapot
-#  Scenario: TC_02_teapot_search
-#    And user search for porcelain teapot
-#    Then verify the result contains porcelain teapot
-#    And close the application
 
 
 
