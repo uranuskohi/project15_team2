@@ -1,15 +1,13 @@
 package stepdefinitions.ui_stepdefs;
 
-import io.cucumber.java.en.And;
 import io.cucumber.java.en.When;
 import pages.Main_Page;
 import pages.Registration_Page;
 
 import utilities.BrowserUtils;
-import utilities.JSUtils;
 import utilities.WaitUtils;
 
-public class US_01 {
+public class US_01_StepDefs {
 
     Main_Page mainPage = new Main_Page();
     Registration_Page registrationPage = new Registration_Page();

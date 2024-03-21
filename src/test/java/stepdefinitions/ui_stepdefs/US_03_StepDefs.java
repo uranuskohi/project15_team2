@@ -7,12 +7,11 @@ import pages.Contact_Us_Page;
 import pages.Main_Page;
 import utilities.BrowserUtils;
 import utilities.Driver;
-import utilities.JSUtils;
 import utilities.WaitUtils;
 import static org.junit.Assert.assertTrue;
 
 
-public class US_03 {
+public class US_03_StepDefs {
 
 
 
