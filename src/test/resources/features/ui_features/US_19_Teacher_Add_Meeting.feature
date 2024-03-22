@@ -1,4 +1,4 @@
-@US_19 @fatih
+@US_19 @fatih @smoke
   Feature: Teacher creates meeting with students
     Background:
       Given user goes to "https://managementonschools.com/" homepage
