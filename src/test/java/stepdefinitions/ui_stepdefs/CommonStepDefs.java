@@ -1,6 +1,7 @@
 package stepdefinitions.ui_stepdefs;
 
 import io.cucumber.java.en.*;
+import org.openqa.selenium.Keys;
 import pages.Main_Page;
 import utilities.*;
 
@@ -17,8 +18,10 @@ public class CommonStepDefs {
     }
 
     @Given("clicks on loginIcon")
-    public void clicks_on_login_icon() {
+    public void clicks_on_login_icon() throws InterruptedException {
+        Thread.sleep(2000);
         mainPage.loginIconAtHeader.click();
+        WaitUtils.waitForPageToLoad(5);
     }
 
     @Given("enters {string} in the userName input field")
@@ -29,14 +32,21 @@ public class CommonStepDefs {
     @Given("enters {string} in the password input field")
     public void enters_in_the_password_input_field(String password) {
         mainPage.password.sendKeys(password);
+
     }
 
     @Given("clicks on Login button")
     public void clicks_on_login_button() {
-        ActionsUtils.actionsDoubleClick(mainPage.loginButton); }
+        ActionsUtils.actionsDoubleClick(mainPage.loginButton);
+//        JSUtils.JSclickWithTimeout(mainPage.loginButton);
+        WaitUtils.waitForPageToLoad(2);
+    }
 
     @Given("clicks on Menu button")
-    public void clicks_on_menu_button() { mainPage.menuButton.click(); }
+    public void clicks_on_menu_button() {
+        mainPage.menuButton.click();
+        WaitUtils.waitForPageToLoad(2);
+    }
 
 
     @Given("clicks on {string} on Main Menu")
@@ -83,9 +93,17 @@ public class CommonStepDefs {
     }
 
 
-        //Close application
-        @When("close the application")
-        public void close_the_application () {Driver.closeDriver();}
-
+    //Close application
+    @When("close the application")
+    public void close_the_application() {
+        Driver.closeDriver();
+//        Driver.getDriver().quit();
     }
+
+//    @And("clicks on getloginIcon")
+//    public void clicksOnGetloginIcon() throws InterruptedException {
+//        mainPage.getLoginIconAtHeader.click();
+//        Thread.sleep(1000);
+//    }
+}
 
