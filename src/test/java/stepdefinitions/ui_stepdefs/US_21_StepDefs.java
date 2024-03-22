@@ -1,18 +1,19 @@
 package stepdefinitions.ui_stepdefs;
 
+
 import io.cucumber.java.en.*;
 import pages.Choose_Lesson_Management_Page;
-import pages.Student_Info_Management_Page;
 import utilities.BrowserUtils;
 import utilities.MediaUtils;
 import utilities.WaitUtils;
 
 import java.io.IOException;
 
+import static org.junit.Assert.assertTrue;
+
 public class US_21_StepDefs {
 
     Choose_Lesson_Management_Page chooseLessonManagementPage = new Choose_Lesson_Management_Page();
-    Student_Info_Management_Page studentInfoManagementPage = new Student_Info_Management_Page();
 
 
     @When("student goes to Choose Lesson Management")
@@ -55,15 +56,22 @@ public class US_21_StepDefs {
     public void student_should_be_able_to_delete_the_chosen_lesson_from_the_list() throws IOException {
         MediaUtils.takeScreenshotOfTheEntirePage();
         System.out.println("There is no any delete button or option for student.");
+        chooseLessonManagementPage.dayInChooseLesson.isDisplayed();
 //        There is no any delete button in this step
     }
     @When("student is not able to delete the chosen lesson from the list")
     public void student_is_not_able_to_delete_the_chosen_lesson_from_the_list() throws IOException {
-        MediaUtils.takeScreenshotOfTheEntirePage();
         System.out.println("Lesson is not delete, cause there is no any delete button for student to delete the chosen lesson.");
+        WaitUtils.waitFor(5);
+        try {
+            MediaUtils.takeScreenshotOfTheEntirePage();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+        assertTrue("The delete button should be visible",false);
+//        MediaUtils.takeScreenshotOfTheEntirePage();
 //         Student can not see any delete option so the student is not able to delete the chosen lesson
     }
-
 
 
     @When("student should click on the menu and should be able to see the Main Menu List")
