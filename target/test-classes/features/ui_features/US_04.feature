@@ -23,26 +23,27 @@
     And add ssn "<SSNNumber>"
     And add username "<Username>"
     And add password "<Password>"
-    And click on Submit button
+    And clicks on the Dean Submit button
     Then verify the Dean is created
       Examples:
         | Name | Surname | Birth Place | Gender | Birth Date | PhoneNumber | SSNNumber | Username | Password |
         | Jane | Eyre | Toronto | Female | 1789-09-10 | 416 235 2355 | 123 12  1234 | JaneyE | Janey3!! |
 
+
     @userStory04_tc02
-    Scenario Outline: Create Dean unsuccessfully, user inputs incorrect SSN
-      When add "<Name>"
-      And add "<Surname>"
-      And add "<Birth Place>"
-      And select the "<Gender>"
-      And add "<Birth Date>"
-      And add "<PhoneNumber>"
-      And add "<SSNNumber>"
-      And add "<Username>"
-      And add "<Password>"
-      And click on Submit button
-      Then verify the Dean is created
+    Scenario Outline: Create Dean unsuccessfully, user inputs incorrect SSN, Username and Password
+       When add name "<Name>"
+    And add last name "<Surname>"
+    And add birthplace "<Birth Place>"
+    And select the "<Gender>"
+    And add birthdate "<Birth Date>"
+    And add the phonenumber "<PhoneNumber>"
+    And add missing digit ssn "<SSNNumber>"
+    And add username "<Username>"
+    And add password "<Password>"
+    And clicks on the Dean Submit button
+    Then verify the Dean is created
       Examples:
-        | Name | Surname | Birth Place | Gender | Birth Date | PhoneNumber | SSNNumber | Username | Password |
-        | Janee | Eyree | Toronto | Female | 1789-09-10 | 416 235 2355 | 123 12  123 | JaneyE | Janey3!! |
+        | Name | Surname | Birth Place | Gender | Birth Date | PhoneNumber |
+        | Janee | Eyree | Toronto | Female | 1789-09-10 | 416 235 2355 |
 
