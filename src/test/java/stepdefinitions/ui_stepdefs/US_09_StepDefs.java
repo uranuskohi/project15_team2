@@ -55,7 +55,15 @@ public class US_09_StepDefs {
     @When("vice dean should be able to update the lesson")
     public void vice_dean_should_be_able_to_update_the_lesson() throws IOException {
         System.out.println("Vice dean can not update the lesson cause there is no any button or option to update the lesson.");
-        MediaUtils.takeScreenshotOfTheEntirePage();
+        WaitUtils.waitFor(5);
+        try {
+            MediaUtils.takeScreenshotOfTheEntirePage();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+        assertTrue("The update button should be visible",false);
+
+//        MediaUtils.takeScreenshotOfTheEntirePage();
 //      There is no any update button or any option to update the lesson
     }
 

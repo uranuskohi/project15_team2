@@ -5,9 +5,9 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import utilities.Driver;
 
-public class Dean_Managament_Page {
+public class Dean_Management_Page {
 
-    public Dean_Managament_Page(){
+    public Dean_Management_Page(){
         PageFactory.initElements(Driver.getDriver(),this);
     }
 
@@ -46,6 +46,9 @@ public class Dean_Managament_Page {
 
     @FindBy (xpath = "(//span[normalize-space()='»'])[1]")
     public WebElement lastPageButton;
+
+    @FindBy (xpath = "//div[text()='Minimum 11 character (XXX-XX-XXXX)']")
+    public WebElement missingDigitNotice;
 
 
 

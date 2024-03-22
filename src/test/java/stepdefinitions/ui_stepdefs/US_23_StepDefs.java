@@ -1,18 +1,14 @@
 package stepdefinitions.ui_stepdefs;
 
-
 import com.github.javafaker.Faker;
 import io.cucumber.java.en.*;
 import pages.Admin_Management_Page;
 import pages.Vice_Dean_Management_Page;
 import utilities.BrowserUtils;
-import utilities.Driver;
-import utilities.JSUtils;
 import utilities.WaitUtils;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertTrue;
 import static utilities.Driver.getDriver;
-import static utilities.JSUtils.JSclickWithTimeout;
 
 public class US_23_StepDefs {
 
@@ -23,7 +19,7 @@ public class US_23_StepDefs {
 
     @When("admin is logged in the website")
     public void admin_is_logged_in_the_website() {
-        Driver.getDriver().getTitle().contains("admin-management");
+        getDriver().getTitle().contains("admin-management");
     }
     @When("click on menu")
     public void click_on_menu() {
