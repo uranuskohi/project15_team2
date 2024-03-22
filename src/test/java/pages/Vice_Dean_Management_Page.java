@@ -42,7 +42,7 @@ public class Vice_Dean_Management_Page {
     @FindBy(xpath = "//input[@value='MALE']")
     public WebElement maleGender;
 
-    @FindBy(xpath = "//div[normalize-space()='Required'])[1]")
+    @FindBy(xpath = "//div[@class='invalid-feedback'][normalize-space()='Required'])[1]")
     public WebElement getVdmNameRequiredMsg;
 
 

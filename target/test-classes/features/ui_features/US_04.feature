@@ -45,5 +45,5 @@
     Then verify the Dean is created
       Examples:
         | Name | Surname | Birth Place | Gender | Birth Date | PhoneNumber |
-        | Janee | Eyree | Toronto | Female | 1789-09-10 | 416 235 2355 |
+        | Janee | Eyree | Toronto | Female | 1789-09-10 | 416 235 2354 |
 

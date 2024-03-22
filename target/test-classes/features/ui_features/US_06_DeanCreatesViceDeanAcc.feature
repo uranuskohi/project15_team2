@@ -2,7 +2,8 @@
 
   Feature: Dean creates a Vice Dean Account
     Background:
-      Given user goes to "https://managementonschools.com/" homepage
+    Given user goes to "https://managementonschools.com/" homepage
+
       And clicks on loginIcon
       And enters "Oz14" in the userName input field
       And enters "Simdiokul3" in password field
@@ -11,6 +12,7 @@
    @US_06_TC_01
 
       Scenario Outline: TC_01 Dean creates Vice Dean Account with valid info
+
         When user enters the "<Name>" as an user name
         And enters the surname as "<Surname>"
         And enters the brith place as "<Birth Place>"
