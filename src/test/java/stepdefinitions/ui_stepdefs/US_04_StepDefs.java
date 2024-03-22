@@ -97,8 +97,4 @@ public class US_04_StepDefs {
         deanManagementPage.missingDigitNotice.isDisplayed();
     }
 
-    @Given("navigate to {string}")
-    public void navigateTo(String url) {
-        Driver.getDriver().navigate().to("https://managementonschools.com/");
-    }
 }
