@@ -2,7 +2,7 @@
 
   Feature:Admin should be able to add Dean
     Background:
-#  Given user goes to "https://managementonschools.com/" homepage
+  Given user goes to "https://managementonschools.com/" homepage
   And clicks on loginIcon
   And enters "AdminBatch197" in the userName input field
   And enters "Batch197+" in the password input field
@@ -14,7 +14,6 @@
 
     @userStory04_tc01
   Scenario Outline: Create Dean successfully when signed in as Admin
-      Given navigate to "url"
     When add name "<Name>"
     And add last name "<Surname>"
     And add birthplace "<Birth Place>"
