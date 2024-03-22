@@ -45,6 +45,11 @@ public class US_04_StepDefs {
         deanManagementPage.dateOfBirth.sendKeys();
     }
 
+    @And("add the phonenumber {string}")
+    public void addThePhonenumber(String arg0) {
+        deanManagementPage.phoneNumber.sendKeys();
+    }
+
     @And("add ssn {string}")
     public void addSsn(String ssn) {
         ssn = TestUtils.ssnGenerator();
@@ -84,5 +89,6 @@ public class US_04_StepDefs {
         missingSsn = TestUtils.ssn8DigitGenerator();
         deanManagementPage.ssn.sendKeys(missingSsn);
     }
+
 
 }
