@@ -1,6 +1,4 @@
 package pages;
-
-import io.github.bonigarcia.wdm.webdriver.WebDriverBrowser;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;

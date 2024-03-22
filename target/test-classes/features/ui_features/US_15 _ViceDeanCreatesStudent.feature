@@ -1,4 +1,4 @@
-@US_15_UI
+@US_15_UI @smoke
   Feature: Vice dean should be able to create student
 
     Background: Sign in as a vice dean
@@ -28,7 +28,6 @@
         And selects "Female" radio button
         Then vice dean clicks submit button
         Then verify invalid phone and invalid ssn  message
-        Then verify student snn  appear in the student list
         And close the application
 
 

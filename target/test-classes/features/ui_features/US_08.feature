@@ -1,5 +1,5 @@
 
-@userStory08
+@userStory08 @hehe @smoke
 Feature: Vice Deans should be able to create a lesson
   Background:
     Given user goes to "https://managementonschools.com/" homepage
@@ -16,6 +16,7 @@ Feature: Vice Deans should be able to create a lesson
       And add "<credit score>" in the Credit Score
       And click on Submit button
       Then verify the Lesson is created
+      And close the application
       Examples:
         | lesson name | credit score |
         | recruiter   | 5            |
@@ -28,7 +29,8 @@ Feature: Vice Deans should be able to create a lesson
         And leave "Compulsory radio button" empty
         And don't add Credit Score
         And click on Submit button
-        Then verify the Lesson is created
+        Then verify the Lesson is not created
+        And close the application
         Examples:
           | lesson name |
           | recruiter   |

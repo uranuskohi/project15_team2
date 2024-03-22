@@ -1,4 +1,4 @@
-@US_17
+@US_17 @smoke
 Feature: US_17
 
   Background:
