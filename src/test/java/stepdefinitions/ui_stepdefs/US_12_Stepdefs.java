@@ -4,6 +4,9 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import pages.Lesson_Program_Page;
 import utilities.BrowserUtils;
+import utilities.MediaUtils;
+
+import java.io.IOException;
 
 import static org.junit.Assert.assertTrue;
 
@@ -30,6 +33,12 @@ public class US_12_Stepdefs {
     public void userInitiallyLeavesTeacherFieldBlank(String teacher) {
 
         BrowserUtils.sendKeysWithTimeout(lessonProgramPage.chooseTeacher,teacher,2);
+
+        try {
+            MediaUtils.takeScreenshotOfTheEntirePage();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
     }
 
 
