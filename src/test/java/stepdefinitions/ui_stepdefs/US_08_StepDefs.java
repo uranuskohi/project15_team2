@@ -11,7 +11,6 @@ import static org.junit.Assert.*;
 public class US_08_StepDefs {
 
     Lessons_Page lessonsPage;
-    Choose_Lesson_Management_Page chooseLessonManagementPage = new Choose_Lesson_Management_Page();
 
     @When("click on Lessons")
     public void click_on_lessons() {

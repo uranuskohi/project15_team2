@@ -19,16 +19,16 @@ public class Hooks {
         System.out.println("After hooks");
         if (scenario.isFailed()){
             byte[] screenshot = ((TakesScreenshot) Driver.getDriver()).getScreenshotAs(OutputType.BYTES);
-            scenario.attach(screenshot, "image/png", "screenshot of failed step");
+            scenario.attach(screenshot, "image/png", "Screenshot of failed step");
             Driver.closeDriver();
         }
 
     }
 
-    @After ( "@ or @")
-    public void tearDownSpecific(){
-        System.out.println("This after method from Hooks class is conditional and will run only with the given tag");
-    }
+//    @After ( "@teapot or @iPhone")
+//    public void tearDownSpecific(){
+//        System.out.println("This after method from Hooks class is conditional and will run only with the given tag");
+//    }
 
 
 }

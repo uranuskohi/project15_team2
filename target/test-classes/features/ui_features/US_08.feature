@@ -1,5 +1,5 @@
 
-@userStory08 @hehe @smoke
+@userStory08  @hehe
 Feature: Vice Deans should be able to create a lesson
   Background:
     Given user goes to "https://managementonschools.com/" homepage

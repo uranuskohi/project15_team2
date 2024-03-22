@@ -15,13 +15,13 @@ import org.junit.runner.RunWith;
 ////                "junit:target/xml-reports/cucumber.xml",
 ////                "rerun:target/failedRerun.txt"
 //        },
-   //     monochrome = true,
+        monochrome = true,
 
 
         features = "./src/test/resources/features",
         glue = {"stepdefinitions", "hooks"},
         dryRun = false,
-        tags = "@US_15_UI"
+        tags = "@userStory23"
 )
 
 public class Runner {

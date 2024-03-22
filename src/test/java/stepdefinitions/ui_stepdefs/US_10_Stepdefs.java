@@ -10,7 +10,10 @@ import org.openqa.selenium.support.ui.Select;
 import pages.Lesson_Program_Page;
 import utilities.BrowserUtils;
 import utilities.Driver;
+import utilities.MediaUtils;
 import utilities.WaitUtils;
+
+import java.io.IOException;
 
 import static org.junit.Assert.assertTrue;
 
@@ -73,6 +76,12 @@ public class US_10_Stepdefs {
 //        WaitUtils.waitFor(2);
         System.out.println("actualText = " + actualText);
         assertTrue(actualText.contains("Created Lesson Program"));
+
+        try {
+            MediaUtils.takeScreenshotOfTheEntirePage();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
     }
 
 
@@ -94,7 +103,15 @@ public class US_10_Stepdefs {
 
         assertTrue(lessonProgramPage.requiredMessageUnderStartTime.isDisplayed());
         assertTrue(lessonProgramPage.requiredMessageUnderStopTime.isDisplayed());
+        try {
+            MediaUtils.takeScreenshotOfTheEntirePage();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
     }
+
+
+
 
 
     @Then("User clicks on the submit button.")
@@ -102,6 +119,7 @@ public class US_10_Stepdefs {
         BrowserUtils.clickWithTimeOut(lessonProgramPage.submitButtonAddLessonProgram,2);
 
     }
+
 
 
 }
