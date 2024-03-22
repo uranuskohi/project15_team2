@@ -1,12 +1,46 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="Cucumber" time="39.404" tests="2" skipped="0" failures="2" errors="0">
-<testcase classname="Vice Deans should be able to view the lesson list and make updates" name="TC_01 Being able to see the lesson details as a Vice Dean and update the information" time="18.855">
+<testsuite name="Cucumber" time="57.239" tests="6" skipped="0" failures="2" errors="0">
+<testcase classname="Vice Deans should be able to create a lesson" name="TC_01 Adding new Lesson as a Vice Dean - Example #1.1" time="5.481">
+<system-out><![CDATA[
+Given user goes to "https://managementonschools.com/" homepage..............passed
+And clicks on loginIcon.....................................................passed
+And enters "uranuskohi" in the userName input field.........................passed
+And enters "Helloworld0" in the password input field........................passed
+And clicks on Login button..................................................passed
+When click on Lessons.......................................................passed
+And enter "recruiter" in the Lesson Name....................................passed
+And check if Compulsory radio button is clickable...........................passed
+And click on Compulsory radio button........................................passed
+And add "5" in the Credit Score.............................................passed
+And click on Submit button..................................................passed
+Then verify the Lesson is created...........................................passed
+And close the application...................................................passed
+]]></system-out>
+</testcase>
+<testcase classname="Vice Deans should be able to create a lesson" name="TC_02 Adding new Lesson without Credit Score as a Vice Dean - Example #1.1" time="4.54">
+<system-out><![CDATA[
+Given user goes to "https://managementonschools.com/" homepage..............passed
+And clicks on loginIcon.....................................................passed
+And enters "uranuskohi" in the userName input field.........................passed
+And enters "Helloworld0" in the password input field........................passed
+And clicks on Login button..................................................passed
+When click on Lessons.......................................................passed
+And enter "recruiter" in the Lesson Name....................................passed
+And check if Compulsory radio button is clickable...........................passed
+And leave "Compulsory radio button" empty...................................passed
+And don't add Credit Score..................................................passed
+And click on Submit button..................................................passed
+Then verify the Lesson is not created.......................................passed
+And close the application...................................................passed
+]]></system-out>
+</testcase>
+<testcase classname="Vice Deans should be able to view the lesson list and make updates" name="TC_01 Being able to see the lesson details as a Vice Dean and update the information" time="18.585">
 <failure type="java.lang.AssertionError" message="The update button should be visible">
 <![CDATA[java.lang.AssertionError: The update button should be visible
 	at org.junit.Assert.fail(Assert.java:89)
 	at org.junit.Assert.assertTrue(Assert.java:42)
 	at stepdefinitions.ui_stepdefs.US_09_StepDefs.vice_dean_should_be_able_to_update_the_lesson(US_09_StepDefs.java:64)
-	at ✽.vice dean should be able to update the lesson(file:///C:/Users/Usuario1/IdeaProjects/project15_team2/src/test/resources/features/ui_features/US_09.feature:21)
+	at ✽.vice dean should be able to update the lesson(file:///C:/Users/Usuario1/IdeaProjects/project15_team2/./src/test/resources/features/ui_features/US_09.feature:21)
 ]]>
 </failure>
 <system-out><![CDATA[
@@ -29,72 +63,86 @@ Then verify the lesson is deleted...........................................skip
 And close the application...................................................skipped
 ]]></system-out>
 </testcase>
-<testcase classname="Students, choose lesson, grades and announcement" name="TC_01 Student goes and see her/his exam grade and meeting announcement" time="20.205">
-<failure type="org.openqa.selenium.NoSuchElementException" message="no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//a[@class='header_link ms-2']&quot;}
-  (Session info: chrome=122.0.6261.129)
-For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
-Build info: version: '4.18.1', revision: 'b1d3319b48'
-System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.2'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [93fa65a4bb98922422eac3f53aa5d716, findElement {using=xpath, value=//a[@class='header_link ms-2']}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 122.0.6261.129, chrome: {chromedriverVersion: 122.0.6261.128 (f18a44fedeb..., userDataDir: C:\Users\Usuario1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:61094}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:61094/devtoo..., se:cdpVersion: 122.0.6261.129, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 93fa65a4bb98922422eac3f53aa5d716">
-<![CDATA[org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//a[@class='header_link ms-2']"}
-  (Session info: chrome=122.0.6261.129)
-For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
-Build info: version: '4.18.1', revision: 'b1d3319b48'
-System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.2'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [93fa65a4bb98922422eac3f53aa5d716, findElement {using=xpath, value=//a[@class='header_link ms-2']}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 122.0.6261.129, chrome: {chromedriverVersion: 122.0.6261.128 (f18a44fedeb..., userDataDir: C:\Users\Usuario1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:61094}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:61094/devtoo..., se:cdpVersion: 122.0.6261.129, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 93fa65a4bb98922422eac3f53aa5d716
-	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
-	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502)
-	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486)
-	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:519)
-	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
-	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:356)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:350)
-	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
-	at org.openqa.selenium.support.ThreadGuard$WebDriverInvocationHandler.invokeUnderlying(ThreadGuard.java:99)
-	at org.openqa.selenium.support.ThreadGuard$WebDriverInvocationHandler.invoke(ThreadGuard.java:91)
-	at jdk.proxy2/jdk.proxy2.$Proxy19.findElement(Unknown Source)
-	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:68)
-	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
-	at jdk.proxy2/jdk.proxy2.$Proxy22.click(Unknown Source)
-	at stepdefinitions.ui_stepdefs.CommonStepDefs.clicks_on_login_icon(CommonStepDefs.java:24)
-	at ✽.clicks on loginIcon(file:///C:/Users/Usuario1/IdeaProjects/project15_team2/src/test/resources/features/ui_features/US_21.feature:6)
+<testcase classname="Students, choose lesson, grades and announcement" name="TC_01 Student goes and see her/his exam grade and meeting announcement" time="12.704">
+<failure type="java.lang.AssertionError" message="The delete button should be visible">
+<![CDATA[java.lang.AssertionError: The delete button should be visible
+	at org.junit.Assert.fail(Assert.java:89)
+	at org.junit.Assert.assertTrue(Assert.java:42)
+	at stepdefinitions.ui_stepdefs.US_21_StepDefs.student_is_not_able_to_delete_the_chosen_lesson_from_the_list(US_21_StepDefs.java:71)
+	at ✽.student is not able to delete the chosen lesson from the list(file:///C:/Users/Usuario1/IdeaProjects/project15_team2/./src/test/resources/features/ui_features/US_21.feature:21)
 ]]>
 </failure>
 <system-out><![CDATA[
 Given user goes to "https://managementonschools.com/" homepage..............passed
-And clicks on loginIcon.....................................................failed
-And enters "uranus" in the userName input field.............................skipped
-And enters "Madrid01" in the password input field...........................skipped
-And clicks on Login button..................................................skipped
-When student goes to Choose Lesson Management...............................skipped
-And student should be able to see the Teacher on the Choose Lesson List.....skipped
-And student can see the day on the Choose Lesson List.......................skipped
-And student should be able to see the StartTime on the Choose Lesson List...skipped
-And student should see the StopTime on the Choose Lesson List...............skipped
-And select the wanted Lessons...............................................skipped
-And click on Submit button for add lesson...................................skipped
-And student is able to see the chosen Lessons on the Lesson Program List....skipped
-And student should be able to delete the chosen lesson from the list........skipped
-And student is not able to delete the chosen lesson from the list...........skipped
+And clicks on loginIcon.....................................................passed
+And enters "uranus" in the userName input field.............................passed
+And enters "Madrid01" in the password input field...........................passed
+And clicks on Login button..................................................passed
+When student goes to Choose Lesson Management...............................passed
+And student should be able to see the Teacher on the Choose Lesson List.....passed
+And student can see the day on the Choose Lesson List.......................passed
+And student should be able to see the StartTime on the Choose Lesson List...passed
+And student should see the StopTime on the Choose Lesson List...............passed
+And select the wanted Lessons...............................................passed
+And click on Submit button for add lesson...................................passed
+And student is able to see the chosen Lessons on the Lesson Program List....passed
+And student should be able to delete the chosen lesson from the list........passed
+And student is not able to delete the chosen lesson from the list...........failed
 And student should click on the menu and should be able to see the Main Menu List.skipped
 And student should click on Grades and Announcements........................skipped
 And student should be able to see his exam grades if it is added by their teacher in the Student Info List.skipped
 And student should be able to see the meeting created by his advisor on the Meet List.skipped
 And close the application...................................................skipped
+]]></system-out>
+</testcase>
+<testcase classname="Admin should be able to add Vice Dean" name="TC_01 Admin adding a Vice Dean - Example #1.1" time="8.052">
+<system-out><![CDATA[
+Given user goes to "https://managementonschools.com/" homepage..............passed
+And clicks on loginIcon.....................................................passed
+And enters "AdminBatch197" in the userName input field......................passed
+And enters "Batch197+" in the password input field..........................passed
+And clicks on Login button..................................................passed
+When admin is logged in the website.........................................passed
+And click on menu...........................................................passed
+And click on Vice Dean Management...........................................passed
+And admin should see the Vice Dean Management Filed.........................passed
+And enter name as "Madrid"..................................................passed
+And enter surname as "Madrid"...............................................passed
+And enter brith place as "Spain"............................................passed
+And select the "Male".......................................................passed
+And write the correct "12/25/1890"..........................................passed
+And enter phone number as "363-918-0845"....................................passed
+And write the SSN as "987-98-9876"..........................................passed
+And write the "madridspain".................................................passed
+And add "Madridspain0"......................................................passed
+And click on Submit button for Vice Dean creation...........................passed
+Then verify the Vice Dean is created........................................passed
+And close the application...................................................passed
+]]></system-out>
+</testcase>
+<testcase classname="Admin should be able to add Vice Dean" name="TC_02 Admin adding a Vice Dean without adding the password - Example #1.1" time="7.499">
+<system-out><![CDATA[
+Given user goes to "https://managementonschools.com/" homepage..............passed
+And clicks on loginIcon.....................................................passed
+And enters "AdminBatch197" in the userName input field......................passed
+And enters "Batch197+" in the password input field..........................passed
+And clicks on Login button..................................................passed
+When admin is logged in the website.........................................passed
+And click on menu...........................................................passed
+And click on Vice Dean Management...........................................passed
+And admin should see the Vice Dean Management Filed.........................passed
+And enter name as "Madrid"..................................................passed
+And enter surname as "Madrid"...............................................passed
+And enter brith place as "Spain"............................................passed
+And select the "Male".......................................................passed
+And write the correct "12/25/1890"..........................................passed
+And enter phone number as "369-258-0147"....................................passed
+And write the SSN as "987-98-9876"..........................................passed
+And write the "madridspain".................................................passed
+And leave "" empty..........................................................passed
+And click on Submit button for Vice Dean creation...........................passed
+Then Verify the Vice Dean is not created....................................passed
+And close the application...................................................passed
 ]]></system-out>
 </testcase>
 </testsuite>

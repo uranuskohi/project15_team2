@@ -1,5 +1,5 @@
 
-@userStory09 @hehe
+@userStory09  @hehe
 Feature: Vice Deans should be able to view the lesson list and make updates
   Background:
     Given user goes to "https://managementonschools.com/" homepage
