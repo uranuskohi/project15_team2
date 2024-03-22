@@ -10,7 +10,7 @@ Feature:Admin should be able to see and delete Dean
     And clicks on Menu button
     And clicks on "Dean Management" on Main Menu
 
-  @userStory05_tc01
+
 
   Scenario Outline: See and Delete Dean successfully, when signed in as Admin
     When Admin sees the new Deans Name "<New Deans Name>"

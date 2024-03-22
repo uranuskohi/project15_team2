@@ -27,27 +27,27 @@ public class US_04_StepDefs {
 
     @When("add name {string}")
     public void addName(String name) {
-        deanManagementPage.firstName.sendKeys();
+        deanManagementPage.firstName.sendKeys(name);
     }
 
     @And("add last name {string}")
-    public void addLastName(String arg0) {
-        deanManagementPage.lastName.sendKeys();
+    public void addLastName(String lName) {
+        deanManagementPage.lastName.sendKeys(lName);
     }
 
     @And("add birthplace {string}")
-    public void addBirthplace(String arg0) {
-        deanManagementPage.birthPlace.sendKeys();
+    public void addBirthplace(String bP) {
+        deanManagementPage.birthPlace.sendKeys(bP);
     }
 
     @And("add birthdate {string}")
-    public void addBirthdate(String arg0) {
-        deanManagementPage.dateOfBirth.sendKeys();
+    public void addBirthdate(String bD) {
+        deanManagementPage.dateOfBirth.sendKeys(bD);
     }
 
     @And("add the phonenumber {string}")
-    public void addThePhonenumber(String arg0) {
-        deanManagementPage.phoneNumber.sendKeys();
+    public void addThePhonenumber(String pN) {
+        deanManagementPage.phoneNumber.sendKeys(pN);
     }
 
     @And("add ssn {string}")
@@ -91,4 +91,8 @@ public class US_04_StepDefs {
     }
 
 
+    @Then("verify the Dean cannot be created")
+    public void verifyTheDeanCannotBeCreated() {
+        deanManagementPage.missingDigitNotice.isDisplayed();
+    }
 }

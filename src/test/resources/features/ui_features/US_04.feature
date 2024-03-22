@@ -42,7 +42,7 @@
     And add username "<Username>"
     And add password "<Password>"
     And clicks on the Dean Submit button
-    Then verify the Dean is created
+    Then verify the Dean cannot be created
       Examples:
         | Name | Surname | Birth Place | Gender | Birth Date | PhoneNumber |
         | Janee | Eyree | Toronto | Female | 1789-09-10 | 416 235 2354 |
