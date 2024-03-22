@@ -28,7 +28,6 @@ Feature: User adds Admin
 
   @US_22_TC02
   Scenario: Admin shouldn't be created with blank name field
-#    And admin is in admin management page
 #    And leaves blank in the name field
    # And scrolls up to the list
     And enters "Smith" again in the surname field

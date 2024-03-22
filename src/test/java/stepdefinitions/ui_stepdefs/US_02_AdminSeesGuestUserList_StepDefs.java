@@ -113,7 +113,6 @@ Admin_Management_Page admin_management_page= new Admin_Management_Page();
         guest_user_list_page.guestuserLink.click();
 
     }
-
     @Then("verifies {string},{string},{string},{string} columns are visible")
     public void verifies_columns_are_visible(String string, String string2, String string3, String string4) {
         Assert.assertTrue(guest_user_list_page.nameSurnameColumn.isDisplayed());
@@ -122,7 +121,6 @@ Admin_Management_Page admin_management_page= new Admin_Management_Page();
         Assert.assertTrue(guest_user_list_page.usernameColumn.isDisplayed());
 
     }
-
 
     @Then("delete if the registered user {string} exist in the list")
     public void delete_if_the_registered_user_exist_in_the_list(String string) {
@@ -140,8 +138,6 @@ Admin_Management_Page admin_management_page= new Admin_Management_Page();
     }
 //    @Then("delete the registered user from the list")
 //    public void delete_the_registered_user_from_the_list() {
-
-
 //        for(int i=1;i<=5;i++) {
 //            if(Driver.getDriver().findElement(By.xpath("//tbody/tr["+i+"]/td[4]")).getText().equalsIgnoreCase("Dugur")){
 //                Driver.getDriver().findElement(By.xpath("//tbody/tr["+i+"]/td[5]")).click();

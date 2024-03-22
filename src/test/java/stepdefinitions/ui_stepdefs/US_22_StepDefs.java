@@ -112,8 +112,6 @@ public class US_22_StepDefs {
             }
             count++;
         }
-
-
     }
 
     @Then("verifies message {string} message")
@@ -135,15 +133,10 @@ public class US_22_StepDefs {
 //            dataExist=true;
 //            System.out.println("dataExist:"+createdData.getText());
 //            break;
-//        }
-//
-//    }
-//
+//        }}
+
 //    ///////////////////////////////// US_22_TC02
-//    @Given("admin is in admin management page")
-//    public void admin_is_in_admin_management_page() {
-//
-//    }
+
 @Given("scrolls up to the list")
 public void scrolls_up_to_the_list() {
     ActionsUtils.actionsScrollUp();
@@ -169,16 +162,7 @@ public void scrolls_up_to_the_list() {
 //        admin_management_page.genderFemaleOnAdminPage.click();
         BrowserUtils.sendKeysWithTimeout(admin_management_page.genderFemaleOnAdminPage,string,2);
     }
-//    @Then("verifies Required message")
-//    public void verifies_admin_is_not_created() {
-//        WaitUtils.waitFor(1);
-//        String actualText = admin_management_page.requiredMessageUnderName.getText();
-//        System.out.println(actualText);
-//        WaitUtils.waitFor(1);
-//        System.out.println(actualText);
-//        Assert.assertEquals(string, actualText);
-//
-//    }
+
 @Then("verifies {string} message")
 public void verifies_message(String string) {
     WaitUtils.waitFor(1);
