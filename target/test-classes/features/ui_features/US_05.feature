@@ -18,7 +18,7 @@ Feature:Admin should be able to see and delete Dean
 #    Then verify new Dean is now not there
     Examples:
       | New Deans Name |
-      | Janee |
+      | Ali |
 
 
 #    delete button does not exist, it is a known bug on Jira

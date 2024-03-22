@@ -2,6 +2,7 @@ package stepdefinitions.ui_stepdefs;
 
 import com.github.javafaker.Faker;
 import io.cucumber.java.en.And;
+import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.openqa.selenium.interactions.Actions;
@@ -94,5 +95,10 @@ public class US_04_StepDefs {
     @Then("verify the Dean cannot be created")
     public void verifyTheDeanCannotBeCreated() {
         deanManagementPage.missingDigitNotice.isDisplayed();
+    }
+
+    @Given("navigate to {string}")
+    public void navigateTo(String url) {
+        Driver.getDriver().navigate().to("https://managementonschools.com/");
     }
 }
