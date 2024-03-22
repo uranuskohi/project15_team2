@@ -2,7 +2,7 @@
 
   Feature:Admin should be able to add Dean
     Background:
-  Given user goes to "https://managementonschools.com/" homepage
+#  Given user goes to "https://managementonschools.com/" homepage
   And clicks on loginIcon
   And enters "AdminBatch197" in the userName input field
   And enters "Batch197+" in the password input field
@@ -14,6 +14,7 @@
 
     @userStory04_tc01
   Scenario Outline: Create Dean successfully when signed in as Admin
+      Given navigate to "url"
     When add name "<Name>"
     And add last name "<Surname>"
     And add birthplace "<Birth Place>"
@@ -28,6 +29,7 @@
       Examples:
         | Name | Surname | Birth Place | Gender | Birth Date | PhoneNumber | SSNNumber | Username | Password |
         | Jane | Eyre | Toronto | Female | 1789-09-10 | 416 235 2355 | 123 12  1234 | JaneyE | Janey3!! |
+        | Janer | Eyrer | Toronto | Female | 1789-09-10 | 416 235 2356 | 123 12  1235 | JaneyR | Janer3!! |
 
 
     @userStory04_tc02
@@ -42,7 +44,7 @@
     And add username "<Username>"
     And add password "<Password>"
     And clicks on the Dean Submit button
-    Then verify the Dean is created
+    Then verify the Dean cannot be created
       Examples:
         | Name | Surname | Birth Place | Gender | Birth Date | PhoneNumber |
         | Janee | Eyree | Toronto | Female | 1789-09-10 | 416 235 2354 |
