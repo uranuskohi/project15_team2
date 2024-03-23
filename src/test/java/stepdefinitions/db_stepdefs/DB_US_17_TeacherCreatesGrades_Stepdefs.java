@@ -8,8 +8,6 @@ import java.util.List;
 
 public class DB_US_17_TeacherCreatesGrades_Stepdefs {
 
-
-
     @When("user gets the {string} column from the table {string} for student info grades")
     public void userGetsTheColumnFromTheTableForStudentInfoGrades(String columnName, String table) {
         DBUtils.executeQuery("SELECT " + columnName + " FROM " + table);
@@ -25,7 +23,5 @@ public class DB_US_17_TeacherCreatesGrades_Stepdefs {
         }
         assertTrue(allColumnDataString.contains(data));
     }
-
-
 }
 

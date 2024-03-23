@@ -4,7 +4,7 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import utilities.DBUtils;
 
-public class CommonSteps {
+public class DB_CommonSteps {
 
     @Given("user connects to application database")
     public void user_connects_to_application_database() {
