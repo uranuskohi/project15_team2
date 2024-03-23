@@ -1,5 +1,6 @@
 package pages;
 
+
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -41,6 +42,10 @@ public class Vice_Dean_Management_Page {
 
     @FindBy(xpath = "//input[@value='MALE']")
     public WebElement maleGender;
+
+    @FindBy(xpath = "//div[@class='invalid-feedback'][normalize-space()='Required'])[1]")
+    public WebElement getVdmNameRequiredMsg;
+
 
 
 //    ----------------------------

@@ -10,6 +10,8 @@ import utilities.MediaUtils;
 import utilities.WaitUtils;
 
 import java.io.IOException;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 
 import static org.junit.Assert.assertTrue;
 import static utilities.WaitUtils.waitFor;
@@ -41,6 +43,10 @@ public class US_20_Teacher_View_Update_Delete_Meeting_StepDefs {
         waitFor(1);
         meetManagementPage.dateOfMeetInEdit.sendKeys(dateUS20);
         waitFor(1);
+
+//        LocalDate current = LocalDate.now().plusMonths(1).plusWeeks(2).plusDays(3);
+//        DateTimeFormatter dtf = DateTimeFormatter.ofPattern("dd.MM.yyyy");
+//        String validDate = dtf.format(current);
     }
 
     @And("clicks Submit")
