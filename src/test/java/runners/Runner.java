@@ -16,12 +16,14 @@ import org.junit.runner.RunWith;
 ////                "rerun:target/failedRerun.txt"
 //        },
         monochrome = true,
+        //it's stuck...?yes
+
 
 
         features = "./src/test/resources/features",
         glue = {"stepdefinitions", "hooks"},
         dryRun = false,
-        tags = "@userStory23"
+        tags = "@sloane"
 )
 
 public class Runner {

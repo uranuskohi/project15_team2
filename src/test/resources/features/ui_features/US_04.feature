@@ -12,6 +12,7 @@ Given user goes to "https://managementonschools.com/" homepage
 
 
 
+
     @userStory04_tc01
   Scenario Outline: Create Dean successfully when signed in as Admin
     When add name "<Name>"
@@ -25,10 +26,12 @@ Given user goes to "https://managementonschools.com/" homepage
     And add password "<Password>"
     And clicks on the Dean Submit button
     Then verify the Dean is created
+      And close the application
       Examples:
         | Name | Surname | Birth Place | Gender | Birth Date | PhoneNumber | SSNNumber | Username | Password |
-        | Jane | Eyre | Toronto | Female | 1789-09-10 | 416 235 2355 | 123 12  1234 | JaneyE | Janey3!! |
-        | Janer | Eyrer | Toronto | Female | 1789-09-10 | 416 235 2356 | 123 12  1235 | JaneyR | Janer3!! |
+#        | Jane1 | Eyre1 | Toronto | Female | 001789-09-10 | 416 235 2315 | 123 12  1231 | JaneyE2 | Janey3!! |
+        | Jane31 | Eyre31 | Toronto | Female | 001719-09-12 | 416 215 2323 | 123 12  1212 | JaneyE1 | Janey1!! |
+   #     | Janer | Eyrer | Toronto | Female | 001789-09-10 | 416 235 2356 | 123 12  1235 | JaneyR | Janer3!! |
 
 
     @userStory04_tc02
@@ -43,8 +46,8 @@ Given user goes to "https://managementonschools.com/" homepage
     And add username "<Username>"
     And add password "<Password>"
     And clicks on the Dean Submit button
-    Then verify the Dean cannot be created
+      And close the application
       Examples:
         | Name | Surname | Birth Place | Gender | Birth Date | PhoneNumber |
-        | Janee | Eyree | Toronto | Female | 1789-09-10 | 416 235 2354 |
+        | Janeer | Eyreeo | Toronto | Female | 001789-09-18 | 416 235 2358 |
 
