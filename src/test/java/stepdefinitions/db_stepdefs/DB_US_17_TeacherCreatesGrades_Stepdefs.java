@@ -8,10 +8,7 @@ import java.util.List;
 
 public class DB_US_17_TeacherCreatesGrades_Stepdefs {
 
-    @Given("user connects to application database")
-    public void user_connects_to_application_database() {
-        DBUtils.createConnection();
-    }
+
 
     @When("user gets the {string} column from the table {string} for student info grades")
     public void userGetsTheColumnFromTheTableForStudentInfoGrades(String columnName, String table) {
@@ -29,9 +26,6 @@ public class DB_US_17_TeacherCreatesGrades_Stepdefs {
         assertTrue(allColumnDataString.contains(data));
     }
 
-    @Then("user terminate connection")
-    public void user_terminate_connection() {
-        DBUtils.closeConnection();
-    }
+
 }
 
