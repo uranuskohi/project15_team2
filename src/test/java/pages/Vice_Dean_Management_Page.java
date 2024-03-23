@@ -1,5 +1,6 @@
 package pages;
 
+
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -10,12 +11,6 @@ public class Vice_Dean_Management_Page {
     public Vice_Dean_Management_Page() {
         PageFactory.initElements(Driver.getDriver(), this);
     }
-
-    
-
-
-
-
 
     @FindBy(xpath = "//a[@class='header_link ms-2']")
     public WebElement loginIconAtHeader;
@@ -45,11 +40,20 @@ public class Vice_Dean_Management_Page {
     @FindBy(xpath = "//input[@value='FEMALE']")
     public WebElement femGender;
 
-    @FindBy(xpath = "(//label[normalize-space()='Male'])[1]")
+    @FindBy(xpath = "//input[@value='MALE']")
     public WebElement maleGender;
 
-    @FindBy(xpath = "//input[@id='birthDay'")
+    @FindBy(xpath = "//div[@class='invalid-feedback'][normalize-space()='Required'])[1]")
+    public WebElement getVdmNameRequiredMsg;
+
+
+
+//    ----------------------------
+//    uranus brithday
+    @FindBy(id = "birthDay")
     public WebElement vdmBirthDay;
+//    ---------------------------------------------------------
+
 
     @FindBy(xpath = "//input[@id='phoneNumber']")
     public WebElement vdmPhone;
@@ -63,7 +67,17 @@ public class Vice_Dean_Management_Page {
     @FindBy(xpath = "//input[@id='password']")
     public WebElement vdmPassword;
 
-    @FindBy(xpath = "//button[normalize-space()='Submit'])[1]")
+    @FindBy(xpath = "//button[@class='fw-semibold btn btn-primary btn-lg']")
     public WebElement submitButton;
+
+
+//    ------------------------
+//    uranus verifyMessage
+    @FindBy(xpath = "//div[text()='Vice dean Saved']")
+    public WebElement verifyViceDeanCreatedMessage;
+
+    @FindBy(xpath = "//div[text()='Enter your password']")
+    public WebElement passwordRequiredMessage;
+//    -----------------------------------------------------------
 
 }

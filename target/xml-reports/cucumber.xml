@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="Cucumber" time="9.118" tests="2" skipped="0" failures="0" errors="0">
+<testcase classname="Admin sees Guest User list" name="" time="4.312">
+<system-out><![CDATA[
+Given user goes to "https://managementonschools.com/" homepage..............passed
+And user clicks Register button.............................................passed
+And enters "Deniz" in the Name input field..................................passed
+And enters "Ugur" in the Surname input field................................passed
+And enters "Istanbul" in the Birth Place input field........................passed
+And enters "444-444-4545" in the phone field................................passed
+And selects gender female radio button......................................passed
+And enters "06-07-1977" in the Date Of Birth field..........................passed
+And enters ssn in the Ssn input field.......................................passed
+And enters "Dugur" in the User Name field...................................passed
+And enters password in the Password input field.............................passed
+And clicks Register button..................................................passed
+Then verifies success mesg "Guest User registered.".........................passed
+]]></system-out>
+</testcase>
+<testcase classname="Admin sees Guest User list" name="" time="4.605">
+<system-out><![CDATA[
+Given user goes to "https://managementonschools.com/" homepage..............passed
+And clicks on loginIcon.....................................................passed
+And enters "AdminBatch197" in the userName input field......................passed
+And enters "Batch197+" in the password input field..........................passed
+And clicks on Login button..................................................passed
+And clicks on Menu button...................................................passed
+And clicks on guest user on the main menu...................................passed
+Then verifies "name","phone number","Ssn","Username" columns are visible....passed
+And delete if the registered user "Deniz Ugur" exist in the list............passed
+Then verifies the message "Guest User deleted Successful"...................passed
+And close the application...................................................passed
+]]></system-out>
+</testcase>
+</testsuite>

@@ -15,10 +15,17 @@ public class Main_Page {
     @FindBy(xpath = "//a[@class='header_link me-2']")
     public WebElement registerIconAtHeader;
 
-    @FindBy(xpath = "//a[@class='header_link ms-2']")
+    @FindBy(xpath = "//a[@class='header_link ms-2']") //---Does not work
     public WebElement loginIconAtHeader;
 
+    @FindBy(xpath ="//a[@href='/login']")
+    public WebElement loginButtonMainPage;
 
+//    @FindBy(xpath = "//i[@class='fa fa-lock']") ---Does not work
+//    public WebElement getLoginIconAtHeader;
+
+//    @FindBy(partialLinkText = "login")---Does not work
+//    public WebElement loginIconAtHeader;
 
     //Log in Part
     @FindBy(id = "username")

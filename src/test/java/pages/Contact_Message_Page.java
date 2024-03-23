@@ -1,6 +1,4 @@
 package pages;
-
-import io.github.bonigarcia.wdm.webdriver.WebDriverBrowser;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -31,19 +29,19 @@ public class Contact_Message_Page {
 
 
     //Added By Esra
-    @FindBy(xpath = "//tr//td//span[text()='arife']")
+    @FindBy(xpath = "//tbody/tr[3]/td[1]")
     public  WebElement nameData;
 
-    @FindBy(xpath = "//tr//td//span[text()='maxidarvin@falkcia.com']")
+    @FindBy(xpath = "//tbody/tr[3]/td[2]/span[1]")
     public WebElement emailData;
 
-    @FindBy(xpath = "//tr//td//span[text()='2024-03-13']")
+    @FindBy(xpath = "//tbody/tr[3]/td[3]/span[1]")
     public WebElement dateData;
 
-    @FindBy(xpath = "//tr//td//span[text()='Matematik']")
+    @FindBy(xpath = "//tbody/tr[3]/td[4]/span[1]")
     public WebElement subjectData;
 
-    @FindBy(xpath = "//tr//td//span[text()='Lorem ipsum dolor sit amet, consectetur adipiscing elit.']")
+    @FindBy(xpath = "//tbody/tr[3]/td[5]/span[1]")
     public WebElement messageData;
 
 

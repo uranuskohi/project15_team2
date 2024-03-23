@@ -1,9 +1,12 @@
 package pages;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import utilities.Driver;
+
+import java.util.List;
 
 public class Admin_Management_Page {
 
@@ -24,6 +27,12 @@ public class Admin_Management_Page {
 
     @FindBy(xpath = "//input[@value='FEMALE']")
     public WebElement genderFemaleOnAdminPage;
+//----------------------------------------------
+//    Uranus: male gender button
+
+    @FindBy(xpath = "//input[@value='MALE']")
+    public WebElement genderMaleOnAdminPage;
+//-------------------------------------------------------
 
     @FindBy(xpath = "//input[@id='birthDay']")
     public WebElement dateOfBirthOnAdminPage;
@@ -49,6 +58,53 @@ public class Admin_Management_Page {
     @FindBy(xpath = "//div[@role='alert']")
     public WebElement adminSavedAlert;
 
+    @FindBy(xpath = "//div[@class='table-responsive']//tbody/tr/td[1]")
+    public List<WebElement> nameColumn1;
+
+    @FindBy(xpath = "(//a[@class='page-link'])[4]")
+    public WebElement lastPageButton;
+
+    @FindBy(xpath = "(//span[normalize-space()='Asmith'])[1]")
+    public WebElement getUserName;
+
+    @FindBy(xpath = "(//span[normalize-space()='Ashley Smith'])[1]")
+    public WebElement getNameToDeleteUser;
+
+    @FindBy(xpath = "(//td)[42]")
+    public WebElement deleteButton;
+
+    @FindBy(xpath = "//div[text()='Admin deleted Successful']")
+    public WebElement adminDeletedSuccessfulMessage;
+
+    @FindBy(xpath = "//div[@id='2']")
+    public WebElement adminDeletedSuccessfulMessage1;
+
+    @FindBy(xpath = "//div[@role='alert']")
+    public WebElement adminDeletedSuccessfulMessage2;
+
+    @FindBy(xpath = "(//div[@class='invalid-feedback'])[1]")
+    public WebElement requiredMessageUnderName;
+
+
+
+
+//    // Get all the elements available with tag name 'p'
+//    List<WebElement> elements = element.findElements(By.tagName("td"));
+//             for (WebElement e : elements) {
+//                    if(e=="Asmith12"){
+//
+//
+//    }
+//
+//        System.out.println(e.getText());
+//    }
+
+
+//List<WebElement> elements = driver.findElements(By.tagName("li"));
+//
+//for (WebElement element : elements) {
+//        System.out.println("Paragraph text:" + element.getText());
+//    }
 
 
     @FindBy(xpath = "//*[.='Menu']")

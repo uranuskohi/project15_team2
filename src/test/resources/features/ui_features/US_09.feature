@@ -1,5 +1,5 @@
 
-@userStory09
+@userStory09  @hehe
 Feature: Vice Deans should be able to view the lesson list and make updates
   Background:
     Given user goes to "https://managementonschools.com/" homepage
@@ -14,11 +14,11 @@ Feature: Vice Deans should be able to view the lesson list and make updates
     And vice dean can see the Lesson Name
     And vice dean can see the Compulsory field
     And vice dean can see the Credit
+      And click on the last page
+      And go to the last page
+      And go up
     And vice dean is able to see and delete the created lesson
     And vice dean should be able to update the lesson
-
-
-
-
-
+      Then verify the lesson is deleted
+      And close the application
 
