@@ -5,6 +5,7 @@ import io.cucumber.java.en.Then;
 import pages.Lesson_Program_Page;
 import utilities.BrowserUtils;
 import utilities.MediaUtils;
+import utilities.WaitUtils;
 
 import java.io.IOException;
 
@@ -39,6 +40,7 @@ public class US_12_Stepdefs {
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
+        WaitUtils.waitFor(1);
     }
 
 
