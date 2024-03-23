@@ -9,7 +9,7 @@ import pages.Admin_Management_Page;
 import pages.Main_Page;
 import utilities.*;
 
-public class US_22_StepDefs {
+public class US_22_Add_Admin_StepDefs {
 
     Admin_Management_Page admin_management_page=new Admin_Management_Page();
     Main_Page mainPage=new Main_Page();
