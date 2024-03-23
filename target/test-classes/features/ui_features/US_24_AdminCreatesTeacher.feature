@@ -1,4 +1,4 @@
-@US24 @Sarah
+@US24 @Sarah @smoke
 Feature: admin creates teacher
   Background:
     Given user goes to "https://managementonschools.com/" homepage

@@ -1,5 +1,5 @@
 
-@userStory23 @hehe
+@userStory23 @hehe @smoke
 Feature: Admin should be able to add Vice Dean
   Background:
     Given user goes to "https://managementonschools.com/" homepage

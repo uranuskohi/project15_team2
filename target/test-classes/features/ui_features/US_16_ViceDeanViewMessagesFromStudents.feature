@@ -1,4 +1,4 @@
-@US_16_UI
+@US_16_UI @smoke
 Feature: Vice Dean should be able to view the messages sent by users.
 
   Background: Sign in as a vice dean
