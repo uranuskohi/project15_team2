@@ -1,5 +1,6 @@
 package pages;
 
+
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -17,6 +18,10 @@ public class Lessons_Page {
     @FindBy(id = "lessonName")
     public WebElement lessonNameField;
 
+    @FindBy(className = "form-check-label")
+    public WebElement compulsory;
+
+
     @FindBy(id = "compulsory")
     public WebElement compulsoryRadioButton;
 
@@ -26,8 +31,38 @@ public class Lessons_Page {
     @FindBy(xpath = "(//button[@class='fw-semibold btn btn-primary btn-lg'])[2]")
     public WebElement submitButtonForLessons;
 
-    @FindBy(xpath = "(//button[@class='btn btn-danger'])[1]")
+    @FindBy(xpath = "//div[text()='Lesson Created']")
+    public WebElement lessonCreatedVerification;
+
+
+    @FindBy(xpath = "(//div[@class='invalid-feedback'])[5]")
+    public WebElement requiredFiledErrorMessage;
+
+
+    @FindBy(xpath = "(//*[@class='fa-solid fa-trash'])[5]")
     public WebElement deleteButtonForLesson;
+
+    @FindBy(xpath = "(//a[@role='button'])[18]")
+    public WebElement lastPageArrow;
+
+    @FindBy(xpath = "(//*[@class='page-link'])[8]")
+    public WebElement nextPage;
+
+    @FindBy(xpath = "//div[text()='Lesson Deleted']")
+    public WebElement deleteLessonVerification;
+//------------------------------------------------------------------------------------------------------------------------
+
+
+    @FindBy(partialLinkText = "Lesson Name")
+    public WebElement lessonListName;
+
+    @FindBy(partialLinkText = "Compulsory")
+    public WebElement lessonListCompulsory;
+
+    @FindBy(partialLinkText = "Credit Score")
+    public WebElement lessonListCreditScore;
+
+
 
 
 
