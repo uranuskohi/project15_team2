@@ -9,7 +9,7 @@ import pages.Admin_Management_Page;
 import pages.Main_Page;
 import utilities.*;
 
-public class US_22_StepDefs {
+public class US_22_Add_Admin_StepDefs {
 
     Admin_Management_Page admin_management_page=new Admin_Management_Page();
     Main_Page mainPage=new Main_Page();
@@ -62,11 +62,12 @@ public class US_22_StepDefs {
         admin_management_page.password.sendKeys("Asmith12");
 
     }
-    @Given("clicks on Submit button")
-    public void clicks_on_submit_button() {
+    @Given("clicks on the Submit button")
+    public void clicks_on_the_submit_button() {
         BrowserUtils.clickWithTimeOut(admin_management_page.submitButton,3);
 
     }
+
     @Then("verifies success message {string}")
     public void verifies_success_message(String string) {
         WaitUtils.waitFor(1);

@@ -1,147 +1,34 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="Cucumber" time="57.239" tests="6" skipped="0" failures="2" errors="0">
-<testcase classname="Vice Deans should be able to create a lesson" name="TC_01 Adding new Lesson as a Vice Dean - Example #1.1" time="5.481">
+<testsuite name="Cucumber" time="9.118" tests="2" skipped="0" failures="0" errors="0">
+<testcase classname="Admin sees Guest User list" name="" time="4.312">
 <system-out><![CDATA[
 Given user goes to "https://managementonschools.com/" homepage..............passed
-And clicks on loginIcon.....................................................passed
-And enters "uranuskohi" in the userName input field.........................passed
-And enters "Helloworld0" in the password input field........................passed
-And clicks on Login button..................................................passed
-When click on Lessons.......................................................passed
-And enter "recruiter" in the Lesson Name....................................passed
-And check if Compulsory radio button is clickable...........................passed
-And click on Compulsory radio button........................................passed
-And add "5" in the Credit Score.............................................passed
-And click on Submit button..................................................passed
-Then verify the Lesson is created...........................................passed
-And close the application...................................................passed
+And user clicks Register button.............................................passed
+And enters "Deniz" in the Name input field..................................passed
+And enters "Ugur" in the Surname input field................................passed
+And enters "Istanbul" in the Birth Place input field........................passed
+And enters "444-444-4545" in the phone field................................passed
+And selects gender female radio button......................................passed
+And enters "06-07-1977" in the Date Of Birth field..........................passed
+And enters ssn in the Ssn input field.......................................passed
+And enters "Dugur" in the User Name field...................................passed
+And enters password in the Password input field.............................passed
+And clicks Register button..................................................passed
+Then verifies success mesg "Guest User registered.".........................passed
 ]]></system-out>
 </testcase>
-<testcase classname="Vice Deans should be able to create a lesson" name="TC_02 Adding new Lesson without Credit Score as a Vice Dean - Example #1.1" time="4.54">
-<system-out><![CDATA[
-Given user goes to "https://managementonschools.com/" homepage..............passed
-And clicks on loginIcon.....................................................passed
-And enters "uranuskohi" in the userName input field.........................passed
-And enters "Helloworld0" in the password input field........................passed
-And clicks on Login button..................................................passed
-When click on Lessons.......................................................passed
-And enter "recruiter" in the Lesson Name....................................passed
-And check if Compulsory radio button is clickable...........................passed
-And leave "Compulsory radio button" empty...................................passed
-And don't add Credit Score..................................................passed
-And click on Submit button..................................................passed
-Then verify the Lesson is not created.......................................passed
-And close the application...................................................passed
-]]></system-out>
-</testcase>
-<testcase classname="Vice Deans should be able to view the lesson list and make updates" name="TC_01 Being able to see the lesson details as a Vice Dean and update the information" time="18.585">
-<failure type="java.lang.AssertionError" message="The update button should be visible">
-<![CDATA[java.lang.AssertionError: The update button should be visible
-	at org.junit.Assert.fail(Assert.java:89)
-	at org.junit.Assert.assertTrue(Assert.java:42)
-	at stepdefinitions.ui_stepdefs.US_09_StepDefs.vice_dean_should_be_able_to_update_the_lesson(US_09_StepDefs.java:64)
-	at ✽.vice dean should be able to update the lesson(file:///C:/Users/Usuario1/IdeaProjects/project15_team2/./src/test/resources/features/ui_features/US_09.feature:21)
-]]>
-</failure>
-<system-out><![CDATA[
-Given user goes to "https://managementonschools.com/" homepage..............passed
-And clicks on loginIcon.....................................................passed
-And enters "uranuskohi" in the userName input field.........................passed
-And enters "Helloworld0" in the password input field........................passed
-And clicks on Login button..................................................passed
-When click on Lessons.......................................................passed
-And scroll down to Lesson List..............................................passed
-And vice dean can see the Lesson Name.......................................passed
-And vice dean can see the Compulsory field..................................passed
-And vice dean can see the Credit............................................passed
-And click on the last page..................................................passed
-And go to the last page.....................................................passed
-And go up...................................................................passed
-And vice dean is able to see and delete the created lesson..................passed
-And vice dean should be able to update the lesson...........................failed
-Then verify the lesson is deleted...........................................skipped
-And close the application...................................................skipped
-]]></system-out>
-</testcase>
-<testcase classname="Students, choose lesson, grades and announcement" name="TC_01 Student goes and see her/his exam grade and meeting announcement" time="12.704">
-<failure type="java.lang.AssertionError" message="The delete button should be visible">
-<![CDATA[java.lang.AssertionError: The delete button should be visible
-	at org.junit.Assert.fail(Assert.java:89)
-	at org.junit.Assert.assertTrue(Assert.java:42)
-	at stepdefinitions.ui_stepdefs.US_21_StepDefs.student_is_not_able_to_delete_the_chosen_lesson_from_the_list(US_21_StepDefs.java:71)
-	at ✽.student is not able to delete the chosen lesson from the list(file:///C:/Users/Usuario1/IdeaProjects/project15_team2/./src/test/resources/features/ui_features/US_21.feature:21)
-]]>
-</failure>
-<system-out><![CDATA[
-Given user goes to "https://managementonschools.com/" homepage..............passed
-And clicks on loginIcon.....................................................passed
-And enters "uranus" in the userName input field.............................passed
-And enters "Madrid01" in the password input field...........................passed
-And clicks on Login button..................................................passed
-When student goes to Choose Lesson Management...............................passed
-And student should be able to see the Teacher on the Choose Lesson List.....passed
-And student can see the day on the Choose Lesson List.......................passed
-And student should be able to see the StartTime on the Choose Lesson List...passed
-And student should see the StopTime on the Choose Lesson List...............passed
-And select the wanted Lessons...............................................passed
-And click on Submit button for add lesson...................................passed
-And student is able to see the chosen Lessons on the Lesson Program List....passed
-And student should be able to delete the chosen lesson from the list........passed
-And student is not able to delete the chosen lesson from the list...........failed
-And student should click on the menu and should be able to see the Main Menu List.skipped
-And student should click on Grades and Announcements........................skipped
-And student should be able to see his exam grades if it is added by their teacher in the Student Info List.skipped
-And student should be able to see the meeting created by his advisor on the Meet List.skipped
-And close the application...................................................skipped
-]]></system-out>
-</testcase>
-<testcase classname="Admin should be able to add Vice Dean" name="TC_01 Admin adding a Vice Dean - Example #1.1" time="8.052">
+<testcase classname="Admin sees Guest User list" name="" time="4.605">
 <system-out><![CDATA[
 Given user goes to "https://managementonschools.com/" homepage..............passed
 And clicks on loginIcon.....................................................passed
 And enters "AdminBatch197" in the userName input field......................passed
 And enters "Batch197+" in the password input field..........................passed
 And clicks on Login button..................................................passed
-When admin is logged in the website.........................................passed
-And click on menu...........................................................passed
-And click on Vice Dean Management...........................................passed
-And admin should see the Vice Dean Management Filed.........................passed
-And enter name as "Madrid"..................................................passed
-And enter surname as "Madrid"...............................................passed
-And enter brith place as "Spain"............................................passed
-And select the "Male".......................................................passed
-And write the correct "12/25/1890"..........................................passed
-And enter phone number as "363-918-0845"....................................passed
-And write the SSN as "987-98-9876"..........................................passed
-And write the "madridspain".................................................passed
-And add "Madridspain0"......................................................passed
-And click on Submit button for Vice Dean creation...........................passed
-Then verify the Vice Dean is created........................................passed
-And close the application...................................................passed
-]]></system-out>
-</testcase>
-<testcase classname="Admin should be able to add Vice Dean" name="TC_02 Admin adding a Vice Dean without adding the password - Example #1.1" time="7.499">
-<system-out><![CDATA[
-Given user goes to "https://managementonschools.com/" homepage..............passed
-And clicks on loginIcon.....................................................passed
-And enters "AdminBatch197" in the userName input field......................passed
-And enters "Batch197+" in the password input field..........................passed
-And clicks on Login button..................................................passed
-When admin is logged in the website.........................................passed
-And click on menu...........................................................passed
-And click on Vice Dean Management...........................................passed
-And admin should see the Vice Dean Management Filed.........................passed
-And enter name as "Madrid"..................................................passed
-And enter surname as "Madrid"...............................................passed
-And enter brith place as "Spain"............................................passed
-And select the "Male".......................................................passed
-And write the correct "12/25/1890"..........................................passed
-And enter phone number as "369-258-0147"....................................passed
-And write the SSN as "987-98-9876"..........................................passed
-And write the "madridspain".................................................passed
-And leave "" empty..........................................................passed
-And click on Submit button for Vice Dean creation...........................passed
-Then Verify the Vice Dean is not created....................................passed
+And clicks on Menu button...................................................passed
+And clicks on guest user on the main menu...................................passed
+Then verifies "name","phone number","Ssn","Username" columns are visible....passed
+And delete if the registered user "Deniz Ugur" exist in the list............passed
+Then verifies the message "Guest User deleted Successful"...................passed
 And close the application...................................................passed
 ]]></system-out>
 </testcase>
