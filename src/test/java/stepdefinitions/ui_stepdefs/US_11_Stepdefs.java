@@ -59,6 +59,7 @@ public class US_11_Stepdefs {
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
+        WaitUtils.waitFor(1);
 
         assertTrue("no update button",false);
 
