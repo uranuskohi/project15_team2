@@ -17,7 +17,11 @@
   </component>
   <component name="DBNavigator.Project.DatabaseConsoleManager">
     <connection id="1a41e693-4431-4c71-8807-d4c3347f108b">
+<<<<<<< HEAD
       <console name="SchoolManagement_Project15Team2" type="STANDARD" schema="" session="Main"><![CDATA[SELECT * FROM student;]]></console>
+=======
+      <console name="SchoolManagement_Project15Team2" type="STANDARD" schema="" session="Main" />
+>>>>>>> 9fb2f883f17df24b44a51c61def942c334d4bb8f
     </connection>
     <connection id="9bb7a238-195d-47cc-83d4-780d36b1e40d">
       <console name="Connection" type="STANDARD" schema="" session="Main" />
@@ -30,7 +34,10 @@
     <last-used-providers />
   </component>
   <component name="DBNavigator.Project.DatabaseFileManager">
+<<<<<<< HEAD
     <open-files />
+=======
+>>>>>>> 9fb2f883f17df24b44a51c61def942c334d4bb8f
   </component>
   <component name="DBNavigator.Project.DatabaseSessionManager">
     <connection id="1a41e693-4431-4c71-8807-d4c3347f108b" />
