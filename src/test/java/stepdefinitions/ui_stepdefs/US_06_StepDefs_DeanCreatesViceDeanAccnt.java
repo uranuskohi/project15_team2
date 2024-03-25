@@ -76,11 +76,6 @@ public class US_06_StepDefs_DeanCreatesViceDeanAccnt {
         WaitUtils.waitFor(1);
     }
 
-    @When("clicks on Submit button")
-    public void clicks_on_submit_button() {
-        WaitUtils.waitFor(2);
-        viceDeanManagementPage.submitButton.click();
-    }
 
     @Then("verify the vice dean is created successfully message")
     public void verify_the_vice_dean_is_created_successfully_message() {
@@ -125,8 +120,12 @@ public class US_06_StepDefs_DeanCreatesViceDeanAccnt {
     }
 
 
-    @Given("navigate to {string}")
-    public void navigateTo(String url) {
-        Driver.getDriver().navigate().to("https://managementonschools.com/");
+
+
+
+    @And("clicks on the Submit button")
+    public void clicksOnTheSubmitButton() {
+        WaitUtils.waitFor(2);
+        viceDeanManagementPage.submitButton.click();
     }
 }

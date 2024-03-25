@@ -22,7 +22,7 @@
         And enters the "<Ssn>" in ssn field
         And user enter a "<User Name>" as an user name
         And enters the "<Password>" in password field
-        And clicks on Submit button
+        And clicks on the Submit button
         Then verify the vice dean is created successfully message
         And close the application
 
