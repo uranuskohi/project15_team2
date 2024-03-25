@@ -1,4 +1,4 @@
-@US14 @Sarah
+@US14
 Feature: vice dean updates teacher
   Background:
     Given user goes to "https://managementonschools.com/" homepage

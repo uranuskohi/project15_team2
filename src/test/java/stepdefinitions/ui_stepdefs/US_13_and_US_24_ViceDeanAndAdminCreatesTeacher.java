@@ -39,21 +39,19 @@ public class US_13_and_US_24_ViceDeanAndAdminCreatesTeacher {
     }
 
     @When("enters {string} in name field")
-    public String enters_in_name_field(String name) {
+    public void enters_in_name_field(String name) {
         name = faker.name().firstName();
         firstnameForAssertion = name;
-        teachersPage.name.sendKeys(firstnameForAssertion);
+        teachersPage.name.sendKeys(name);
         WaitUtils.waitFor(1);
-        return firstnameForAssertion;
     }
 
     @When("enters {string} in surname field")
-    public String enters_in_surname_field(String surname) {
+    public void enters_in_surname_field(String surname) {
         surname = faker.name().lastName();
         surnameForAssertion = surname;
-        teachersPage.surname.sendKeys(surnameForAssertion);
+        teachersPage.surname.sendKeys(surname);
         WaitUtils.waitFor(1);
-        return surnameForAssertion;
     }
 
     @When("enters {string} in birth place field")
@@ -71,12 +69,11 @@ public class US_13_and_US_24_ViceDeanAndAdminCreatesTeacher {
     }
 
     @When("enters {string} in phone field")
-    public String enters_in_phone_field(String phone) {
+    public void enters_in_phone_field(String phone) {
         phone = phoneNumberGenerator();
         phoneForAssertion = phone;
-        teachersPage.phone.sendKeys(phoneForAssertion);
+        teachersPage.phone.sendKeys(phone);
         WaitUtils.waitFor(1);
-        return phoneForAssertion;
     }
 
     @When("selects is advisor teacher")
@@ -103,19 +100,17 @@ public class US_13_and_US_24_ViceDeanAndAdminCreatesTeacher {
     }
 
     @When("enters {string} in ssn field")
-    public String enters_in_ssn_field(String ssn) {
+    public void enters_in_ssn_field(String ssn) {
         ssn = ssnGenerator();
         ssnForAssertion = ssn;
-        teachersPage.ssn.sendKeys(ssnForAssertion);
-        return ssnForAssertion;
+        teachersPage.ssn.sendKeys(ssn);
     }
 
     @When("enters {string} in user name field")
-    public String enters_in_user_name_field(String username) {
+    public void enters_in_user_name_field(String username) {
         username = faker.regexify("[a-z]{9}");
         usernameForAssertion = username;
-        teachersPage.userName.sendKeys(usernameForAssertion);
-        return usernameForAssertion;
+        teachersPage.userName.sendKeys(username);
     }
 
     @When("enters {string} in password field")
