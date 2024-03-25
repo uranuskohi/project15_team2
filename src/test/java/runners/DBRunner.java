@@ -7,7 +7,7 @@ import org.junit.runner.RunWith;
 @RunWith(Cucumber.class)
 @CucumberOptions(
 
-//        Don't use it now
+        //Don't use it now
 //        plugin = {
 //                "pretty",
 //                "html:target/cucumber-reports.html",
@@ -15,14 +15,16 @@ import org.junit.runner.RunWith;
 //                "junit:target/xml-reports/cucumber.xml",
 //                "rerun:target/failedRerun.txt"
 //        },
-        monochrome = true,
+//        monochrome = true,
 
 
         features = "./src/test/resources/features",
         glue = {"stepdefinitions", "hooks"},
         dryRun = false,
-        tags = "@US_15_UI"
+        tags = "@US_17_DB"
+
 )
 
-public class Runner {
+public class DBRunner {
 }
+

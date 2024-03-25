@@ -45,6 +45,7 @@ public class Dean_Management_Page {
     public WebElement deanSubmitButton;
 
     @FindBy (xpath = "(//span[normalize-space()='»'])[1]")
+
     public WebElement lastPageButton;
 
     @FindBy (xpath = "//div[text()='Minimum 11 character (XXX-XX-XXXX)']")
