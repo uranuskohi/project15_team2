@@ -17,6 +17,23 @@
   </component>
   <component name="DBNavigator.Project.DatabaseConsoleManager">
     <connection id="1a41e693-4431-4c71-8807-d4c3347f108b">
+      <console name="Project15Team2" type="STANDARD" schema="" session="Main"><![CDATA[US_17/18
+SELECT * FROM student WHERE name = 'Harry' AND surname = 'Potter';
+SELECT * FROM student_info WHERE student_id = '3258';
+
+SELECT * FROM student 
+SELECT * FROM student WHERE name = 'Harry' AND surname = 'Potter';
+SELECT * FROM student_info 
+SELECT * FROM student_info WHERE student_id = '3258';
+
+US_19/20
+SELECT * FROM meet_student_table;
+SELECT * FROM meet;
+
+
+SELECT * FROM lesson;
+SELECT * FROM lesson_program_lesson;
+SELECT * FROM lesson_program;]]></console>
       <console name="SchoolManagement_Project15Team2" type="STANDARD" schema="public" session="Main"><![CDATA[SELECT * FROM teacher]]></console>
     </connection>
     <connection id="9bb7a238-195d-47cc-83d4-780d36b1e40d">
@@ -27,9 +44,7 @@
     <last-used-providers />
   </component>
   <component name="DBNavigator.Project.DatabaseFileManager">
-    <open-files>
-      <object connection-id="1a41e693-4431-4c71-8807-d4c3347f108b" object-ref="consoles/SchoolManagement_Project15Team2" />
-    </open-files>
+    <open-files />
   </component>
   <component name="DBNavigator.Project.DatabaseSessionManager">
     <connection id="1a41e693-4431-4c71-8807-d4c3347f108b" />

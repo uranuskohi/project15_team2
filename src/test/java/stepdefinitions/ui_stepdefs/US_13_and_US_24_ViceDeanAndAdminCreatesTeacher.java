@@ -14,8 +14,8 @@ public class US_13_and_US_24_ViceDeanAndAdminCreatesTeacher {
     Faker faker = new Faker();
     Actions actions = new Actions(Driver.getDriver());
 
-    public String name1;
-    public static String fullNameForAssertion;
+    public static String firstnameForAssertion;
+    public static String surnameForAssertion;
     public static String phoneForAssertion;
     public static String ssnForAssertion;
     public static String usernameForAssertion;
@@ -39,20 +39,21 @@ public class US_13_and_US_24_ViceDeanAndAdminCreatesTeacher {
     }
 
     @When("enters {string} in name field")
-     public void enters_in_name_field(String name) {
+    public String enters_in_name_field(String name) {
         name = faker.name().firstName();
-        name1 = name;
-        teachersPage.name.sendKeys(name);
+        firstnameForAssertion = name;
+        teachersPage.name.sendKeys(firstnameForAssertion);
         WaitUtils.waitFor(1);
+        return firstnameForAssertion;
     }
 
     @When("enters {string} in surname field")
-    public void enters_in_surname_field(String surname) {
+    public String enters_in_surname_field(String surname) {
         surname = faker.name().lastName();
-        teachersPage.surname.sendKeys(surname);
+        surnameForAssertion = surname;
+        teachersPage.surname.sendKeys(surnameForAssertion);
         WaitUtils.waitFor(1);
-        fullNameForAssertion = name1+" "+surname;
-        System.out.println(fullNameForAssertion);
+        return surnameForAssertion;
     }
 
     @When("enters {string} in birth place field")
@@ -70,12 +71,12 @@ public class US_13_and_US_24_ViceDeanAndAdminCreatesTeacher {
     }
 
     @When("enters {string} in phone field")
-    public void enters_in_phone_field(String phone) {
+    public String enters_in_phone_field(String phone) {
         phone = phoneNumberGenerator();
         phoneForAssertion = phone;
         teachersPage.phone.sendKeys(phoneForAssertion);
-//        teachersPage.phone.sendKeys(phone);
         WaitUtils.waitFor(1);
+        return phoneForAssertion;
     }
 
     @When("selects is advisor teacher")
@@ -84,7 +85,7 @@ public class US_13_and_US_24_ViceDeanAndAdminCreatesTeacher {
     }
 
     @When("selects gender radio button")
-    public static void selectGenderRadioButton(){
+    public void selectGenderRadioButton(){
         Teachers_Page teachersPage = new Teachers_Page();
         if (!teachersPage.male.isSelected() && !teachersPage.female.isSelected()){
             teachersPage.male.click();
@@ -102,19 +103,19 @@ public class US_13_and_US_24_ViceDeanAndAdminCreatesTeacher {
     }
 
     @When("enters {string} in ssn field")
-    public void enters_in_ssn_field(String ssn) {
+    public String enters_in_ssn_field(String ssn) {
         ssn = ssnGenerator();
         ssnForAssertion = ssn;
         teachersPage.ssn.sendKeys(ssnForAssertion);
-//        teachersPage.ssn.sendKeys(ssn);
+        return ssnForAssertion;
     }
 
     @When("enters {string} in user name field")
-    public void enters_in_user_name_field(String username) {
+    public String enters_in_user_name_field(String username) {
         username = faker.regexify("[a-z]{9}");
         usernameForAssertion = username;
         teachersPage.userName.sendKeys(usernameForAssertion);
-//        teachersPage.userName.sendKeys(username);
+        return usernameForAssertion;
     }
 
     @When("enters {string} in password field")
@@ -138,7 +139,7 @@ public class US_13_and_US_24_ViceDeanAndAdminCreatesTeacher {
     }
 
 
-//  TC_02_create_teacher_asvicedean_invalid StepDefs
+    //  TC_02_create_teacher_asvicedean_invalid StepDefs
     @When("enters only {int} digits {string} in ssn field")
     public void enters_only_digits_in_ssn_field(Integer numberOfDigits, String ssn) {
         teachersPage.ssn.sendKeys(ssn8DigitGenerator());
@@ -149,4 +150,4 @@ public class US_13_and_US_24_ViceDeanAndAdminCreatesTeacher {
         Assert.assertEquals(string, teachersPage.ssnErrorMsg.getText());
     }
 
-    }
+}
