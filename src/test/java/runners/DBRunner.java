@@ -15,7 +15,7 @@ import org.junit.runner.RunWith;
 //                "junit:target/xml-reports/cucumber.xml",
 //                "rerun:target/failedRerun.txt"
 //        },
-//        monochrome = true,
+        monochrome = true,
 
 
         features = "./src/test/resources/features",

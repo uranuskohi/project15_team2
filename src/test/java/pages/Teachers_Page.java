@@ -118,10 +118,10 @@ public class Teachers_Page {
     @FindBy(xpath = "//*[text()='Next']")
     public WebElement nextPageButton;
 
-    @FindBy(xpath = "//*[text()='Last']")
+    @FindBy(xpath = "//div[@id='controlled-tab-example-tabpane-teachersList']//li[5]//a[1]")
     public WebElement lastPageButton;
 
-    @FindBy(xpath = "//*[text()='Previous']")
+    @FindBy(xpath = "//div[@id='controlled-tab-example-tabpane-teachersList']//li[1]//a[1]")
     public WebElement previousPageButton;
 
 

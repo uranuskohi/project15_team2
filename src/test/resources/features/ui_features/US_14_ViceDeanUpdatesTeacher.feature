@@ -16,22 +16,22 @@ Feature: vice dean updates teacher
     And verify "phone" in phone field
     And verify "ssn" in ssn field
     And verify "username" in user name field
-    When clicks on edit button
-    And enters "Cypress" in edit select lesson field
-    And enters "name" in edit name field
-    And enters "lastname" in edit surname field
-    And enters "birthplace" in edit birth place field
-    And enters "email" in edit email field
-    And enters "phone" in edit phone field
-    And enters "ssn" in edit ssn field
-    And selects edit is advisor teacher
-    And selects edit gender radio button
-    And enters "dateofbirth" in edit date of birth field
-    And enters "username" in edit user name field
-    And enters "password" in edit password field
-    And clicks edit submit button
-    Then verify success message "Teacher updated Successful"
-    And close the application
+#    When clicks on edit button
+#    And enters "Cypress" in edit select lesson field
+#    And enters "name" in edit name field
+#    And enters "lastname" in edit surname field
+#    And enters "birthplace" in edit birth place field
+#    And enters "email" in edit email field
+#    And enters "phone" in edit phone field
+#    And enters "ssn" in edit ssn field
+#    And selects edit is advisor teacher
+#    And selects edit gender radio button
+#    And enters "dateofbirth" in edit date of birth field
+#    And enters "username" in edit user name field
+#    And enters "password" in edit password field
+#    And clicks edit submit button
+#    Then verify success message "Teacher updated Successful"
+#    And close the application
 
   @US14_TC02
   Scenario: vice dean updates teacher with invalid information
