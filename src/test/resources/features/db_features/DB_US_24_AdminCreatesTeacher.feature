@@ -1,5 +1,5 @@
-@US13_DB
-Feature: US13_DB
+@US24_DB
+Feature: US24_DB
 
   Scenario: vice dean creates teacher
     Given user connects to application database
