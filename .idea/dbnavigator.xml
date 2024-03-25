@@ -17,7 +17,7 @@
   </component>
   <component name="DBNavigator.Project.DatabaseConsoleManager">
     <connection id="1a41e693-4431-4c71-8807-d4c3347f108b">
-      <console name="SchoolManagement_Project15Team2" type="STANDARD" schema="" session="Main" />
+      <console name="SchoolManagement_Project15Team2" type="STANDARD" schema="public" session="Main"><![CDATA[SELECT * FROM teacher]]></console>
     </connection>
     <connection id="9bb7a238-195d-47cc-83d4-780d36b1e40d">
       <console name="Connection" type="STANDARD" schema="" session="Main" />
@@ -27,7 +27,9 @@
     <last-used-providers />
   </component>
   <component name="DBNavigator.Project.DatabaseFileManager">
-    <open-files />
+    <open-files>
+      <object connection-id="1a41e693-4431-4c71-8807-d4c3347f108b" object-ref="consoles/SchoolManagement_Project15Team2" />
+    </open-files>
   </component>
   <component name="DBNavigator.Project.DatabaseSessionManager">
     <connection id="1a41e693-4431-4c71-8807-d4c3347f108b" />
@@ -38,6 +40,7 @@
     <filter-actions connection-id="1a41e693-4431-4c71-8807-d4c3347f108b" dataset="public.student_info" active-filter-id="" />
     <filter-actions connection-id="1a41e693-4431-4c71-8807-d4c3347f108b" dataset="public.dean" active-filter-id="" />
     <filter-actions connection-id="1a41e693-4431-4c71-8807-d4c3347f108b" dataset="public.student" active-filter-id="" />
+    <filter-actions connection-id="1a41e693-4431-4c71-8807-d4c3347f108b" dataset="public.teacher" active-filter-id="" />
     <filter-actions connection-id="1a41e693-4431-4c71-8807-d4c3347f108b" dataset="public.lesson_program_lesson" active-filter-id="" />
     <filter-actions connection-id="1a41e693-4431-4c71-8807-d4c3347f108b" dataset="public.education_term" active-filter-id="" />
     <filter-actions connection-id="1a41e693-4431-4c71-8807-d4c3347f108b" dataset="public.meet_student_table" active-filter-id="" />
