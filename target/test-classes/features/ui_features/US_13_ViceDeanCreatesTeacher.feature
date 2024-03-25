@@ -1,4 +1,4 @@
-@US13 @Sarah
+@US13 @Sarah @smoke
 Feature: vice dean creates teacher
   Background:
     Given user goes to "https://managementonschools.com/" homepage

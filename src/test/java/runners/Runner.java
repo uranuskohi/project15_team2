@@ -11,9 +11,9 @@ import org.junit.runner.RunWith;
 //        plugin = {
 //                "pretty",
 //                "html:target/cucumber-reports.html",
-////                "json:target/json-reports/cucumber.json",
-////                "junit:target/xml-reports/cucumber.xml",
-////                "rerun:target/failedRerun.txt"
+//                "json:target/json-reports/cucumber.json",
+//                "junit:target/xml-reports/cucumber.xml",
+//                "rerun:target/failedRerun.txt"
 //        },
         monochrome = true,
 
@@ -21,7 +21,7 @@ import org.junit.runner.RunWith;
         features = "./src/test/resources/features",
         glue = {"stepdefinitions", "hooks"},
         dryRun = false,
-        tags = "@US_06_UI"
+        tags = "@US_02"
 )
 
 public class Runner {

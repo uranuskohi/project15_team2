@@ -8,8 +8,7 @@ import io.cucumber.java.en.When;
 import org.openqa.selenium.interactions.Actions;
 import pages.Dean_Management_Page;
 import pages.Main_Page;
-import utilities.Driver;
-import utilities.TestUtils;
+import utilities.*;
 
 import static org.junit.Assert.assertTrue;
 
@@ -77,7 +76,10 @@ public class US_04_StepDefs {
 
     @Then("verify the Dean is created")
     public void verifyTheDeanIsCreated() {
-        deanManagementPage.lastPageButton.click();
+        WaitUtils.waitFor(2);
+        JSUtils.JSclickWithTimeout(deanManagementPage.lastPageButton);
+
+     //   deanManagementPage.lastPageButton.click();
         assertTrue(deanManagementPage.firstName.isDisplayed());
     }
 
@@ -96,5 +98,6 @@ public class US_04_StepDefs {
     public void verifyTheDeanCannotBeCreated() {
         deanManagementPage.missingDigitNotice.isDisplayed();
     }
+
 
 }
