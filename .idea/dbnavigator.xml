@@ -17,11 +17,19 @@
   </component>
   <component name="DBNavigator.Project.DatabaseConsoleManager">
     <connection id="1a41e693-4431-4c71-8807-d4c3347f108b">
-<<<<<<< HEAD
-      <console name="SchoolManagement_Project15Team2" type="STANDARD" schema="" session="Main"><![CDATA[SELECT * FROM student;]]></console>
-=======
-      <console name="SchoolManagement_Project15Team2" type="STANDARD" schema="" session="Main" />
->>>>>>> 9fb2f883f17df24b44a51c61def942c334d4bb8f
+      <console name="SchoolManagement_Project15Team2" type="STANDARD" schema="" session="Main"><![CDATA[SELECT * FROM lesson WHERE lesson_name= 'recruiter';
+SELECT * FROM lesson_program WHERE id ='3969';
+SELECT * FROM lesson_program;
+SELECT * FROM lesson;
+SELECT * FROM lesson_program_lesson;
+SELECT * FROM student WHERE name = 'Uranus';
+SELECT * FROM meet_student_table;
+SELECT * FROM student_info WHERE student_id = '3279';
+
+
+
+
+SELECT * FROM vice_dean;]]></console>
     </connection>
     <connection id="9bb7a238-195d-47cc-83d4-780d36b1e40d">
       <console name="Connection" type="STANDARD" schema="" session="Main" />
@@ -34,10 +42,7 @@
     <last-used-providers />
   </component>
   <component name="DBNavigator.Project.DatabaseFileManager">
-<<<<<<< HEAD
     <open-files />
-=======
->>>>>>> 9fb2f883f17df24b44a51c61def942c334d4bb8f
   </component>
   <component name="DBNavigator.Project.DatabaseSessionManager">
     <connection id="1a41e693-4431-4c71-8807-d4c3347f108b" />
@@ -46,11 +51,13 @@
   </component>
   <component name="DBNavigator.Project.DatasetFilterManager">
     <filter-actions connection-id="1a41e693-4431-4c71-8807-d4c3347f108b" dataset="public.lesson_program" active-filter-id="" />
+    <filter-actions connection-id="1a41e693-4431-4c71-8807-d4c3347f108b" dataset="public.student_lessonprogram" active-filter-id="" />
+    <filter-actions connection-id="1a41e693-4431-4c71-8807-d4c3347f108b" dataset="public.admins" active-filter-id="" />
     <filter-actions connection-id="1a41e693-4431-4c71-8807-d4c3347f108b" dataset="public.student_info" active-filter-id="" />
-    <filter-actions connection-id="1a41e693-4431-4c71-8807-d4c3347f108b" dataset="public.dean" active-filter-id="" />
     <filter-actions connection-id="1a41e693-4431-4c71-8807-d4c3347f108b" dataset="public.student" active-filter-id="" />
+    <filter-actions connection-id="1a41e693-4431-4c71-8807-d4c3347f108b" dataset="public.vice_dean" active-filter-id="" />
     <filter-actions connection-id="1a41e693-4431-4c71-8807-d4c3347f108b" dataset="public.lesson_program_lesson" active-filter-id="" />
-    <filter-actions connection-id="1a41e693-4431-4c71-8807-d4c3347f108b" dataset="public.education_term" active-filter-id="" />
+    <filter-actions connection-id="1a41e693-4431-4c71-8807-d4c3347f108b" dataset="public.lesson" active-filter-id="" />
     <filter-actions connection-id="1a41e693-4431-4c71-8807-d4c3347f108b" dataset="public.meet_student_table" active-filter-id="" />
   </component>
   <component name="DBNavigator.Project.ExecutionManager">
