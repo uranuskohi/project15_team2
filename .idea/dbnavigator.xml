@@ -33,7 +33,10 @@ SELECT * FROM meet;
 
 SELECT * FROM lesson;
 SELECT * FROM lesson_program_lesson;
-SELECT * FROM lesson_program;]]></console>
+SELECT * FROM lesson_program;
+
+US_22
+SELECT * FROM admins;]]></console>
       <console name="SchoolManagement_Project15Team2" type="STANDARD" schema="" session="Main" />
     </connection>
     <connection id="9bb7a238-195d-47cc-83d4-780d36b1e40d">
@@ -44,9 +47,7 @@ SELECT * FROM lesson_program;]]></console>
     <last-used-providers />
   </component>
   <component name="DBNavigator.Project.DatabaseFileManager">
-    <open-files>
-      <object connection-id="1a41e693-4431-4c71-8807-d4c3347f108b" object-ref="consoles/Project15Team2" />
-    </open-files>
+    <open-files />
   </component>
   <component name="DBNavigator.Project.DatabaseSessionManager">
     <connection id="1a41e693-4431-4c71-8807-d4c3347f108b" />
@@ -134,6 +135,7 @@ SELECT * FROM lesson_program;]]></console>
           <debugger-type value="ASK" />
         </debugger>
         <object-filters hide-empty-schemas="false" hide-pseudo-columns="false" hide-audit-columns="false">
+          <object-filters />
           <object-type-filter use-master-settings="true">
             <object-type name="SCHEMA" enabled="true" />
             <object-type name="USER" enabled="true" />
@@ -161,7 +163,6 @@ SELECT * FROM lesson_program;]]></console>
             <object-type name="CLUSTER" enabled="true" />
             <object-type name="DBLINK" enabled="true" />
           </object-type-filter>
-          <object-name-filters />
         </object-filters>
       </connection>
       <connection id="9bb7a238-195d-47cc-83d4-780d36b1e40d" active="true" signed="true">
@@ -228,6 +229,7 @@ SELECT * FROM lesson_program;]]></console>
           <debugger-type value="ASK" />
         </debugger>
         <object-filters hide-empty-schemas="false" hide-pseudo-columns="false" hide-audit-columns="false">
+          <object-filters />
           <object-type-filter use-master-settings="true">
             <object-type name="SCHEMA" enabled="true" />
             <object-type name="USER" enabled="true" />
@@ -255,7 +257,6 @@ SELECT * FROM lesson_program;]]></console>
             <object-type name="CLUSTER" enabled="true" />
             <object-type name="DBLINK" enabled="true" />
           </object-type-filter>
-          <object-name-filters />
         </object-filters>
       </connection>
     </connections>
