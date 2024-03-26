@@ -1,7 +1,7 @@
 @US_17_DB
 Feature: US_17_DB
 
-  Scenario Outline: User Validates Created Student Info From DB
+  Scenario Outline: TC_01 User Validates Created Student Info From Database
     Given user connects to application database
     When user gets the "*" column from the table "<tableName>" for student info grades
     Then verify "<tableName>" table and "<columnName>" column contains "<data>"
