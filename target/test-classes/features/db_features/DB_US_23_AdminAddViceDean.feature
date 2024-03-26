@@ -1,5 +1,5 @@
 
-@water
+@water @uranus
 Feature: ViceDeanCreation
   Scenario Outline: Checking created vice dean
     Given user connects to application database
