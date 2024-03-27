@@ -62,11 +62,20 @@ public class US_22_Add_Admin_StepDefs {
         admin_management_page.password.sendKeys("Asmith12");
 
     }
-    @Given("clicks on the Submit button")
-    public void clicks_on_the_submit_button() {
-        BrowserUtils.clickWithTimeOut(admin_management_page.submitButton,3);
+//    @Given("clicks on the Submit button")
+//    public void clicks_on_the_submit_button() {
+//        BrowserUtils.clickWithTimeOut(admin_management_page.submitButton,3);
+//
+//    }
+//@Given("clicks on the Submit button")
+//public void clicks_on_submit_button() {
+//    BrowserUtils.clickWithTimeOut(admin_management_page.submitButton,3);
+//}
+@Given("clicks on the Submit submit button")
+public void clicks_on_the_submit_submit_button() {
+    BrowserUtils.clickWithTimeOut(admin_management_page.submitButton,3);
+}
 
-    }
 
     @Then("verifies success message {string}")
     public void verifies_success_message(String string) {

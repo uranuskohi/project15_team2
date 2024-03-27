@@ -17,7 +17,7 @@ Feature: User adds Admin
     And enters ssn in SSN field
     And enters "Asmith" in Username field
     And enters password in Password field
-    And clicks on the Submit button
+    And clicks on the Submit submit button
     Then verifies success message "Admin Saved"
     And scrolls down to the last page
     And goes to the last page
@@ -38,6 +38,6 @@ Feature: User adds Admin
     And enters ssn in SSN field
     And enters "Asmith" in Username field
     And enters password in Password field
-    And clicks on Submit button
+    And clicks on the Submit submit button
     Then verifies "Required" message
     And close the application

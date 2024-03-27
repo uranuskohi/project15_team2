@@ -35,8 +35,11 @@ SELECT * FROM lesson;
 SELECT * FROM lesson_program_lesson;
 SELECT * FROM lesson_program;
 
+US_02
+SELECT * FROM guest_user WHERE username='Dugur'; 
+
 US_22
-SELECT * FROM admins;]]></console>
+SELECT * FROM admins WHERE username='Asmith';]]></console>
       <console name="SchoolManagement_Project15Team2" type="STANDARD" schema="" session="Main" />
     </connection>
     <connection id="9bb7a238-195d-47cc-83d4-780d36b1e40d">

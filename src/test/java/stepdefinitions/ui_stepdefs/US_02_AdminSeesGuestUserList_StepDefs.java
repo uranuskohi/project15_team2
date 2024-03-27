@@ -31,7 +31,6 @@ Admin_Management_Page admin_management_page= new Admin_Management_Page();
     Actions actions = new Actions(Driver.getDriver());
     WaitUtils waitUtils=new WaitUtils();
 
-
     @Given("user clicks Register button")
     public void user_clicks_register_button() {
         mainPage.registerIconAtHeader.click();

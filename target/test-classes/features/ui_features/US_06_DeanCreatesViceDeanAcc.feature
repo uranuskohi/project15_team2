@@ -45,7 +45,7 @@
           And enters the "<Ssn>" in ssn field
           And user enters the "<User Name>" as an user name
           And enters the "<Password>" in password field
-         # And clicks on Submit button
+          And clicks on Submit button
           Then user sees the required message
           And close the application
 
