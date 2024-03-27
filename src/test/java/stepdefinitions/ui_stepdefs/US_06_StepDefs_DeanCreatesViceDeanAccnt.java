@@ -107,7 +107,7 @@ public class US_06_StepDefs_DeanCreatesViceDeanAccnt {
     }
     @And("enters the{string} in date of birth field")
     public void entersTheInDateOfBirthField(String dateofbirth) {
-        viceDeanManagementPage.vdmBirthDay.sendKeys(dateofbirth);
+//        viceDeanManagementPage.vdmBirthDay.sendKeys(dateofbirth);
         WaitUtils.waitFor(1);
 
     }

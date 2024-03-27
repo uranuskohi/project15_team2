@@ -1,7 +1,7 @@
 @US13_DB
 Feature: US13_DB
 
-  Scenario: vice dean creates teacher
+  Scenario: user validates created teacher on DB
     Given user connects to application database
     And creates statement
     When user executes query for created teacher

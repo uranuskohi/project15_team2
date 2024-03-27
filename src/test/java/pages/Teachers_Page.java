@@ -115,14 +115,10 @@ public class Teachers_Page {
     @FindBy(xpath = "//i[@class='fa-solid fa-pencil']")
     public WebElement editButton;
 
-    @FindBy(xpath = "//*[text()='Next']")
-    public WebElement nextPageButton;
-
     @FindBy(xpath = "//*[text()='Last']")
     public WebElement lastPageButton;
 
-    @FindBy(xpath = "//*[text()='Previous']")
-    public WebElement previousPageButton;
+
 
 
 

@@ -34,16 +34,14 @@ SELECT * FROM meet;
 SELECT * FROM lesson;
 SELECT * FROM lesson_program_lesson;
 SELECT * FROM lesson_program;]]></console>
-      <console name="SchoolManagement_Project15Team2" type="STANDARD" schema="public" session="Main"><![CDATA[SELECT * FROM teacher where username = 'Faruk']]></console>
+      <console name="SchoolManagement_Project15Team2" type="STANDARD" schema="public" session="Main"><![CDATA[SELECT * FROM teacher_lessonprogram]]></console>
     </connection>
   </component>
   <component name="DBNavigator.Project.DatabaseEditorStateManager">
     <last-used-providers />
   </component>
   <component name="DBNavigator.Project.DatabaseFileManager">
-    <open-files>
-      <object connection-id="1a41e693-4431-4c71-8807-d4c3347f108b" object-ref="consoles/SchoolManagement_Project15Team2" />
-    </open-files>
+    <open-files />
   </component>
   <component name="DBNavigator.Project.DatabaseSessionManager">
     <connection id="1a41e693-4431-4c71-8807-d4c3347f108b" />

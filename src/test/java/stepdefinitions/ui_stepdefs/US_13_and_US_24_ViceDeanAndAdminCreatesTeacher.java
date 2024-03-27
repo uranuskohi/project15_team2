@@ -9,7 +9,6 @@ import utilities.*;
 import static utilities.TestUtils.*;
 
 public class US_13_and_US_24_ViceDeanAndAdminCreatesTeacher {
-
     Teachers_Page teachersPage = new Teachers_Page();
     Faker faker = new Faker();
     Actions actions = new Actions(Driver.getDriver());
@@ -39,9 +38,10 @@ public class US_13_and_US_24_ViceDeanAndAdminCreatesTeacher {
     }
 
     @When("enters {string} in name field")
-    public void enters_in_name_field(String name) {
+    public void enters_in_name_field(String name){
         name = faker.name().firstName();
         firstnameForAssertion = name;
+        System.out.println("firstnameForAssertion = " + firstnameForAssertion);
         teachersPage.name.sendKeys(name);
         WaitUtils.waitFor(1);
     }

@@ -11,7 +11,8 @@ Feature: vice dean updates teacher
 
   @US14_TC01
   Scenario: vice dean updates teacher list with valid information
-    Given user is on last page of teacher list
+    Given user clicks on last page of teacher list
+    When finds created teacher
     Then verify "fullname" in name field
     And verify "phone" in phone field
     And verify "ssn" in ssn field
@@ -35,7 +36,8 @@ Feature: vice dean updates teacher
 
   @US14_TC02
   Scenario: vice dean updates teacher with invalid information
-    Given user is on last page of teacher list
+    Given user clicks on last page of teacher list
+    When finds created teacher
     When clicks on edit button
     And enters "C#" in edit select lesson field
     And enters "name" in edit name field
